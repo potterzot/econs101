@@ -1,0 +1,23 @@
+---
+layout: page
+element: lecture
+title: Key Ideas
+output:
+  md_document:
+    variant: gfm
+    preserve_yaml: true
+---
+
+[Video]()
+
+
+## Economics has three key ideas:
+
+* Opportunity Cost
+* Marginality
+
+## Wrapping Up
+
+* Single Question Quiz: []() 
+
+* Today's etherpad for comments and feedback: []().

@@ -12,7 +12,7 @@ permalink:        pretty
 title:            Foundations of Microeconomics
 description:      'An introduction to markets, behavior, and policy.'
 url:              http://potterzot.com/semester-microeconomics-i
-baseurl:          /semester-microeconomics-i
+baseurl:          /econs101
 email:            nicholas.a.potter@wsu.edu
 feedbackurl:      https://goo.gl/forms/8SiOwdi19kN8cINJ3
 author:
@@ -20,7 +20,9 @@ author:
   url:            https://twitter.com/potterzot
 
 github:
-  repo:           https://github.com/potterzot/semester-microeconomics-i
+  repo:           https://github.com/potterzot/econs101
   #               Be sure the 'Issues' feature is activated in 'Settings'
+
+exclude:          ["*.Rmd"]
 
 theme: jekyll-theme-minimal

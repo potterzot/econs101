@@ -15,6 +15,11 @@ TA: Michael Mahoney
 TA_email: michael.mahoney@wsu.edu
 TA_office_hours: Wednesday 11:00-1:00 pm
 TA_office_hours_location: Hulbert Hall 207A
+
+output:
+  md_document:
+    variant: gfm
+    preserve_yaml: true
 ---
 
 # {{ page.catalog }} {{ site.title }}
@@ -23,17 +28,22 @@ TA_office_hours_location: Hulbert Hall 207A
 
 **Time & Location**: {{ page.schedule }}
 
-**Current Syllabus**: The syllabus and other relevant class information and resources will be posted at [{{ site.url}}]({{ site.baseurl }}/) as well as on blackboard at [https://learn.wsu.edu](https://learn.wsu.edu).
+**Course Website**: [{{ site.url }}]({{ site.baseurl }})
+
+**Current Syllabus**: The syllabus and other relevant class information and resources will be posted at [{{ site.url}}]({{ site.baseurl }}) as well as on blackboard at [https://learn.wsu.edu](https://learn.wsu.edu).
 
 **Current Schedule**: The details course schedule is available on the course website at: [{{ site.url }}/schedule]({{ site.baseurl }}/schedule) and on blackboard at [https://learn.wsu.edu](https://learn.wsu.edu).
 
-**Professor**: {{ page.professor }}, {{ page.office }}, {{ page.email }}, Office hours: {{ page.office_hours }}, {{ page.office_hours_location }}
+**Professor**: {{ page.professor }}, {{ page.office }}, {{ page.email }}, Office hours: {{ page.office_hours }}
 
-**Teaching Assistant**: {{ page.TA }}, {{ page.TA_office }}, {{ page.TA_email }}, Office hours: {{ page.TA_office_hours }}, {{ page.TA_office_hours_location }}
+**Teaching Assistant**: {{ page.TA }}, {{ page.TA_office_hours_location }}, {{ page.TA_email }}, Office hours: {{ page.TA_office_hours }}
 
-Additional office hours by appointment. *Note: schedules get very busy, so no appointments can be made less than 24 hours in advance.*
+*I receive ~100 emails per day. To manage this, I only check email from 4:00-5:00 pm. I prefer verbal communication, but if you want to use email, the subject line ~~must~~ start with "ECONS101" or your email will likely be lost. I will do you the same courtesy, and will never send an email or make a Blackboard announcement that requires action within 24 hours.*
 
-**Feedback**: Please leave feedback at any time at: {{ site.feedbackurl }}
+*Note: Additional office hours by appointment. Schedules get very busy, so no appointments can be made less than 24 hours in advance.*
+
+**Feedback**: Please leave feedback at any time at: [{{ site.feedbackurl }}]({{ site.feedbackurl }})
+
 
 ### Texts
 
@@ -91,17 +101,17 @@ and I will do my best to help.**
 
 ### Grading
 
-Grading will be based on the following components: **12 weekly homeworks**, **4 written assignments**, **two quizzes**, **a final exam**, **class participation** and any **extra credit** submitted. There are 400 possible points and 40 additional extra credit points, with each component weighted as follows:
+Grading will be based on the following components: **11 homeworks**, **4 written assignments**, **two quizzes**, **a final exam**, **class participation** and any **extra credit** submitted. There are 430 possible points and 40 additional extra credit points. Total points from each element are:
 
-* 12 Homeworks (drop 2 lowest): 80
+* 11 Homeworks (drop 2 lowest): 90
 * 4 Written Assignments (drop lowest): 90
 * Quiz 1: 60
 * Quiz 2: 60
-* Final: 80
+* Final: 90
 * Participation: 40
 * Extra Credit: 40
 
-Your total points are divided by 400, and your letter grade is determined according to the resulting percent as follows:
+Your total points are divided by 430, and your letter grade is determined according to the resulting percent as follows:
 
 - **A:  93-100**
 - **A-: 90-92.9**
@@ -140,9 +150,9 @@ In the case of NetTutor, each written assignment is graded on two components: ec
 
 #### Quizzes and the Final Exam
 
-There will be two quizzes and a final.  Except for the final, the quizzes are on the [class schedule](schedule/), in Blackboard, and announced in class.  The quizzes will take place during class time and will involve only the material covered since the last quiz.  The final exam will be cumulative, but with an emphasis on the material covered since the third test.
+There will be two quizzes and a final.  Except for the final, the quizzes are on the [class schedule]({{ site.baseurl | append: '/schedule' }}/), in Blackboard, and announced in class.  The quizzes will take place during class time and will involve only the material covered since the last quiz.  The final exam will be cumulative, but with an emphasis on the material covered since the second test. *If your final exam score is better than one of your quiz scores, I will replace the lowest quiz score with your final exam score.*
 
-The format of the quizzes will be multiple choice questions. Bubble sheets (or *Scantrons*) will be provided for each exam.  
+The format of the quizzes will be multiple choice questions. Bubble sheets (or *Scantrons*) will be provided for each quiz and for the final exam.  
 
 **I will not allow students to take a quiz late**. You can however arrange to take a quiz ahead of time if you have an official university-sanctioned event that conflicts with the quiz time.  If you need to reschedule as a result of a non-official event (you've scheduled surgery for that day, or you need to attend a wedding, etc.) you can arrange to take the quiz ahead of time as well.
 
@@ -162,7 +172,7 @@ The format of the quizzes will be multiple choice questions. Bubble sheets (or *
 
 Class participation points depend on two factors:
 
-* Answering in-class questions in an online form that will be displayed at the end of class. Each completed form will be worth one point.
+* Answering in-class questions in an online form that will be displayed during some classes. Each correct question will be worth one point.
 * Asking a substantive question during class. Each question is worth five points.
 
 These are subject to the following rules:
@@ -172,7 +182,7 @@ These are subject to the following rules:
 
 #### Extra Credit
 
-Extra credit will be given in the form of additional homeworks available online and will be posted and added to the schedule throughout the semester. There will be eight extra credit opportunities, each containing five questions worth one point. There is no option to retake or to turn in extra credit late.
+Extra credit will be given in the form of additional homeworks available on Sapling and will be posted and added to the schedule throughout the semester. There will be eight extra credit opportunities, each containing five questions worth one point. There is no option to retake or to turn in extra credit late.
 
 ## Course Policies
 

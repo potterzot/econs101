@@ -12,7 +12,7 @@
   {% for session in site.data.sessions %}
     {% assign topic_str = session.topics | join: ", " %}
     {% assign module_str = session.modules | join: ", " %}
-    
+
 
     {% assign reading_links = "" | split: "/" %}
     {% for topic in session.topics %}
@@ -34,16 +34,6 @@
       {% endfor %}
     {% endfor %}
 
-    {% assign assignmentslecture_links = "" | split: "/" %}
-    {% for topic in session.topics %}
-      {% for lecturepage in site.pages %}
-        {% if lecturepage.title == topic and lecturepage.element == 'lecture' %}
-          {% capture link %}{{ lecturepage.url | prepend: site.baseurl }}{% endcapture %}
-          {% assign lecture_links = lecture_links | push: link %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-    
     <tr>
       <td align="left">{{ session.date }}</td>
       <td>{{ module_str }}</td>
@@ -52,7 +42,7 @@
 
       <td align="center">
         {% if reading_links %}
-          {% for reading_link in reading_links %} 
+          {% for reading_link in reading_links %}
             <a href="{{ reading_link }}">
             <i class="fa fa-book fa-lg"></i></a>
           {% endfor %}
@@ -61,10 +51,10 @@
           <i class="fa fa-book fa-lg"></i></font>
       {% endif %}
       </td>
-      
+
       <td align="center">
         {% if lecture_links %}
-          {% for lecture_link in lecture_links %} 
+          {% for lecture_link in lecture_links %}
             <a href="{{ lecture_link }}">
             <i class="fa fa-book fa-lg"></i></a>
           {% endfor %}
@@ -73,7 +63,7 @@
           <i class="fa fa-book fa-lg"></i></font>
       {% endif %}
       </td>
-     
+
       <td align="center">
         {% if session.assignments %}
           {{ session.assignments }}
