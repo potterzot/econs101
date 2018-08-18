@@ -175,10 +175,7 @@ Class participation points depend on two factors:
 * Answering in-class questions in an online form that will be displayed during some classes. Each correct question will be worth one point.
 * Asking a substantive question during class. Each question is worth five points.
 
-These are subject to the following rules:
-
-1. You cannot accumulate more than 40 total participation points.
-2. Since there are 39 classes that aren't reviews or quizzes, everyone will receive one participation point to start. Questions asked during reviews still count toward participation points.
+You cannot accumulate more than 40 total participation points.
 
 #### Extra Credit
 
