@@ -1,0 +1,215 @@
+# Dates and topics to be covered in each
+#
+
+- date: 2018-08-20 (M)
+  modules: ['1']
+  topics: ['Course Overview', 'Key Ideas']
+
+- date: 2018-08-22 (W)
+  modules: ['3']
+  topics: ['Trade-offs']
+
+- date: 2018-08-24 (F)
+  modules: ['18']
+  topics: ['Decision Making']
+
+- date: 2018-08-27 (M)
+  modules: ['20']
+  topics: ['Maximizing Utility']
+  
+- date: 2018-08-29 (W)
+  modules: ['21']
+  topics: ['Production Function']
+
+- date: 2018-08-31 (F)
+  modules: ['22']
+  topics: ['Production Costs']
+  assignments: ['Homework 1']
+
+- date: 2018-09-03 (M)
+  topics: ['Labor Day - NO CLASS']
+
+- date: 2018-09-05 (W)
+  modules: ['32']
+  topics: ['Game Theory']
+
+- date: 2018-09-07 (F)
+  modules: ['32']
+  topics: ['Game Theory']
+  assignments: ['Homework 2']
+
+- date: 2018-09-10 (M)
+  modules: ['5']
+  topics: ['Demand']
+  assignments: ['Writing Assignment 1']
+
+- date: 2018-09-12 (W)
+  modules: ['6']
+  topics: ['Supply and Equilibrium']
+
+- date: 2018-09-14 (F)
+  modules: ['7']
+  topics: ['Changes in Equilibrium']
+  assignments: ['Homework 3']
+
+- date: 2018-09-17 (M)
+  modules: ['8']
+  topics: ['Income Effects, Substitution, and Elasticity']
+
+- date: 2018-09-19 (W)
+  modules: ['9']
+  topics: ['Interpretating Price Elasticity of Demand']
+
+- date: 2018-09-21 (F)
+  modules: ['11']
+  topics: ['Consumer and Producer Surplus']
+  assignments: ['Homework 4']
+
+- date: 2018-09-24 (M)
+  modules: ['12']
+  topics: ['Efficiency and Markets']
+
+- date: 2018-09-26 (W)
+  modules: ['']
+  topics: ['Review Exam 1']
+
+- date: 2018-09-28 (F)
+  modules: ['']
+  topics: ['Exam 1']
+  assignments: ['Exam 1 In Class']
+
+- date: 2018-10-01 (M)
+  modules: ['13']
+  topics: ['Price Controls']
+
+- date: 2018-10-03 (W)
+  modules: ['14']
+  topics: ['Quantity Controls']
+
+- date: 2018-10-05 (F)
+  modules: ['15']
+  topics: ['Taxes']
+  assignments: ['Homework 5']
+
+- date: 2018-10-08 (M)
+  modules: ['4']
+  topics: ['Comparative Advantage and Trade']
+  assignments: ['Writing Assignment 2']
+
+- date: 2018-10-10 (W)
+  modules: ['16']
+  topics: ['Gains from Trade']
+
+- date: 2018-10-12 (F)
+  modules: ['17']
+  topics: ['Supply, Demand, and Trade']
+  assignments: ['Homework 6']
+
+- date: 2018-10-15 (M)
+  modules: ['24']
+  topics: ['Market Structure']
+
+- date: 2018-10-17 (W)
+  modules: ['25', '26']
+  topics: ['Perfect Competition']
+
+- date: 2018-10-19 (F)
+  modules: ['27']
+  topics: ['Long Run Outcomes in Perfect Competition']
+  assignments: ['Homework 7']
+
+- date: 2018-10-22 (M)
+  modules: ['28']
+  topics: ['Monopoly']
+
+- date: 2018-10-24 (W)
+  modules: ['29']
+  topics: ['Monopoly and Public Policy']
+
+- date: 2018-10-26 (F)
+  modules: ['30']
+  topics: ['Price Discrimination']
+  assignments: ['Homework 8']
+
+- date: 2018-10-29 (M)
+  modules: ['31']
+  topics: ['Oligopoly']
+
+- date: 2018-10-31 (W)
+  modules: ['34']
+  topics: ['Monopolistic Competition']
+
+- date: 2018-11-02 (F)
+  modules: ['35']
+  topics: ['Product Differentiation and Advertising']
+  assignments: ['Homework 9']
+
+- date: 2018-11-05 (M)
+  modules: ['36']
+  topics: ['Externalities']
+  assignments: ['Writing Assignment 3']
+
+- date: 2018-11-07 (W)
+  modules: ['37']
+  topics: ['Externalities and Public Policy']
+
+- date: 2018-11-09 (F)
+  modules: ['38']
+  topics: ['Public Goods and Common Resources']
+  assignments: ['Homework 10']
+
+- date: 2018-11-12 (M)
+  modules: ['']
+  topics: ['Veterans Day - NO CLASS']
+
+- date: 2018-11-14 (W)
+  modules: ['']
+  topics: ['Exam 2 Review']
+
+- date: 2018-11-16 (F)
+  modules: ['']
+  topics: ['Exam 2']
+  assignments: ['EXAM 2 In Class']
+
+- date: 2018-11-19 (M)
+  modules: ['']
+  topics: ['Thanksgiving Break']
+
+- date: 2018-11-21 (W)
+  modules: ['']
+  topics: ['Thanksgiving Break']
+
+- date: 2018-11-23 (F)
+  modules: ['']
+  topics: ['Thanksgiving Break']
+  assignments: []
+
+- date: 2018-11-26 (M)
+  modules: ['']
+  topics: []
+
+- date: 2018-11-28 (W)
+  modules: ['']
+  topics: []
+
+- date: 2018-11-30 (F)
+  modules: ['']
+  topics: []
+  assignments: ['Homework 11']
+
+- date: 2018-12-03 (M)
+  modules: ['']
+  topics: []
+  assignments: ['Writing Assignment 4']
+
+- date: 2018-12-05 (W)
+  modules: ['']
+  topics: ['']
+
+- date: 2018-12-07 (F)
+  modules: ['']
+  topics: ['']
+  assignments: []
+
+
+

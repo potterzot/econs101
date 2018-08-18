@@ -1,0 +1,87 @@
+<table>
+
+  <tr>
+    <th width="250">Date</th>
+    <th width="50">Modules</th>
+    <th width="300">Topic</th>
+    <th width="50">Reading</th>
+    <th width="50">Lecture</th>
+    <th width="50">Assignments</th>
+  </tr>
+
+  {% for session in site.data.sessions %}
+    {% assign topic_str = session.topics | join: ", " %}
+    {% assign module_str = session.modules | join: ", " %}
+    
+
+    {% assign reading_links = "" | split: "/" %}
+    {% for topic in session.topics %}
+      {% for readingpage in site.pages %}
+        {% if readingpage.title == topic and readingpage.element == 'reading' %}
+          {% capture link %}{{ readingpage.url | prepend: site.baseurl }}{% endcapture %}
+          {% assign reading_links = reading_links | push: link %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    {% assign lecture_links = "" | split: "/" %}
+    {% for topic in session.topics %}
+      {% for lecturepage in site.pages %}
+        {% if lecturepage.title == topic and lecturepage.element == 'lecture' %}
+          {% capture link %}{{ lecturepage.url | prepend: site.baseurl }}{% endcapture %}
+          {% assign lecture_links = lecture_links | push: link %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    {% assign assignmentslecture_links = "" | split: "/" %}
+    {% for topic in session.topics %}
+      {% for lecturepage in site.pages %}
+        {% if lecturepage.title == topic and lecturepage.element == 'lecture' %}
+          {% capture link %}{{ lecturepage.url | prepend: site.baseurl }}{% endcapture %}
+          {% assign lecture_links = lecture_links | push: link %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    
+    <tr>
+      <td align="left">{{ session.date }}</td>
+      <td>{{ module_str }}</td>
+      <td>{{ topic_str }}</td>
+
+
+      <td align="center">
+        {% if reading_links %}
+          {% for reading_link in reading_links %} 
+            <a href="{{ reading_link }}">
+            <i class="fa fa-book fa-lg"></i></a>
+          {% endfor %}
+        {% else %}
+          <font color="f1f1f1">
+          <i class="fa fa-book fa-lg"></i></font>
+      {% endif %}
+      </td>
+      
+      <td align="center">
+        {% if lecture_links %}
+          {% for lecture_link in lecture_links %} 
+            <a href="{{ lecture_link }}">
+            <i class="fa fa-book fa-lg"></i></a>
+          {% endfor %}
+        {% else %}
+          <font color="f1f1f1">
+          <i class="fa fa-book fa-lg"></i></font>
+      {% endif %}
+      </td>
+     
+      <td align="center">
+        {% if session.assignments %}
+          {{ session.assignments }}
+        {% endif %}
+      </td>
+
+    </tr>
+
+  {% endfor %}
+
+</table>

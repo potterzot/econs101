@@ -1,0 +1,26 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+kramdown:
+  input:          GFM
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Foundations of Microeconomics
+description:      'An introduction to markets, behavior, and policy.'
+url:              http://potterzot.com/semester-microeconomics-i
+baseurl:          /semester-microeconomics-i
+email:            nicholas.a.potter@wsu.edu
+feedbackurl:      https://goo.gl/forms/8SiOwdi19kN8cINJ3
+author:
+  name:           'Nicholas Potter'
+  url:            https://twitter.com/potterzot
+
+github:
+  repo:           https://github.com/potterzot/semester-microeconomics-i
+  #               Be sure the 'Issues' feature is activated in 'Settings'
+
+theme: jekyll-theme-minimal
