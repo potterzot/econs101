@@ -4,5 +4,5 @@ element: reading
 title: Key Ideas
 ---
 
-* Readings
-  * [Test](test)
+* Krugman and Wells: Module 1
+* The Economy: Chapter 1

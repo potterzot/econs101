@@ -6,16 +6,16 @@
   topics: ['Course Overview', 'Key Ideas']
 
 - date: 2018-08-22 (W)
-  modules: ['3']
-  topics: ['Trade-offs']
+  modules: ['3', '18']
+  topics: ['Trade-offs', 'Decision Making']
 
 - date: 2018-08-24 (F)
-  modules: ['18']
-  topics: ['Decision Making']
-
-- date: 2018-08-27 (M)
   modules: ['20']
   topics: ['Maximizing Utility']
+
+- date: 2018-08-27 (M)
+  modules: ['19']
+  topics: ['Human Behavior in Reality (Behavioral Economics)']
 
 - date: 2018-08-29 (W)
   modules: ['21']
@@ -24,7 +24,7 @@
 - date: 2018-08-31 (F)
   modules: ['22']
   topics: ['Production Costs']
-  assignments: ['Homework 1']
+  assignments: ['Homework 1 Due']
 
 - date: 2018-09-03 (M)
   topics: ['Labor Day - NO CLASS']
@@ -36,12 +36,12 @@
 - date: 2018-09-07 (F)
   modules: ['32']
   topics: ['Game Theory']
-  assignments: ['Homework 2']
+  assignments: ['Homework 2 Due']
 
 - date: 2018-09-10 (M)
   modules: ['5']
   topics: ['Demand']
-  assignments: ['Writing Assignment 1']
+  assignments: ['Writing Assignment 1 Due']
 
 - date: 2018-09-12 (W)
   modules: ['6']
@@ -50,7 +50,7 @@
 - date: 2018-09-14 (F)
   modules: ['7']
   topics: ['Changes in Equilibrium']
-  assignments: ['Homework 3']
+  assignments: ['Homework 3 Due']
 
 - date: 2018-09-17 (M)
   modules: ['8']
@@ -63,7 +63,7 @@
 - date: 2018-09-21 (F)
   modules: ['11']
   topics: ['Consumer and Producer Surplus']
-  assignments: ['Homework 4']
+  assignments: ['Homework 4 Due']
 
 - date: 2018-09-24 (M)
   modules: ['12']
@@ -71,12 +71,12 @@
 
 - date: 2018-09-26 (W)
   modules: ['']
-  topics: ['Review Exam 1']
+  topics: ['Review Quiz 1']
 
 - date: 2018-09-28 (F)
   modules: ['']
-  topics: ['Exam 1']
-  assignments: ['Exam 1 In Class']
+  topics: ['Quiz 1']
+  assignments: ['Quiz 1 In Class']
 
 - date: 2018-10-01 (M)
   modules: ['13']
@@ -89,12 +89,12 @@
 - date: 2018-10-05 (F)
   modules: ['15']
   topics: ['Taxes']
-  assignments: ['Homework 5']
+  assignments: ['Homework 5 Due']
 
 - date: 2018-10-08 (M)
   modules: ['4']
   topics: ['Comparative Advantage and Trade']
-  assignments: ['Writing Assignment 2']
+  assignments: ['Writing Assignment 2 Due']
 
 - date: 2018-10-10 (W)
   modules: ['16']
@@ -103,7 +103,7 @@
 - date: 2018-10-12 (F)
   modules: ['17']
   topics: ['Supply, Demand, and Trade']
-  assignments: ['Homework 6']
+  assignments: ['Homework 6 Due']
 
 - date: 2018-10-15 (M)
   modules: ['24']
@@ -116,7 +116,7 @@
 - date: 2018-10-19 (F)
   modules: ['27']
   topics: ['Long Run Outcomes in Perfect Competition']
-  assignments: ['Homework 7']
+  assignments: ['Homework 7 Due']
 
 - date: 2018-10-22 (M)
   modules: ['28']
@@ -129,7 +129,7 @@
 - date: 2018-10-26 (F)
   modules: ['30']
   topics: ['Price Discrimination']
-  assignments: ['Homework 8']
+  assignments: ['Homework 8 Due']
 
 - date: 2018-10-29 (M)
   modules: ['31']
@@ -142,12 +142,12 @@
 - date: 2018-11-02 (F)
   modules: ['35']
   topics: ['Product Differentiation and Advertising']
-  assignments: ['Homework 9']
+  assignments: ['Homework 9 Due']
 
 - date: 2018-11-05 (M)
   modules: ['36']
   topics: ['Externalities']
-  assignments: ['Writing Assignment 3']
+  assignments: ['Writing Assignment 3 Due']
 
 - date: 2018-11-07 (W)
   modules: ['37']
@@ -156,7 +156,7 @@
 - date: 2018-11-09 (F)
   modules: ['38']
   topics: ['Public Goods and Common Resources']
-  assignments: ['Homework 10']
+  assignments: ['Homework 10 Due']
 
 - date: 2018-11-12 (M)
   modules: ['']
@@ -164,12 +164,12 @@
 
 - date: 2018-11-14 (W)
   modules: ['']
-  topics: ['Exam 2 Review']
+  topics: ['Quiz 2 Review']
 
 - date: 2018-11-16 (F)
   modules: ['']
-  topics: ['Exam 2']
-  assignments: ['EXAM 2 In Class']
+  topics: ['Quiz 2']
+  assignments: ['Quiz 2 In Class']
 
 - date: 2018-11-19 (M)
   modules: ['']
@@ -195,12 +195,12 @@
 - date: 2018-11-30 (F)
   modules: ['']
   topics: ['TBD']
-  assignments: ['Homework 11']
+  assignments: ['Homework 11 Due']
 
 - date: 2018-12-03 (M)
   modules: ['']
   topics: ['TBD']
-  assignments: ['Writing Assignment 4']
+  assignments: ['Writing Assignment 4 Due']
 
 - date: 2018-12-05 (W)
   modules: ['']

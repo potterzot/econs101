@@ -18,6 +18,6 @@ output:
 
 ## Wrapping Up
 
-* Single Question Quiz: []() 
+* Test your knowledge: []() 
 
-* Today's etherpad for comments and feedback: []().
+* Feedback: [https://goo.gl/forms/8SiOwdi19kN8cINJ3](https://goo.gl/forms/8SiOwdi19kN8cINJ3).
