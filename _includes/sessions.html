@@ -28,7 +28,7 @@
     {% for topic in session.topics %}
       {% for lecturepage in site.pages %}
         {% if lecturepage.title == topic and lecturepage.element == 'lecture' %}
-          {% capture link %}{{ lecturepage.url | prepend: site.baseurl }}{% endcapture %}
+          {% capture link %}{{ lecturepage.url | prepend: site.baseurl | append: "@!" | replace: "/@!",".html" }}{% endcapture %}
           {% assign lecture_links = lecture_links | push: link %}
         {% endif %}
       {% endfor %}

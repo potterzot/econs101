@@ -2,11 +2,14 @@
 layout: page
 element: lecture
 title: Key Ideas
-output:
+date: August 20, 2018
+output: ioslides_presentation
+---
+
   md_document:
     variant: gfm
     preserve_yaml: true
----
+
 
 [Video]()
 
