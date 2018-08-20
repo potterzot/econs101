@@ -1,0 +1,22 @@
+---
+title: "Income Effects, Substitution, and Elastiticy"
+author: "Nicholas A Potter"
+date: "August 19, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+##
+
+*Teacher*: Some key factors that affect the elasticity of demand are what? Mr. Bell.
+
+*Stringer*: Desire, consumer need.
+
+*Teacher*: Right, specifically the ability of a consumer to delay acquisition. What else?
+
+## The Wire
+
+https://www.youtube.com/watch?v=gGgRtiCVo2w&feature=related
