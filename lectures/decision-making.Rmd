@@ -1,0 +1,57 @@
+---
+layout: page
+element: lecture
+title: Decision Making1
+date: August 22, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+```
+
+## Decision Making
+
+## Explicit vs. Implicit Costs
+
+## Economic Profit
+
+
+## Marginal Cost
+
+Table of marginal costs
+
+## Marginal Cost
+
+graph of increasing, decreasing, costant
+
+## Marginal Benefit
+
+Table of marginal benefit
+
+## Marginal Analysis
+
+
+
+## Marginal Analysis
+
+Graph of where marginal benefit and marginal cost meet
+
+
+## Sunk Costs { .flexbox .vcenter }
+
+"Sunk costs should be ignored because they have no influence on our actual costs and benefits." - Krugman and Wells
+
+LOLGIF
+
+
+## Wrapping Up
+
+* Complete the [knowledge check](https://goo.gl/forms/1XOfCyiJ6Jt1NR8J3) for today's participation point.
+
+* Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.

@@ -4,10 +4,13 @@
 - date: 2018-08-20 (M)
   modules: ['1']
   topics: ['Course Overview', 'Key Ideas']
+  knowledge_check_url: https://goo.gl/forms/1XOfCyiJ6Jt1NR8J3
+
 
 - date: 2018-08-22 (W)
   modules: ['3', '18']
   topics: ['Trade-offs', 'Decision Making']
+  knowledge_check_url: https://goo.gl/forms/L9w8WyzTnRS1QP6H2
 
 - date: 2018-08-24 (F)
   modules: ['20']

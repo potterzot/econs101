@@ -38,7 +38,7 @@ output:
 
 **Teaching Assistant**: {{ page.TA }}, {{ page.TA_office_hours_location }}, {{ page.TA_email }}, Office hours: {{ page.TA_office_hours }}
 
-*I receive ~100 emails per day. To manage this, I only check email from 4:00-5:00 pm. I prefer verbal communication, but if you want to use email, the subject line ~~must~~ start with "ECONS101" or your email will likely be lost. I will do you the same courtesy, and will never send an email or make a Blackboard announcement that requires action within 24 hours.*
+*I receive ~100 emails per day. To manage this, I only check email from 4:00-5:00 pm. I prefer verbal communication, but if you want to use email, the subject line __must__ start with "ECONS101" or your email will likely be lost. I will do you the same courtesy, and will never send an email or make a Blackboard announcement that requires action within 24 hours.*
 
 *Note: Additional office hours by appointment. Schedules get very busy, so no appointments can be made less than 24 hours in advance.*
 

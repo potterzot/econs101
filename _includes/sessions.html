@@ -7,12 +7,13 @@
     <th width="50">Reading</th>
     <th width="50">Lecture</th>
     <th width="50">Assignments</th>
+    <th width="50">Knowledge Check</th>
   </tr>
 
   {% for session in site.data.sessions %}
     {% assign topic_str = session.topics | join: ", " %}
     {% assign module_str = session.modules | join: ", " %}
-
+  
 
     {% assign reading_links = "" | split: "/" %}
     {% for topic in session.topics %}
@@ -70,6 +71,15 @@
         {% endif %}
       </td>
 
+      <td align="center">
+        {% if session.knowledge_check_url %}
+          <a href="{{ session.knowledge_check_url }}">
+          <i class="fa fa-book fa-lg"></i></a>
+        {% else %}
+          <font color="f1f1f1">
+          <i class="fa fa-book fa-lg"></i></font>
+        {% endif %}
+      </td>
     </tr>
 
   {% endfor %}
