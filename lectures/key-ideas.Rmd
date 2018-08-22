@@ -71,7 +71,7 @@ At the core, economics is:
 
 ## Opportunity Cost
 
-* What you must give up in making your choice
+* What you must give up in making your choice.
 * Opportunity cost can be said to be the "true cost" of your choice.
 
 ```{r out.width = '75%'}

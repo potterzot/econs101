@@ -10,3 +10,4 @@ Gemfile.lock
 # Ignore confidential data
 confidential/
 
+.Rproj.user

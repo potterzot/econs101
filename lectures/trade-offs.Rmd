@@ -15,11 +15,6 @@ library(tidyr)
 library(dplyr)
 ```
 
-## Bartering
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GY4yJoSSMZM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
@@ -39,9 +34,22 @@ library(dplyr)
 
 Since resources are **scarce**, we have to make **trade-offs**. We can't both *take a nap* and *go to class*, as much as we might want to.
 
-```{r trade-offs, echo=FALSE, out.width='75%'}
-knitr::include_graphics("../images/productivity_light.jpg")
+<iframe src="https://giphy.com/embed/2YehS22GFOIsK1yWEV" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ifc-funny-season-2-2YehS22GFOIsK1yWEV">via GIPHY</a></p>
+
+
+## Trade-offs
+
+```{r out.width = '75%'}
+d1 <- data.frame(x = 1:22)
+d1$y <- 25 - d1$x + rnorm(n = nrow(d1), mean = 0, sd = .2)
+ggplot(data = d1) + 
+  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
+  geom_line(aes(x = x, y = y), color = "red", size = 0.5, alpha = .8) +
+  xkcdaxis(c(0,25), c(0,25)) + 
+  xlab("Naps") + ylab("Classes attended") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
 ```
+
 
 ## Production { .flexbox .vcenter }
 
@@ -71,6 +79,7 @@ ggplot(data = d1) +
   xlab("Hours Running") + ylab("Final Rank") +
   theme(text = element_text(size = 16, family = "Humor Sans"))
 ```
+
 
 ## Production { .flexbox .vcenter }
 
@@ -104,11 +113,12 @@ ggplot(data = d2) +
 
 * **Marginality** -  *The cost or benefit of an additional item.*
 
+
 ## Marginality in Production
 
-* **Average product** - The average amount of **production** per unit of input. 
+* **Average product** - *The average amount of __production__ per unit of input.* 
 
-* **Marginal product** - The additional **production** from increasing a single unit of input.
+* **Marginal product** - *The additional __production__ from increasing a single unit of input.*
 
 
 ## Marginality in Production
@@ -123,9 +133,10 @@ ggplot(data = d2) +
 
 > - **Utility** - *the advantage, pleasure, or fulfillment a person gains from obtaining or consuming a good or service.*
 
+
 ## Marginality of Consumption
 
-```{r marginal_consumption, out.width = "75%"}
+```{r marginal_consumption, out.width = "100%"}
 d1 <- data.frame(t = 0:16)
 d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
 d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
@@ -158,6 +169,21 @@ ggplot(data = d1) +
 * **Average utility** - The average amount of **utility** per unit of consumption. 
 
 * **Marginal utility** - The additional **utility** from consuming an additional unit.
+
+
+## WSU: An example
+
+WSU Tuition: \$5,134
+
+Cost of classes:
+
+| Classes | Total Cost | Marginal Cost | Average Cost | 
+| ------- | ----------:| -------------:| ------------:|
+| 1       | 1000       | 1000          | 1000         |
+| 2       | 1750       | 750           | 875          |
+| 3       | 2350       | ???           | 783.3        |
+| 4       | ????       | 250           | ???          |
+| 5       | 2850       | 250           | 570          |
 
 
 ## Possibility Frontiers
@@ -207,7 +233,7 @@ ggplot(data = d4) +
   geom_segment(aes(x = d4[x4_idx,]$t, xend = d4[x4_idx,]$t, y = min(d4$y), yend = d4[x4_idx,]$y), color = "seagreen4", linetype = 2) +
   geom_segment(aes(x = 0, xend = d4[x4_idx,]$t, y = d4[x4_idx,]$y, yend = d4[x4_idx,]$y), color = "seagreen4", linetype = 2) +
   xkcdaxis(range(0, 1), c(0, 1)) + 
-  xlab("Ability as a dancer") + ylab("Ability as a musician") +
+  xlab("Students who graduate") + ylab("Football games won") +
   theme(text = element_text(size = 16, family = "Humor Sans"))
 
 ```
