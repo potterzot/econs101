@@ -10,4 +10,7 @@ Gemfile.lock
 # Ignore confidential data
 confidential/
 
+# Ignore publishers lectures
+kw_lectures/
+
 .Rproj.user
