@@ -1,0 +1,364 @@
+---
+layout: page
+element: lecture
+title: Maximizing Utility
+date: August 22, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(here)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+```
+
+## Pregame
+
+* Don't eat an entire half a watermelon right before bed...
+* Missing class: emails to let me know are awesome and let me know that you appreciate me as ateacher, but I trust you to make the best decision for your life given your constraints, so you don't need to be excused or need a note *except if there is something due or an exam, in which case talk to me as soon as possible.*
+
+<iframe src="https://giphy.com/embed/26tPpUAaydyLaEL3a" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/comedycentral-drinking-workaholics-pregame-26tPpUAaydyLaEL3a"></a></p>
+
+
+## Feedback
+
+
+<h3 style="color: green;">Good: </h3>
+
+* Content is relevant
+* Graphs and visuals are great to compare to verbal material
+* Went slower when speaking sometimes
+
+<h3 style="color: red;">Needs improvement: </h3>
+
+* Too slow __and__ too fast
+* Frazzled
+* "Use a better marker on the white board. Too many repetitive examples."
+* Take more time when explaining new terms
+* Don't like the graphs, prefer better balance of visuals
+
+
+## On notes and professors
+
+* How I take notes: Divide a paper into two columns and a header. Label the upper right with the class, date, lecture number, and topic. Write reminders and todo items in the header. If non-class related thoughts come up in class, add a box in the lower right corner and add them there. 
+
+Other methods in [this video](https://www.youtube.com/watch?v=AffuwyJZTQQ).
+
+* [How to make use of professors](https://www.hercampus.com/high-school/how-interact-college-professors). But in addition, no matter what you're interested in, your professor would probably love to work with you to get better at it. Go talk to them!
+
+
+## Critiques?
+
+* Does anything matter other than economic growth?
+
+* Does the idea of utility make sense? Any objections?
+
+## A formal critique
+
+* People don't have the processing power to fully analyze every choice, so how can they maximize?
+
+<iframe src="https://giphy.com/embed/ouE6OPO1MADM4" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ouE6OPO1MADM4">via GIPHY</a></p>
+
+## One response
+
+By Milton Friedman: 
+
+1. People may not consciously analyze, but they are like pool players. Pool players don't calculate the physics of every shot, they build up experience over time that allows them to make the best shot.
+2. Competition would weed out people who don't optimize (i.e. over time they wouldn't reproduce.)
+
+[Criticism of Friedman's argument](https://noahpinionblog.blogspot.com/2016/06/the-pool-player-analogy-is-silly.html)
+
+
+## Adding some complexity
+
+<iframe src='http://www.criticalcommons.org/Members/JJWooten/clips/p-r-leslie-is-santa-clause/embed_view' frameborder='0' width='630' height='460' allowfullscreen></iframe>
+
+## We value differently than price
+
+* A naive economist (or economics critic) would say Ron Swanson's gift of \$20 is better, why?
+
+> - Because since we optimize utility, we know best how to use \$20.
+
+> - But actually the value of the gift is not the money, but the signal that they know us right?
+
+> - Imposes an additional cost on the gift giver of trying to find a meaningful gift to "demonstrate" knowing.
+
+
+## Utility
+
+**Utility** - *the advantage, pleasure, or fulfillment a person gains from obtaining or consuming a good or service.*
+
+> - Okay but *how* do people make choices to maximize their utility? How do we make choices to be happy?
+
+> - People choose between goods to maximize __utility__ subject to their __budget constraint__. 
+
+
+## Indifference
+
+* You are __indifferent__ between two bundles of goods if they both have the same utility to you.
+
+## Example of indifference
+
+1. Think of your favorite shoes and hats.
+2. Suppose you have 3 pairs of awesome shoes and 6 hats. How many hats would you give up to have a fourth pair of shoes?
+3. Suppose you'd give up 3 hats for a 4th pair of shoes. Then you'd be indifferent between $\{3 \; \mbox{shoes}, 6 \;\mbox{hats} \}$ and $\{4 \; \mbox{shoes}, 3 \;\mbox{hats} \}$
+
+## Indifference Curves
+
+[Alexei's Studying Choice](https://core-econ.org/the-economy/book/text/03.html#figure-3-6a)
+
+
+## Exercise with WSU
+
+* Let's do something similar with WSU Academics and Athletics...
+
+
+```{r wsu1, out.width = "90%"}
+d <- data.frame(academics = c(10), athletics = c(80))
+ggplot(data = d) +
+  geom_point(aes(x = academics, y = athletics), size = 3, color = "#981e32") + 
+  xkcdaxis(c(0,100), c(0,100)) + 
+  geom_segment(aes(x = 0, xend = 10, y = 80, yend = 80), linetype = 2, color = "#981e32") +
+  geom_segment(aes(x = 10, xend = 10, y = 0, yend = 80), linetype = 2, color = "#981e32") +
+  annotate("text", x = 13, y = 5, label = "10", color = "#981e32", size = 5) + 
+  annotate("text", x = 3, y = 85, label = "80", color = "#981e32", size = 5) + 
+  annotate("text", x = 13, y = 85, label = "A", color = "#981e32", size = 5) + 
+  
+  xlab("Academics") + ylab("Athletics") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+```
+
+## Exercise with WSU
+
+
+```{r wsu2, out.width = "90%"}
+d <- data.frame(academics = c(10, 20), athletics = c(80, 65))
+ggplot(data = d) +
+  geom_point(aes(x = academics, y = athletics), size = 3, color = "#981e32") + 
+  xkcdaxis(c(0,100), c(0,100)) + 
+  geom_segment(aes(x = 0, xend = 10, y = 80, yend = 80), linetype = 2, color = "#981e32") +
+  geom_segment(aes(x = 10, xend = 10, y = 0, yend = 80), linetype = 2, color = "#981e32") +
+  annotate("text", x = 13, y = 5, label = "10", color = "#981e32", size = 5) + 
+  annotate("text", x = 3, y = 85, label = "80", color = "#981e32", size = 5) + 
+  annotate("text", x = 13, y = 85, label = "A", color = "#981e32", size = 5) + 
+  
+  geom_segment(aes(x = 0, xend = 20, y = 65, yend = 65), linetype = 2, color = "#981e32") +
+  geom_segment(aes(x = 20, xend = 20, y = 0, yend = 65), linetype = 2, color = "#981e32") +
+  annotate("text", x = 23, y = 5, label = "20", color = "#981e32", size = 5) + 
+  annotate("text", x = 3, y = 70, label = "65", color = "#981e32", size = 5) + 
+  annotate("text", x = 23, y = 66, label = "B", color = "#981e32", size = 5) + 
+
+  xlab("Academics") + ylab("Athletics") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+```
+
+
+## Exercise with WSU
+
+```{r wsu3, out.width = "90%"}
+d <- data.frame(academics = c(10, 20, 30), athletics = c(78, 65, 50))
+ggplot(data = d) +
+  geom_point(aes(x = academics, y = athletics), size = 3, color = "#981e32") + 
+  xkcdaxis(c(0,100), c(0,100)) + 
+  geom_segment(aes(x = 0, xend = 10, y = 80, yend = 80), linetype = 2, color = "#981e32") +
+  geom_segment(aes(x = 10, xend = 10, y = 0, yend = 80), linetype = 2, color = "#981e32") +
+  annotate("text", x = 13, y = 5, label = "10", color = "#981e32", size = 5) + 
+  annotate("text", x = 3, y = 85, label = "80", color = "#981e32", size = 5) + 
+  annotate("text", x = 13, y = 85, label = "A", color = "#981e32", size = 5) + 
+  
+  geom_segment(aes(x = 0, xend = 20, y = 65, yend = 65), linetype = 2, color = "#981e32") +
+  geom_segment(aes(x = 20, xend = 20, y = 0, yend = 65), linetype = 2, color = "#981e32") +
+  annotate("text", x = 23, y = 5, label = "20", color = "#981e32", size = 5) + 
+  annotate("text", x = 3, y = 70, label = "65", color = "#981e32", size = 5) + 
+  annotate("text", x = 23, y = 66, label = "B", color = "#981e32", size = 5) + 
+  
+  geom_segment(aes(x = 0, xend = 30, y = 50, yend = 50), linetype = 2, color = "#981e32") +
+  geom_segment(aes(x = 30, xend = 30, y = 0, yend = 50), linetype = 2, color = "#981e32") +
+  annotate("text", x = 33, y = 5, label = "30", color = "#981e32", size = 5) + 
+  annotate("text", x = 33, y = 50, label = "C", color = "#981e32", size = 5) + 
+  xlab("Academics") + ylab("Athletics") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+```
+
+
+## Exercise with WSU
+
+```{r wsu4, out.width = "90%"}
+d <- data.frame(academics = c(10, 20, 30, 40, 50, 60, 70), athletics = c(80, 65, 50, 45, 42.5, 41, 40))
+ggplot(data = d) +
+  geom_point(aes(x = academics, y = athletics), size = 3, color = "#981e32") + 
+  xkcdaxis(c(0,100), c(0,100)) + 
+  geom_segment(aes(x = 0, xend = 10, y = 80, yend = 80), linetype = 2, color = "#981e32") +
+  geom_segment(aes(x = 10, xend = 10, y = 0, yend = 80), linetype = 2, color = "#981e32") +
+  annotate("text", x = 13, y = 5, label = "10", color = "#981e32", size = 5) + 
+  annotate("text", x = 3, y = 85, label = "80", color = "#981e32", size = 5) + 
+  annotate("text", x = 13, y = 85, label = "A", color = "#981e32", size = 5) + 
+  
+  geom_segment(aes(x = 0, xend = 20, y = 65, yend = 65), linetype = 2, color = "#981e32") +
+  geom_segment(aes(x = 20, xend = 20, y = 0, yend = 65), linetype = 2, color = "#981e32") +
+  annotate("text", x = 23, y = 5, label = "20", color = "#981e32", size = 5) + 
+  annotate("text", x = 3, y = 70, label = "65", color = "#981e32", size = 5) + 
+  annotate("text", x = 23, y = 66, label = "B", color = "#981e32", size = 5) + 
+  
+  geom_segment(aes(x = 5, xend = 25, y = 87.5, yend = 57.5), color = "Seagreen4") + 
+  annotate("text", x = 30, y = 75, label = "MRS: 15/10 = 1.5", color = "Seagreen4", size = 5) + 
+  
+  geom_segment(aes(x = 0, xend = 30, y = 50, yend = 50), linetype = 2, color = "#981e32") +
+  geom_segment(aes(x = 30, xend = 30, y = 0, yend = 50), linetype = 2, color = "#981e32") +
+  annotate("text", x = 33, y = 5, label = "30", color = "#981e32", size = 5) + 
+  annotate("text", x = 33, y = 50, label = "C", color = "#981e32", size = 5) + 
+  
+  annotate("text", x = 43, y = 45, label = "D", color = "#981e32", size = 5) + 
+  annotate("text", x = 53, y = 42.5, label = "E", color = "#981e32", size = 5) + 
+  annotate("text", x = 63, y = 41, label = "F", color = "#981e32", size = 5) + 
+  annotate("text", x = 73, y = 40, label = "G", color = "#981e32", size = 5) + 
+  xlab("Academics") + ylab("Athletics") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+```
+
+
+## Marginal rate of substitution
+
+* **Marginal Rate of Substitution** - *The trade-off that a person is willing to make between two goods. At any point, this is the slope of the indifference curve.*
+
+
+## Exercise with WSU
+
+```{r wsu5, out.width = "90%"}
+d <- data.frame(academics = c(10, 20, 30, 40, 50, 60, 70), athletics = c(80, 65, 50, 45, 42.5, 41, 40))
+ggplot(data = d) +
+  geom_point(aes(x = academics, y = athletics), size = 3, color = "#981e32") + 
+  geom_line(aes(x = academics, y = athletics), size = 1, color = "#981e32") + 
+  geom_segment(aes(x = 30, xend = 40, y = 60, yend = 70), arrow = arrow(angle = 30, ends = "first")) +  
+  annotate("text", x = 55 , y = 75, label = "Indifference Curve", size = 5) + 
+  xkcdaxis(c(0,100), c(0,100)) + 
+  xlab("Academics") + ylab("Athletics") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+```
+
+
+## Indifference Curves
+
+* **Indifference Curve** - *A curve of the points which indicate the combinations of goods that provide a given level of utility to the individual.* [The Economy on the indifference curve]("https://core-econ.org/the-economy/book/text/03.html#figure-3-6g")
+
+
+## Budget Constraint
+
+Unfortunately, WSU doesn't have unlimited resources...
+
+<iframe src="https://giphy.com/embed/132pnhRx4EM7ni" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/132pnhRx4EM7ni">via GIPHY</a></p>
+
+
+## WSU Spending
+
+```{r wsu_net, out.width="100%"}
+knitr::include_graphics(here("images/wsu_net.jpg"))
+```
+
+
+## Budget Constraint
+
+* WSU Fiscal Year (FY) 2018 Spending was \~ \$800 million.
+
+* Suppose we estimate that spending \$800 million on Athletics would yield an 80% win rate, and spending \$800 million on academics would yield a 75\% retention rate. 
+
+
+## Budget Constraint
+
+```{r wsu7, out.width = "90%"}
+d <- data.frame(academics = c(0, 10, 20, 30, 40, 50, 60, 70, 75), athletics = c(80, 77.5, 72.5, 65, 57.5, 47.5, 35, 20, 0))
+ggplot(data = d) +
+  geom_area(aes(x = academics, y = athletics), size = 1, fill = "skyblue") + 
+  geom_point(aes(x = academics, y = athletics), size = 3, color = "#981e32") + 
+  geom_line(aes(x = academics, y = athletics), size = 1, color = "#981e32") + 
+  geom_segment(aes(x = 20, xend = 30, y = 75, yend = 85), arrow = arrow(angle = 30, ends = "first")) +  
+  annotate("text", x = 55 , y = 85, label = "Feasible Frontier", size = 5) + 
+  annotate("text", x = 15 , y = 25, label = "Feasible Set", size = 5) + 
+  annotate("text", x = 75 , y = 55, label = "Unfeasible Set", size = 5) + 
+  
+  
+  xkcdaxis(c(0,100), c(0,100)) + 
+  xlab("Academics") + ylab("Athletics") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+```
+
+
+## Marginal rate of transformation
+
+* **Marginal rate of transformation** - *The quantity of some good that must be sacrificed to acquire one additional unit of another good. At any point, it is the slope of the feasible frontier.* [The Economy on MRT](https://core-econ.org/the-economy/book/text/03.html#34-the-feasible-set).
+
+
+## Feasible options { .flexbox .vcenter }
+
+```{r wsu6, out.width = "90%"}
+ds <- data.frame(Line = "Feasible Frontier", academics = c(0, 10, 20, 30, 40, 50, 60, 70, 75), athletics = c(80, 77.5, 72.5, 65, 57.5, 47.5, 35, 20, 0))
+dd <- data.frame(Line = "Indifference Curve", academics = c(10, 20, 30, 40, 50, 60, 70), athletics = c(80, 65, 50, 45, 42.5, 41, 40))
+
+d <- rbind(ds, dd)
+
+ggplot(data = d) +
+  geom_line(aes(x = academics, y = athletics, group = Line, color = Line ), size = 1) + 
+  xkcdaxis(c(0,100), c(0,100)) + 
+  xlab("Academics") + ylab("Athletics") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+```
+
+
+## Feasible options { .flexbox .vcenter }
+
+```{r wsu8, out.width = "90%"}
+ds <- data.frame(Line = "Feasible Frontier", academics = c(0, 10, 20, 30, 40, 50, 60, 70, 75), athletics = c(80, 77.5, 72.5, 65, 57.5, 47.5, 35, 20, 0))
+dd1 <- data.frame(Line = "Indifference Curve 1", academics = c(10, 20, 30, 40, 50, 60, 70), athletics = c(80, 65, 50, 45, 42.5, 41, 40))
+dd2 <- data.frame(Line = "Indifference Curve 2", academics = c(10, 20, 30, 40, 50, 60, 70), athletics = c(90, 75, 65, 60, 57.5, 55, 54))
+
+d <- rbind(ds, dd1, dd2)
+
+ggplot(data = d) +
+  geom_line(aes(x = academics, y = athletics, group = Line, color = Line ), size = 1) + 
+  xkcdaxis(c(0,100), c(0,100)) + 
+  xlab("Academics") + ylab("Athletics") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+```
+
+
+## Back to Alexei
+
+[The Economy Alexei's Choice](https://core-econ.org/the-economy/book/text/03.html#figure-3-10aa)
+
+
+## Choice with Income
+
+[The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-15a)
+
+
+## Lets add some complexity
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FrIhloNEwT8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## Income Growth
+
+
+
+## Definitions
+
+* **Indifference Curve** - *A curve of the points which indicate the combinations of goods that provide a given level of utility to the individual.* [The Economy on the indifference curve and MRS](https://core-econ.org/the-economy/book/text/03.html#figure-3-6g)
+
+* **Marginal Rate of Substitution** - *The trade-off that a person is willing to make between two goods. At any point, this is the slope of the indifference curve.* [The Economy on the indifference curve and MRS](https://core-econ.org/the-economy/book/text/03.html#figure-3-6g)
+
+* **Marginal rate of transformation** - *The quantity of some good that must be sacrificed to acquire one additional unit of another good. At any point, it is the slope of the feasible frontier.* [The Economy on MRT](https://core-econ.org/the-economy/book/text/03.html#34-the-feasible-set).
+
+
+## Wrapping Up
+
+* Complete the [knowledge check](https://goo.gl/forms/Gs7ICvYyZ6NJ3glE2) for today's participation point.
+
+* Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
+
+
+
+
