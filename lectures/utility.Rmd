@@ -44,9 +44,7 @@ library(dplyr)
 
 ## On notes and professors
 
-* How I take notes: Divide a paper into two columns and a header. Label the upper right with the class, date, lecture number, and topic. Write reminders and todo items in the header. If non-class related thoughts come up in class, add a box in the lower right corner and add them there. 
-
-Other methods in [this video](https://www.youtube.com/watch?v=AffuwyJZTQQ).
+* How I take notes: Divide a paper into two columns and a header. Label the upper right with the class, date, lecture number, and topic. Write reminders and todo items in the header. If non-class related thoughts come up in class, add a box in the lower right corner and add them there. Other methods in [this video](https://www.youtube.com/watch?v=AffuwyJZTQQ).
 
 * [How to make use of professors](https://www.hercampus.com/high-school/how-interact-college-professors). But in addition, no matter what you're interested in, your professor would probably love to work with you to get better at it. Go talk to them!
 
