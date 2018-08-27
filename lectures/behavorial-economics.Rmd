@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Human Behavior in Reality (Behavioral Economics)
+date: August 27, 2018
 output: ioslides_presentation
 ---
 
@@ -10,73 +10,154 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
 ```
 
+## Pregame
+
+* New Tutoring hours (CUB 410: Monday 1-7pm, Tuesday and Wednesday 2-7pm, and Thursday, 5-7pm (closed on Friday).
+
+
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
-
+* Better explanation then the previous lesson.	
 
 <h3 style="color: red;">Needs improvement: </h3>
+* Need more relatable examples.
 
 
+## Questions, criticisms, and why do we care?
 
-## Example of plotting { .flexbox .vcenter }
+* Questions about the last lecture?
+* Criticisms about the theory of choice?
+* Why do we care? Because we want to...:
+  * design good policies.
+  * estimate demand for a new product.
+  * make good decisions about time and team management.
+  * know the downstream effects of something.
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+## In class questionnaire
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+* Write your name and student ID number on the top
+* Write group A (if farther from the doors) or B (if closer to the doors)
+
+
+## Behavioral Economics
+
+* People are weird, and how can we incoporate that weirdness to better understand the choices people make and to use that in policy models?
+
+
+## Rationality
+
+* **Rational choice** - *A choice made that leads to the most preferred outcome.*
+
+
+## An economics fairy tale
+
+Once upon a time, economists argued that people were rational because they implicitly calculated the value of all choices.
+
+```{r well_duh, echo=FALSE, out.width="50%"}
+knitr::include_graphics(here("images/well_duh.jpg"))
 ```
 
 
-## Linking an Image
+## Along came a dragon
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+But people actually behave with systematic biases:
+
+1. They may choose a worse but more fair outcome
+2. They may be risk-averse when facing gains but risk-seeking when facing losses 
+3. They use shortcuts to make choices rather than evaluating the full cost/benefit of each choice.
+
+These are from Krugman and Wells, but it's really even worse than this...
+
+## Ways of being 'irrational' { .smaller }
+
+* Misperceptions of opportunity costs (e.g. I stood in line for a free student lunch for over an hour...)
+* Overconfidence (i.e. we think we're better the less we know about something) ref: [Dunning-Kruger effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+* Unrealistic expectations about future behavior (why don't I get up in the morning at 6am?)
+* Mental accounting / counting dollars unequally
+* Loss aversion (the disutility of losing $100 is greater than the utility of gaining $100)
+* We find calculating choice difficult and sometimes unpleasant, so we avoid thinking carefully ([Thinking: Fast and Slow](https://www.nytimes.com/2011/11/27/books/review/thinking-fast-and-slow-by-daniel-kahneman-book-review.html))
+* We value something we own more than we value the same item if we don't own it
+* We are altruistic even when there's no possible benefit
+
+And others... An ongoing list is on [wikipedia](https://en.wikipedia.org/wiki/List_of_cognitive_biases).
+
+
+## Misperceptions of opportunity cost
+
+* When we make choices, especially when we consider the opportunity cost of something free, we often undervalue or don't include the cost of our time in our decision.
+
+```{r too_damn_high, echo=FALSE, out.width="50%"}
+knitr::include_graphics(here("images/too_damn_highjpg"))
+```
+
+
+## Unrealistic expectations about future behavior
+
+<iframe src='http://www.criticalcommons.org/Members/Ghent/clips/the%20glasses_night%20guy.mp4/embed_view' frameborder='0' width='630' height='460' allowfullscreen></iframe>
+
+
+## Mental accounting
+
+**Question 1 (Mental Accounting)**: 
+
+* (Group A): You find \$20 on the street while walking to class. Do you spend that on something fun or on groceries?
+* (Group B): You get a \$20 per week raise. Do you spend that on something fun or on groceries?
+
+
+## Other-regarding preferences (Ultimatum game)
+
+You are paired with another student. I give you \$10. You offer some amount to the other student. That student can accept, in which case you give them your offer and keep the rest, or reject, in which case neither of you gets anything.
+
+**Question 2 (Ultimatum game)**: 
+
+* (Group A): You are paired with a student next to you. How much would you offer the other person? Do you think they would accept or reject?
+* (Group B): You are randomly paired with a student from a different class. How much would you offer the other person? Do you think they would accept or reject?
+
+
+## Loss aversion
+
+**Question 3 (Loss aversion)**:
+
+* (Both groups): What amount would you accept instead of an even chance of winning \$100? What ammount would you pay not to take a bet with an even chance of losing \$100?
+
+
+## Too many choices
+
+<iframe src='http://www.criticalcommons.org/Members/JJWooten/clips/greys-anatomy-overchoice-problem/embed_view' frameborder='0' width='630' height='460' allowfullscreen></iframe>
+
+
+## Calculating the value of a choice
+
+* We don't want to spend the time to calculate the value of a choice, so we just pick a less good option
+
+<iframe src="https://giphy.com/embed/5xaOcLHvfEUSJZAStm8" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/redbandsociety-5xaOcLHvfEUSJZAStm8">via GIPHY</a></p>
 
 
 
-## WSU: An example
+## Would we murder more without laws against it?
 
-WSU Tuition: \$5,134
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mQUr2RkjykU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Cost of classes:
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+## Does economic theory still apply to choice?
+
+Krugman and Wells:
+
+* Rational models still provide good predictions in most markets. (*If markets are perfectly competitive.*)
+* Market forces may compel people to behave more rationally over time. (*If people can observe outcomes quickly and if they want to learn and if the penalty is high enough to induce behavior.*)
+* Assuming rationality makes modeling simpler. (*At the potential cost of unrealist or incorrect conclusions.*)
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/IO3DLoCDYgDKwHgH3) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.

@@ -323,21 +323,17 @@ ggplot(data = d) +
 
 ## Back to Alexei
 
-[The Economy Alexei's Choice](https://core-econ.org/the-economy/book/text/03.html#figure-3-10aa)
+[The Economy on Alexei's Choice](https://core-econ.org/the-economy/book/text/03.html#figure-3-10aa)
 
 
 ## Choice with Income
 
-[The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-15a)
+[The Economy on Choice with Income](https://core-econ.org/the-economy/book/text/03.html#figure-3-15a)
 
 
 ## Lets add some complexity
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FrIhloNEwT8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
-## Income Growth
-
 
 
 ## Definitions

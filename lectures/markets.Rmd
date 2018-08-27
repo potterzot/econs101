@@ -15,6 +15,9 @@ library(tidyr)
 library(dplyr)
 ```
 
+## Pregame
+
+
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
@@ -22,6 +25,10 @@ library(dplyr)
 
 <h3 style="color: red;">Needs improvement: </h3>
 
+
+## Markets and Civic Life
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3nsoN-LS8RQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 ## Example of plotting { .flexbox .vcenter }
