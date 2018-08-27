@@ -95,14 +95,15 @@ And others... An ongoing list is on [wikipedia](https://en.wikipedia.org/wiki/Li
 * When we make choices, especially when we consider the opportunity cost of something free, we often undervalue or don't include the cost of our time in our decision.
 
 ```{r too_damn_high, echo=FALSE, out.width="50%"}
-knitr::include_graphics(here("images/too_damn_highjpg"))
+knitr::include_graphics(here("images/too_damn_high.jpg"))
 ```
 
 
 ## Unrealistic expectations about future behavior
 
-<iframe src='http://www.criticalcommons.org/Members/Ghent/clips/the%20glasses_night%20guy.mp4/embed_view' frameborder='0' width='630' height='460' allowfullscreen></iframe>
+* We attribute the best behaviors to our future self, while making poorer choices in the moment.
 
+[Jerry Seinfeld on 'Morning Guy'](https://econ.video/2018/04/14/jerry-seinfeld-morning-guy/)
 
 ## Mental accounting
 
@@ -131,15 +132,9 @@ You are paired with another student. I give you \$10. You offer some amount to t
 
 ## Too many choices
 
-<iframe src='http://www.criticalcommons.org/Members/JJWooten/clips/greys-anatomy-overchoice-problem/embed_view' frameborder='0' width='630' height='460' allowfullscreen></iframe>
-
-
-## Calculating the value of a choice
-
 * We don't want to spend the time to calculate the value of a choice, so we just pick a less good option
 
 <iframe src="https://giphy.com/embed/5xaOcLHvfEUSJZAStm8" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/redbandsociety-5xaOcLHvfEUSJZAStm8">via GIPHY</a></p>
-
 
 
 ## Would we murder more without laws against it?
