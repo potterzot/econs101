@@ -74,6 +74,8 @@ But people actually behave with systematic biases:
 2. They may be risk-averse when facing gains but risk-seeking when facing losses 
 3. They use shortcuts to make choices rather than evaluating the full cost/benefit of each choice.
 
+*Even economists, who learn about this stuff in multiple ways, still exhibit "irrational" behaviors.*
+
 These are from Krugman and Wells, but it's really even worse than this...
 
 ## Ways of being 'irrational' { .smaller }
