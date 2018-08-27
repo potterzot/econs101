@@ -96,7 +96,7 @@ And others... An ongoing list is on [wikipedia](https://en.wikipedia.org/wiki/Li
 
 * When we make choices, especially when we consider the opportunity cost of something free, we often undervalue or don't include the cost of our time in our decision.
 
-```{r too_damn_high, echo=FALSE, out.width="50%"}
+```{r too_damn_high, echo=FALSE, out.width="40%"}
 knitr::include_graphics(here("images/too_damn_high.jpg"))
 ```
 
