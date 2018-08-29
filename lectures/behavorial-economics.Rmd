@@ -14,11 +14,12 @@ library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
+library(data.table)
 ```
 
 ## Pregame
 
-* New Tutoring hours (CUB 410: Monday 1-7pm, Tuesday and Wednesday 2-7pm, and Thursday, 5-7pm (closed on Friday).
+* New Tutoring hours (CUB 410): Monday 1-7pm, Tuesday and Wednesday 2-7pm, and Thursday, 5-7pm (closed on Friday).
 
 
 ## Feedback
@@ -142,6 +143,67 @@ You are paired with another student. I give you \$10. You offer some amount to t
 ## Would we murder more without laws against it?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mQUr2RkjykU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## Results from last class: mental accounting { .center .smaller }
+
+**Q**: If you {found \$20 | got a raise of \$20}, would you spend it on something fun or on groceries?
+
+```{r q1, echo=FALSE, out.width = "75%"}
+dt <- readr::read_csv(here("confidential/f18/extra_credit1.csv")) %>% 
+  select(group, q1, q2a, q2b, q3a, q3b) %>%
+  gather(key = q, value = r, -group) %>% 
+  filter(!is.na(r)) %>%
+  data.table()
+
+
+dt1 <- dt[q == "q1"]
+dt1$Response <- factor(dt1$r, levels = c("g", "f"), labels = c("Groceries", "Fun"))
+dt1$Group <- factor(dt1$group, levels = c("A", "B"), labels = c("Found $20", "$20 Raise"))
+
+dt1a <- dt1[, .(Freq = .N), by = c("Group", "Response")][, .(Response = Response, Freq = Freq / sum(Freq)), by = c("Group")]
+
+ggplot(data = dt1a) +
+  geom_bar(aes(x = Group, y = Freq, group = Response, fill = Response), stat = "identity") +
+  ggtitle("Responses to Q1: Mental Accounting") +
+  theme_bw()
+```
+
+
+## Results from last class: other-regarding preferences { .center .smaller }
+
+**Q**: How much of your \$10 would you give to your partner in the ultimatum game?
+
+```{r q2, echo=FALSE, out.width = "75%"}
+dt2 <- dt[q %in% c("q2a")]
+dt2$Response <- as.numeric(dt2$r)
+dt2$Group <- factor(dt2$group, levels = c("A", "B"), labels = c("Paired with neighbor", "Paired randomly"))
+
+ggplot(data = dt2) +
+  geom_density(aes(x = Response, group = Group, fill = Group), alpha = 0.5) +
+  ggtitle("Responses to Q2: Other-regarding preferences") + 
+  theme_bw()
+```
+
+
+## Results from last class: loss aversion { .center .smaller}
+
+**Q (Gain)**: You have a 50-50 lottery ticket of *receiving* \$100 or *receiving* nothing, what is the *minimum* you would *accept* to sell the lottery ticket?
+
+**Q (Loss)**: You have a 50-50 lottery ticket of *paying* \$100 or *paying* nothing, what is the *maximum* you would *pay* to get rid of the ticket?
+
+
+```{r q3, echo=FALSE, out.width="75%"}
+dt3 <- dt[q %in% c("q3a", "q3b")]
+dt3$Response <- as.numeric(dt3$r)
+dt3$Type <- factor(dt3$q, levels = c("q3a", "q3b"), labels = c("Gain", "Loss"))
+
+ggplot(data = dt3) +
+  geom_density(aes(x = Response, group = Type, fill = Type), alpha = 0.5) +
+  ylab("Density") +
+  ggtitle("Responses to Q3: loss aversion") + 
+  theme_bw()
+```
 
 
 ## Does economic theory still apply to choice?

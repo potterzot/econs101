@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Production
+date: August 29, 2018
 output: ioslides_presentation
 ---
 
@@ -10,73 +10,197 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
+library(pander)
 ```
+
+## Pregame
+
+* Sapling is not working for multiple classes and students - I will postpone homework for a week, but that means two homeworks will be due next Friday at 5pm.
+
 
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
-
+* I enjoyed the videos as visual interpreting the new information being taught.
+* I liked thinking about how people typically make irrational choices rather than making perfect rational choices all the time.
 
 <h3 style="color: red;">Needs improvement: </h3>
+* Please go slower and take more time explaining concepts used in class, beginning with vocab, and then how it applies to real world scenarios.
+* Finishing each lesson in class, so when you do the knowledge check we got it.
 
 
+## Questions? Critiques?
 
-## Example of plotting { .flexbox .vcenter }
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
+## Production
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+"The production of too many useful things results in too many useless people." -- Karl Marx
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
+
+## Production Questions
+
+* How can we describe the way things are made generally?
+* What different kinds of resources are needed to produce goods?
+* How do different resources behave differently?
+
+
+## Production functions
+
+* **Production function** - *a function that describes the quantity of output generated from a given amount of inputs.*
+
+E.g.: What does it take to produce coffee?
+  
+  * coffee beans
+  * baristas, managers
+  * equipment (grinder, espresso machine, refrigerator)
+  * a building
+  * power
+  * etc...
+  
+All of these are inputs!
+
+## Types of inputs
+
+* **Fixed input** - *An input that can't be changed in the short run.*
+* **Variable input** - *An input that can vary easily at any time.*
+
+> - **But**: All inputs are variable in the __long run__.
+
+## Long run and short run
+
+From Krugman and Wells:
+
+* The __long run__ is the period in which all inputs can be varied.
+* The __short run__ is the period in which at least one input is fixed.
+
+E.g: Buildings are __fixed__ in the __short term__, but you can expand or buy more buildings in the __long term__, so they are variable in the __long term__.
+
+
+## Total Product
+
+* **Total Product Curve** - *Shows quantity produced as the quantity of a variable input changes.*
+
+Imagine you have only one cash register and one espresso machine...
+
+```{r tp, echo=FALSE, out.width = "75%"}
+d <- data.frame(Labor = 1:10)
+d$Lattes <- 1 + 2*log((d$Labor)^(0.6))
+
+ggplot(data = d) + 
+  geom_line(aes(x = Labor, y = Lattes), color = "red", size = 1, alpha = .8) +
+  xkcdaxis(c(0,10), c(0,5)) + 
+  xlab("Labor") + ylab("Lattes per minute") +
+  ggtitle("Production of lattes per worker") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+  
+```
+
+
+## Whaaaaa?
+
+<iframe src="https://giphy.com/embed/Ni4cpi0uUkd6U" width="480" height="313" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/are-you-serious-insane-Ni4cpi0uUkd6U">via GIPHY</a></p>
+
+## An example with numbers { .flexbox .smaller }
+
+```{r latte_table, echo=FALSE}
+d["Marginal Production"] <- 
+d2 <- d %>%
+  mutate("Marginal Production" = Lattes - lag(Lattes, default = 0))
+pander(d2)
+```
+
+## An exmaple plotted
+```{r tp2, echo=FALSE}
+
+ggplot(data = d) + 
+  geom_line(aes(x = Labor, y = Lattes), color = "red", size = 1, alpha = .8) +
+  
+  geom_segment(aes(x = 1, xend = 1.8, y = d[d$Labor == 1,]$Lattes, yend = d[d$Labor == 1,]$Lattes), 
+               color = "deepskyblue4", linetype = 2, alpha = .9, arrow = arrow(ends = "last", length = unit(10, units = "pt"))) +
+  geom_segment(aes(x = 2, xend = 2, y = d[d$Labor == 1,]$Lattes, yend = (d[d$Labor == 2,]$Lattes - .1)), 
+               color = "deepskyblue4", linetype = 2, alpha = .9, arrow = arrow(ends = "last", length = unit(10, units = "pt"))) +
+  
+  geom_segment(aes(x = 6.2, xend = 6.8, y = d[d$Labor == 6,]$Lattes, yend = d[d$Labor == 6,]$Lattes), 
+               color = "deepskyblue4", linetype = 2, alpha = .9, arrow = arrow(ends = "last", length = unit(10, units = "pt"))) +
+  geom_segment(aes(x = 7, xend = 7, y = d[d$Labor == 6,]$Lattes, yend = (d[d$Labor == 7,]$Lattes - .1)), 
+               color = "deepskyblue4", linetype = 2, alpha = .9, arrow = arrow(ends = "last", length = unit(10, units = "pt"))) +
+  
+  annotate(geom = "text", x = 9, y = d[d$Labor == 10,]$Lattes, label = "TP", color = "deepskyblue4") + 
+  
+  xkcdaxis(c(0,10), c(0,5)) + 
+  xlab("Labor") + ylab("Lattes per minute") +
+  ggtitle("Production of lattes per worker") +
   theme(text = element_text(size = 16, family = "Humor Sans"))
 ```
 
 
-## Linking an Image
+## Marginality again?!?
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+```{r gosh, echo=FALSE, out.width = "75%"}
+knitr::include_graphics(here("images/gosh.gif"))
+```
 
 
+## Marginal production
 
-## WSU: An example
+* **Marginal product** - *the additional output produced from one additional unit of input.*
 
-WSU Tuition: \$5,134
+$$\mbox{MP} = \frac{\Delta Q}{ \Delta X}$$
 
-Cost of classes:
+In particular:
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+* **Marginal product of labor** - *the additional output produced from one additional worker.*
+* **Marginal product of capital** - *the additional output produced from one additional unit of capital.*
+
+$$\mbox{MPL} = \frac{\Delta Q}{ \Delta L}, \; \; \mbox{MPK} = \frac{\Delta Q}{ \Delta K}$$
+
+## Diminishing returns
+
+* **Diminishing returns** - *Each additional increase in an input leads to a correspondingly smaller increase in output (i.e. the curve is shaped down).*
+
+
+## Increasing fixed inputs
+
+*What impact would increasing fixed costs have on production?*
+
+## Increasing fixed inputs 
+```{r tp3, echo=FALSE}
+d3 <- d %>% 
+  select(Lattes, Labor) %>%
+  mutate(Lattes2 = 1 + 4*log((d$Labor)^(0.6))) %>%
+  gather(key = "Fixed Costs", value = Lattes, -Labor)
+d3[, "Fixed Costs"] <- c(rep("1 Espresso Machine", 10), rep("2 Espresso Machines", 10))
+
+ggplot(data = d3) + 
+  geom_line(aes(x = Labor, y = Lattes, group = `Fixed Costs`, color = `Fixed Costs`), size = 1, alpha = .8) +
+  xkcdaxis(c(0,10), c(0,5)) + 
+  xlab("Labor") + ylab("Lattes per minute") +
+  ggtitle("Production of lattes per worker") +
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+```
+
+
+## One cent hamburgers
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/doUYH3Uria4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Definitions
+
+* **Fixed input** - *An input that can't be changed in the short run.*
+* **Variable input** - *An input that can vary easily at any time.*
+* **Total Product Curve** - *Shows quantity produced as the quantity of a variable input changes.*
+* **Marginal product** - *the additional output produced from one additional unit of input.*
+* **Marginal product of labor** - *the additional output produced from one additional worker.*
+* **Marginal product of capital** - *the additional output produced from one additional unit of capital.*
+* **Diminishing returns** - *Each additional increase in an input leads to a correspondingly smaller increase in output (i.e. the curve is shaped down).*
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/GF32BOHRlCyEHr4Z2) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.

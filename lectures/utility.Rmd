@@ -2,7 +2,7 @@
 layout: page
 element: lecture
 title: Maximizing Utility
-date: August 22, 2018
+date: August 24, 2018
 output: ioslides_presentation
 ---
 
@@ -334,6 +334,11 @@ ggplot(data = d) +
 ## Lets add some complexity
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FrIhloNEwT8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+##
+
+<iframe src="https://giphy.com/embed/uvMEhrg0lOPRu" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/waynes-world-garth-dana-carvey-uvMEhrg0lOPRu">via GIPHY</a></p>
 
 
 ## Definitions

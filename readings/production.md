@@ -1,7 +1,7 @@
 ---
 layout: page
 element: reading
-title: Production Function
+title: Production
 ---
 
 * Krugman and Wells: Module 21
