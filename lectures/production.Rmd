@@ -113,7 +113,7 @@ d2 <- d %>%
 pander(d2)
 ```
 
-## An exmaple plotted
+## An example plotted
 ```{r tp2, echo=FALSE}
 
 ggplot(data = d) + 
@@ -149,14 +149,15 @@ knitr::include_graphics(here("images/gosh.gif"))
 
 * **Marginal product** - *the additional output produced from one additional unit of input.*
 
-$$\mbox{MP} = \frac{\Delta Q}{ \Delta X}$$
+$$\mbox{MP} = \frac{\Delta Q}{ \Delta X} = \frac{Q_{new} - Q_{old}}{ X_{new} - X_{old}}$$
 
 In particular:
 
 * **Marginal product of labor** - *the additional output produced from one additional worker.*
 * **Marginal product of capital** - *the additional output produced from one additional unit of capital.*
 
-$$\mbox{MPL} = \frac{\Delta Q}{ \Delta L}, \; \; \mbox{MPK} = \frac{\Delta Q}{ \Delta K}$$
+$$\mbox{MPL} = \frac{\Delta Q}{ \Delta L}  = \frac{Q_{new} - Q_{old}}{ L_{new} - L_{old}}, \; \; \mbox{MPK} = \frac{\Delta Q}{ \Delta K}  = \frac{Q_{new} - Q_{old}}{ K_{new} - K_{old}}$$
+
 
 ## Diminishing returns
 
@@ -168,10 +169,13 @@ $$\mbox{MPL} = \frac{\Delta Q}{ \Delta L}, \; \; \mbox{MPK} = \frac{\Delta Q}{ \
 *What impact would increasing fixed costs have on production?*
 
 ## Increasing fixed inputs 
-```{r tp3, echo=FALSE}
+
+* Increased fixed inputs make variable inputs like labor more productive.
+
+```{r tp3, echo=FALSE, out.width="75%"}
 d3 <- d %>% 
   select(Lattes, Labor) %>%
-  mutate(Lattes2 = 1 + 4*log((d$Labor)^(0.6))) %>%
+  mutate(Lattes2 = 2 + 2.5*log((d$Labor)^(0.6))) %>%
   gather(key = "Fixed Costs", value = Lattes, -Labor)
 d3[, "Fixed Costs"] <- c(rep("1 Espresso Machine", 10), rep("2 Espresso Machines", 10))
 
@@ -182,6 +186,27 @@ ggplot(data = d3) +
   ggtitle("Production of lattes per worker") +
   theme(text = element_text(size = 16, family = "Humor Sans"))
 ```
+
+
+## Increased fixed inputs
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OUJe0Wmfo5g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Does automation lead to less employment?
+
+**This is an open question in economics.**
+
+A debate:
+
+*Wayde*: Increasing capital replaces workers with robots, so those jobs are lost, QED.
+
+*Paul*: It's true that robots replace workers, but they also create more jobs through robot maintenance, robot development, and open up whole new industries like software development.
+
+*Wayde*: But those new jobs aren't as numerous as the original jobs, and they require more skilled labor, so less educated and less skilled people are worse off than before.
+
+*Paul*: We can retrain those workers to work in higher skilled areas. Not to mention, automation makes everyone better off because things are cheaper, so even people who are paid less benefit because their food costs less when it's production is automated.
+
+etc...
 
 
 ## One cent hamburgers
