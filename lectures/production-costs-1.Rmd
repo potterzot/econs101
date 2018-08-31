@@ -17,7 +17,7 @@ library(pander)
 library(here)
 ```
 
-## Pregame
+## Pregame { .smaller }
 
 * Interested in R (data science, analytics, research)? Come to the [R Working Group](https://cereo.wsu.edu/r-working-group/)!
 * Interested in Python (data science, tech, programming)? Come to the [Python Working Group](https://cereo.wsu.edu/python-working-group/)!
