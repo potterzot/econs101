@@ -29,7 +29,8 @@
 
 - date: 2018-08-31 (F)
   modules: ['21']
-  topics: ['Production']
+  topics: ['Production Costs 1']
+  knowledge_check_url: https://goo.gl/forms/tgXVe8U0G1RExKTn1
   assignments: ['Homework 1 Due']
 
 - date: 2018-09-03 (M)
@@ -37,7 +38,7 @@
 
 - date: 2018-09-05 (W)
   modules: ['22']
-  topics: ['Production Costs']
+  topics: ['Production Costs 2']
 
 - date: 2018-09-07 (F)
   modules: ['32']

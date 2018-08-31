@@ -128,9 +128,7 @@ Your total points are divided by 430, and your letter grade is determined accord
 
 #### Homework
 
-There will be 12 homework assignments, due each Friday by 5pm. We will often (but not always) spend the last part of class on Friday discussing the homework. Answers will be available at 5pm, and as a result **no late homeworks will be accepted. There are no exceptions. However, I will drop the lowest two homework scores.**
-
-If you are not happy with your score after submitting, you may resubmit one time as long as you do so before the deadline. If you restart the assignment, you will have to re-complete the questions you got correct as well as those you did not. **Be careful not to mark the wrong answer for a question you already got correct**.
+There will be 12 homework assignments, due each Friday by 5pm. We will often (but not always) spend the last part of class on Friday discussing the homework. Answers will be available at 5pm, and as a result **no late homeworks will be accepted. There are no exceptions. However, I will drop the lowest two homework scores.** Each question can be submitted twice.
 
 Sapling tech support is the only source for help with technical difficulties. Much to my chagrin, I do not have the ability to resolve technical issues with Sapling. To contact Sapling Technical Support, go to https://community.macmillan.com/community/digital-product-support, or call 1-800-936-6899.  As a reference, the course ID in Sapling is **84139**.
 

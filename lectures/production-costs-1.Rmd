@@ -1,0 +1,161 @@
+---
+layout: page
+element: lecture
+title: Production Costs 1
+date: August 31, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+library(pander)
+library(here)
+```
+
+## Pregame
+
+* Interested in R (data science, analytics, research)? Come to the [R Working Group](https://cereo.wsu.edu/r-working-group/)!
+* Interested in Python (data science, tech, programming)? Come to the [Python Working Group](https://cereo.wsu.edu/python-working-group/)!
+* Interested in Economics? Join the [WSU Undergraduate Economics Club](http://ses.wsu.edu/undergraduate-programs/econclub/)!
+* Sapling issues: instructions sent via Blackboard should fix it (fingers crossed).
+* First extra credit is posted. All extra credit assignments can be done when you like but must be completed by December 7th at 5pm.
+* Practice problems have also been posted. These are not graded but are there for you to practice for exams and to help with understanding concepts.
+* EXTRA EXTRA CREDIT: Attend the Soonish lecture on Wednesday, Sept 5, at 5 pm in CUE 203. Verify your attendance [here](https://commonreading.wsu.edu/event-attendance/) to get credit (5 points).
+
+## Feedback
+
+<h3 style="color: green;">Good: </h3>
+
+* The automated kitchen
+* Good pacing 
+
+<h3 style="color: red;">Needs improvement: </h3>
+
+* the relationship between MPL and MPK was confusing
+* quit it with the oreos!
+* more visual examples
+
+## Thoughts about Economics?
+
+<iframe src="https://giphy.com/embed/d31vAEYA7RsuBtHG" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/southparkgifs-d31vAEYA7RsuBtHG">via GIPHY</a></p>
+
+
+## Types of costs
+
+* __Fixed cost__ - *The cost of fixed inputs (i.e. inputs that can't change in the short run).*
+
+In the coffee example, this would be your building, and potentially other items like the espresso machine and the refrigerator.
+
+* __Variable cost__ - *The cost of variable inputs (i.e. inputs that change in the short run).*
+
+for example: coffee, electricity, etc...
+
+
+## Producing palm oil (1) { .flexbox .center }
+
+```{r, out.width="75%"}
+knitr::include_graphics(here("images/pc1.jpg"))
+```
+
+
+## Producing palm oil (2) { .flexbox .center }
+
+```{r, out.width="75%"}
+knitr::include_graphics(here("images/pc2.jpg"))
+```
+
+
+## Producing palm oil (3) { .flexbox .center }
+
+```{r, out.width="75%"}
+knitr::include_graphics(here("images/pc3.jpg"))
+```
+
+
+## Producing palm oil (4) { .flexbox .center }
+
+```{r, out.width="75%"}
+knitr::include_graphics(here("images/pc4.jpg"))
+```
+
+
+## Example of Marginal Productivity of Labor in roofing { .smaller }
+
+**Production per week**:
+
+```{r mpdata, echo=FALSE}
+d <- tibble(
+  "Workers" = 1:7,
+  "Marginal Roof" = c(NA, .3, .5, .4, .3, .2, .1),
+  "Number of Roofs" = c(.2, .5, 1, 1.4, 1.7, 1.9, 2),
+  "Marginal Labor Cost" = 800,
+  "Labor Cost" = 800*1:7
+)
+```
+
+`r pander(d)`
+
+## Graphing marginal productivity and costs { .flexbox .center }
+
+```{r mp, echo=FALSE}
+d2 <- gather(d, key = variable, value = value, -Workers)
+d2$variable <- factor(d2$variable, levels = c("Marginal Roof", "Number of Roofs", "Marginal Labor Cost", "Labor Cost"), labels =  c("Marginal Roof", "Number of Roofs", "Marginal Labor Cost", "Labor Cost"))
+ggplot(data = d2) +
+  geom_line(aes(x = Workers, y = value), color = "seagreen4", size = 1, alpha = 0.8) +
+  #xkcdaxis(c(0,7), c(0,2)) + 
+  ylab("") +
+  theme(text = element_text(size = 16, family = "Humor Sans")) +
+  facet_wrap(~ variable, ncol = 2, scales = "free_y") + 
+  theme_bw() +
+  theme(strip.background = element_blank(), strip.text = element_text(size = 12))
+  
+```
+
+
+## Total cost
+
+* __Total cost__ - *The sum of fixed and variable costs.*
+
+If the fixed costs of the roofing business are \$400 a week, then total costs are:
+
+$$\begin{aligned} 
+TC &= FC + VC \\
+TC &= 400 + 800*L \\
+\end{aligned}$$
+
+## Roofing total cost  { .smaller }
+
+```{r tcdata, echo=FALSE}
+d$`Fixed Cost` = 400
+d$`Material Cost` = d$`Number of Roofs` * 2000
+d$`Variable Cost` = d$`Material Cost` + d$`Labor Cost`
+d$`Total Cost` = d$`Fixed Cost` + d$`Variable Cost`
+
+panderOptions('table.split.table', 300)
+```
+
+`r pander(d[, c("Number of Roofs", "Fixed Cost", "Material Cost", "Variable Cost", "Labor Cost", "Total Cost")])`
+
+## Graphing total cost
+
+```{r tc, echo=FALSE}
+d3 <- gather(d[, c("Fixed Cost", "Material Cost", "Variable Cost", "Labor Cost", "Total Cost", "Number of Roofs")], key = variable, value = value, -`Number of Roofs`)
+
+ggplot(data = d3) +
+  geom_line(aes(x = `Number of Roofs`, y = value, group = variable, color = variable), size = 1, alpha = 0.8) +
+  xkcdaxis(c(0,2), c(0,10000)) + 
+  theme(text = element_text(size = 16, family = "Humor Sans"))
+  
+```
+
+
+## Wrapping Up
+
+* Complete the [knowledge check](https://goo.gl/forms/tgXVe8U0G1RExKTn1) for today's participation point.
+
+* Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
