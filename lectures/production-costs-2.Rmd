@@ -21,6 +21,7 @@ panderOptions('digits', 2)
 
 ## Pregame { .smaller }
 
+* Homeworks 1 & 2 are due Friday by 5pm. 
 * Extra tutoring through [ASCC](https://tutoring.ascc.wsu.edu/CampusTutoringList.aspx). 
 * Writing Assignments 1 and 2 are posted. Deadlines: 9/19/2018 and 10/10/2018.
 * EXTRA EXTRA CREDIT: Attend the Soonish lecture on Wednesday, Sept 5, at 5 pm in CUE 203. Verify your attendance [here](https://commonreading.wsu.edu/event-attendance/) to get credit (5 points).
@@ -242,7 +243,15 @@ http://videos.criticalcommons.org/transcoded/http/www.criticalcommons.org/Member
 
 * Building the banana stand costs \$100.
 * Bananas cost \$0.49 per pound.
+* Child labor (our friends) costs \$40 per day per worker 
 * Cutting bananas has diminishing returns to scale (i.e. as we increase the amount of labor, the number of bananas each person can cut goes down -- the _marginal productivity_ of each additional worker is smaller than that of the worker before them.)
+
+*Let's put this in a spreadsheet!*
+
+
+## The banana stand
+
+<iframe src="https://giphy.com/embed/6f6HMJ2iGNLyM" width="480" height="358" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/christmas-december-elf-6f6HMJ2iGNLyM">via GIPHY</a></p>
 
 
 ## The banana stand
