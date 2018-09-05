@@ -1,0 +1,27 @@
+---
+title: 'Writing Assignment 1: Analysis of the Soda Tax in Berkeley CA'
+output: pdf_document
+---
+
+**DUE**: Wednesday, September 19, 2018 by 5pm Pacific Time via NETTUTOR
+
+_Essays are submitted to a plagarism aglorithm to check for copying. Make sure you submit your own work. Plagarism is a failing offense._
+
+In November 2014 Berkeley CA passed a "sugar-sweetened-beverage" (SSB) of \$0.01 per ounce (i.e. a 20oz. soda would carry at \$0.20 tax). Imagine the typical price of a 20oz. SSB is \$1.99 and the typical price of bottled water is \$1.46. Assume the entire tax is reflected in increased prices, so that the new price of a 20oz. SSB is \$2.19. Also assume that consumers only have \$21.90 to spend on water and SSBs. In an essay, discuss the implications of the tax on consumer utility. In particular, answer the following in your essay:
+
+(a). How would the price change affect the number of SSBs a consumer can purchase? Will the shift result in more or less SSBs purchased?
+
+(b). Does conusmer utility increase or decrease? How does the indifference curve shift to indicate why?
+
+(c). Given that Berkeley is a small city of about 106,000 people and only 17 square miles, what might consumers do to avoid the tax? How would that affect Berkeley's tax receipts and the effectivenss of the policy?
+
+*I am __not__ asking you to argue one way or the other whether the policy was good. Instead, focus on the impacts on choice themselves and write as objectively as possible.*
+
+## Grading Rubric
+Your essay must not exceed one typed page with one-inch margins and 12-point font single spaced.  Please include your name, instructor’s name (Potter), course and section number 1 (i.e. EconS 101.01), and writing assignment (assignment 1) on the top of your assignment in 12-point font. Your essay will be assessed as either “Meets Expectations” or “Needs Improvement” on both the writing portion and economic analysis. If your essay needs improvement, you will be given feedback from NetTutor to help you revise it.  You can then re-submit the essay to NetTutor for another try, but you only get one second chance. If you take materials or quotes from sources, you must provide citations/references in a standard citation/reference format. The references do not count toward the one page limit. Here are the criteria your essay will be judged against:
+
+| Criterion | Needs Improvement | Meets Expectations |
+| --------- | ----------------- | ------------------ |
+| Writing   | The writing is difficult to follow and/or poorly organized.  Transition sentences are absent or ineffective.  Typos and/or grammatical errors distract the reader. Source material citations/references needed, but are missing or incorrect. | Ideas are well-organized.  Transition sentences effectively connect one idea to the next.  The essay is free of typos and grammatical errors. Sources properly cited and referenced, any citation style is acceptable. |
+| Application of economic analysis | Does not provide correct interpretation of how the change in price would affect the choice between SSBs and water. Fails to discuss the impact on utility correctly. Does not identify the primary issue with Berkeley being a small city attempting to implement this tax. | Correctly identifies the answers to parts a, b, and c above and provides correct justification for answers. |
+

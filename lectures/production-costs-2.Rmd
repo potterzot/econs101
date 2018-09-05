@@ -10,73 +10,253 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
+library(pander)
 library(xkcd)
 library(tidyr)
 library(dplyr)
+panderOptions('table.split.table', 300)
+panderOptions('digits', 2)
 ```
+
+## Pregame { .smaller }
+
+* Extra tutoring through [ASCC](https://tutoring.ascc.wsu.edu/CampusTutoringList.aspx). 
+* Writing Assignments 1 and 2 are posted. Deadlines: 9/19/2018 and 10/10/2018.
+* EXTRA EXTRA CREDIT: Attend the Soonish lecture on Wednesday, Sept 5, at 5 pm in CUE 203. Verify your attendance [here](https://commonreading.wsu.edu/event-attendance/) to get credit (5 points).
+
 
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
-
+* You look like Joseph Gordon-Levitt if he had long hair 👍👍.
 
 <h3 style="color: red;">Needs improvement: </h3>
+* Incorporate Joseph Gordon-Levitt in lectures.
+* I know time is a matter but go deeper into the topic to make sure we all understand.
+
+
+## I was going for this { .flexbox .vcenter }
+
+```{r kr}
+knitr::include_graphics(here("images/john_wick.jpeg"))
+```
+
+## Not this { .flexbox .vcenter }
+
+```{r jgl}
+knitr::include_graphics(here("images/jgl.jpg"))
+```
+
+## Back to Productivity { .smaller }
+
+```{r mpl}
+d <- tibble(
+  "Labor" = seq(from = 1, to = 7, by = 0.5),
+  "Number of Lattes" = 1500*c(.2, NA, .5, NA, 1, NA, 1.4, NA, 1.7, NA, 1.9, NA, 2),
+  "Marginal Productivity" = c(NA, .3, NA, .5, NA, .4, NA, .3, NA, -.5, NA, -.6, NA),
+  "Marginal Labor Cost" = 400,
+  "Labor Cost" = 400 * seq(from = 1, to = 7, by = 0.5)
+)
+```
+
+<div class="columns-2">
+
+```{r wtf, out.width="90%", out.height="90%", fig.height=4, fig.width=3}
+
+d2 <- gather(d, key = variable, value = value, -Labor) %>% drop_na()
+d2$variable <- factor(d2$variable, levels = c("Number of Lattes", "Marginal Productivity", "Marginal Labor Cost", "Labor Cost"), labels =  c("Number of Lattes", "Marginal Productivity", "Marginal Labor Cost", "Labor Cost"))
+ggplot(data = filter(d2, variable %in% c("Number of Lattes", "Marginal Productivity"))) +
+  geom_line(aes(x = Labor, y = value), color = "seagreen4", size = 1, alpha = 0.8) +
+  #xkcdaxis(c(0,7), c(0,2)) + 
+  ylab("") +
+  scale_x_continuous(breaks = 1:7) + 
+  theme(text = element_text(size = 16, family = "Humor Sans")) +
+  facet_wrap(~ variable, ncol = 1, scales = "free_y") + 
+  theme_bw() +
+  theme(strip.background = element_blank(), strip.text = element_text(size = 12))
+```
+
+
+```{r pd1, out.width = "100%"}
+d[["Marginal Productivity"]] <- c(NA, .3, .3, .5, .5, .4, .4, .3, .3, .2, .2, .1, .1)
+pander(filter(d, (Labor %% 1) == 0))
+```
+
+</div>
+
+
+## Average Variable Cost { .smaller }
+
+* __Average Variable Cost (AVC)__ - *Total variable cost (TVC) divided by the total production. Variable costs consist of inputs that can be adjusted in the short term such as labor and supplies.*
+
+E.g. if a college track team produces 4 star athletes per year and they have variable costs of \$2.5 million, the average variable cost is 
+
+$$
+\frac{TVC}{Q} = \frac{2.5}{4} = 625,000 \; \mbox{dollars.}
+$$
+
+## Average Total Cost { .smaller }
+
+* __Average Total Cost__ - *Total cost divided by the total production. Total costs consist of the sum of total fixed costs and total variable costs.*
+
+E.g. if the college track team has fixed costs of \$1 million and variable costs of \$2.5 million, the average total cost is 
+
+$$
+\frac{TC}{Q} = \frac{1 + 2.5}{4} = 875,000 \; \mbox{dollars.}
+$$
+
+## Marginal Cost { .smaller }
+
+* __Marginal Cost__ - *The additional cost of one more unit of output. Marginal cost is equal to the slop of the Total Cost Curve.*
+
+E.g. Suppose the college wants to produce 5 star athletes per year. They estimate that the total cost would be \$1.1 million in fixed costs and \$3 million in variable costs. Then the _marginal cost_ of the 5th star athlete is 
+
+$$
+\frac{\Delta TC}{\Delta Q} = \frac{(1.1 + 3) - (1 + 2.5)}{5 - 4} = 600,000 \; \mbox{dollars.}
+$$
+
+The new __Average Total Cost__ would be 
+
+$$
+\frac{TC}{Q} = \frac{1.1 + 3}{5} = 820,000 \; \mbox{dollars.}
+$$
+
+_What does this imply about whether the college should increase their investment in star athletes?_
 
 
 
-## Example of plotting { .flexbox .vcenter }
+## Feeling Good? { .vcenter }
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
+<iframe src="https://giphy.com/embed/mZ6Qs0gLuEybe" width="480" height="201" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/zooey-deschanel-500-days-of-summer-the-smiths-mZ6Qs0gLuEybe">via GIPHY</a></p>
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+## Feeling Bad? { .vcenter }
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
+<iframe src="https://giphy.com/embed/zUfUCj8ZLRczK" width="480" height="316" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/break-joseph-gordon-levitt-500-days-of-summer-zUfUCj8ZLRczK">via GIPHY</a></p>
+
+
+## Graphing Costs { .smaller }
+
+```{r data-costs}
+d3 <- d %>%
+  filter(!is.na(`Number of Lattes`))
+dc <- d3 %>%
+  select(c("Number of Lattes", "Labor Cost"))
+dc$`Coffee Cost` <- d3$`Number of Lattes` * .23
+dc2 <- dc %>%
+  mutate(`Variable Cost` = `Coffee Cost` + `Labor Cost`,
+         `Fixed Cost` = c(1000, 1000, 1000, 1000, 1000, 1000, 1000)) %>%
+  mutate(`Total Cost` = `Fixed Cost` + `Variable Cost`) %>%
+  mutate(`Avg Variable Cost` = `Variable Cost` / `Number of Lattes`,
+         `Avg Total Cost` = `Total Cost` / `Number of Lattes`) %>%
+  mutate(`Marginal Cost` = (`Total Cost` - lag(`Total Cost`))/(`Number of Lattes` - lag(`Number of Lattes`)))
+```
+
+<div class="columns-2">
+
+
+```{r costs1, fig.height=5, fig.width=3}
+dc3 <- gather(dc2, key = Variable, value = value, -`Number of Lattes`) %>% 
+  drop_na() %>%
+  filter(Variable %in% c("Marginal Cost", "Avg Variable Cost", "Avg Total Cost"))
+ggplot(data = dc3) +
+  geom_line(aes(x = `Number of Lattes`, y = value, group = Variable, color = Variable), size = 1, alpha = 0.8) +
+  #xkcdaxis(c(0,7), c(0,2)) + 
+  ylab("Cost") +
+  scale_x_continuous(breaks = seq(0,3000, by = 500)) + 
+  theme(text = element_text(size = 16, family = "Humor Sans")) +
+  theme_bw() +
+  theme(legend.position = "bottom",
+        legend.direction = "vertical", 
+        text = element_text(size = 12, family = "Humor Sans"))
+```
+
+
+
+
+```{r pander-costs, out.width = "100%"}
+dc2a <- dc2 %>% select(c("Number of Lattes", "Variable Cost", "Fixed Cost", "Avg Variable Cost", "Avg Total Cost", "Marginal Cost"))
+pander(dc2a)
+```
+
+</div>
+
+
+## Why is the ATC curve U-shaped?
+
+* __Spreading Effect__: On the one hand, each additional output lowers average fixed costs (AFC), so the ATC is declining,
+
+* __Diminishing Marginal Returns__: on the other, each additional unit faces diminishing marginal returns from labor, so the ATC is increasing.
+
+*At low levels of production, the cost savings due to the spreading effect are higher so ATC declines overall, but at higher levels of production diminishing marginal returns have a stronger effect so the ATC increases again.*
+
+
+## Graphing Costs { .smaller }
+
+M is the minimum average total cost. (Why?)
+
+```{r tc-curve, out.width = "90%"}
+tc <- tibble(
+  Quantity = 1:1000,
+  TFC = 10000
+) %>%
+  mutate(TVC = 0.2 * Quantity^2) %>%
+  mutate(TC = TVC + TFC) %>%
+  mutate(MC = TC - lag(TC)) %>%
+  mutate(ATC = TC / Quantity,
+         AVC = TVC / Quantity,
+         AFC = TFC / Quantity)
+
+tc2 <- tc %>%
+  select("MC", "ATC", "AVC", "AFC", "Quantity") %>%
+  gather(key = Variable, value = Cost, -Quantity)
+ggplot(data = tc2) + 
+  geom_segment(aes(x = 225, xend = 225, y = 0, yend = 90), linetype = 2, color = "gray40", size = .2) +
+  geom_segment(aes(x = 0, xend = 225, y = 90, yend = 90), linetype = 2, color = "gray40", size = .2) +
+  geom_line(aes(x = Quantity, y = Cost, group = Variable, color = Variable)) + 
+  geom_point(aes(x = 225, xend = 225, y = 90, yend = 90), color = "gray40", size = 2) +
+  annotate("text", x = 220, y = 110, label = "M") + 
+  xkcdaxis(c(0,1000), c(0,500)) +
   theme(text = element_text(size = 16, family = "Humor Sans"))
 ```
 
 
-## Linking an Image
+## An example: the banana stand
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+Let's walk through this. Suppose we are 14 years old and our parents tell us 
+
+    "there's always money in the banana stand."
 
 
+## The banana stand
 
-## WSU: An example
+<iframe src="https://giphy.com/embed/nkOqBHEJ1hcTm" width="480" height="220" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/arrested-development-television-angry-nkOqBHEJ1hcTm">via GIPHY</a></p>
 
-WSU Tuition: \$5,134
 
-Cost of classes:
+## Can we use child labor for our banana stand?
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+http://videos.criticalcommons.org/transcoded/http/www.criticalcommons.org/Members/JJWooten/clips/horrible-bosses-2-child-labor/video_file/mp4-high/horroble-bosses-2-child-labor-mp4.mp4?_=1
+
+
+## The banana stand { .smaller }
+
+* Building the banana stand costs \$100.
+* Bananas cost \$0.49 per pound.
+* Cutting bananas has diminishing returns to scale (i.e. as we increase the amount of labor, the number of bananas each person can cut goes down -- the _marginal productivity_ of each additional worker is smaller than that of the worker before them.)
+
+
+## The banana stand
+
+* [Google sheet of banana stand costs](https://docs.google.com/spreadsheets/d/1RfWQVQwJTbVr5A5AtMoBFPsJ2bb5dZALEFjoEiLWFtI/edit?usp=sharing)
+
+
+## A tutorial with spreadsheets
+
+* Khan Academy tutorial on costs using a spreadsheet: https://www.youtube.com/watch?v=bBQVaRnHqLs
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/xVcayjE8zNCsYgtz1) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.

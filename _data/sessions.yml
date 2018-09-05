@@ -39,6 +39,7 @@
 - date: 2018-09-05 (W)
   modules: ['22']
   topics: ['Production Costs 2']
+  knowledge_check_url: https://goo.gl/forms/xVcayjE8zNCsYgtz1
 
 - date: 2018-09-07 (F)
   modules: ['32']
@@ -48,7 +49,6 @@
 - date: 2018-09-10 (M)
   modules: ['32']
   topics: ['Game Theory']
-  assignments: ['Writing Assignment 1 Due']
 
 - date: 2018-09-12 (W)
   modules: ['5']
@@ -66,6 +66,7 @@
 - date: 2018-09-19 (W)
   modules: ['8']
   topics: ['Income Effects, Substitution, and Elasticity']
+  assignments: ['Writing Assignment 1 Due']
 
 - date: 2018-09-21 (F)
   modules: ['9']
@@ -101,11 +102,11 @@
 - date: 2018-10-08 (M)
   modules: ['15']
   topics: ['Taxes']
-  assignments: ['Writing Assignment 2 Due']
 
 - date: 2018-10-10 (W)
   modules: ['4']
   topics: ['Comparative Advantage and Trade']
+  assignments: ['Writing Assignment 2 Due']
 
 - date: 2018-10-12 (F)
   modules: ['16']
@@ -207,11 +208,11 @@
 - date: 2018-12-03 (M)
   modules: ['']
   topics: ['TBD']
-  assignments: ['Writing Assignment 4 Due']
 
 - date: 2018-12-05 (W)
   modules: ['']
   topics: ['TBD']
+  assignments: ['Writing Assignment 4 Due']
 
 - date: 2018-12-07 (F)
   modules: ['']

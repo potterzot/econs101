@@ -1,0 +1,27 @@
+---
+title: 'Writing Assignment 2: Effect of Gas Prices on Retail'
+output: pdf_document
+---
+
+**DUE**: Wednesday, October 10, 2018 by 5pm Pacific Time via BLACKBOARD
+
+
+By the spring of 2018, gasoline prices had risen significantly ( https://www.gasbuddy.com/Charts). The increase in gas prices had some retailers concerned that high prices may prevent customers from traveling to their stores. For a discussion of this read the following article:
+
+https://www.thestreet.com/investing/rising-gas-prices-wont-hurt-retailers-for-now-14588845
+
+Based on information contained in this article and other information presented in this course, discuss the assumption this article is making about elasticity of demand with respect to gas prices. Is this a valid assumption? Explain your answer in the following. Specifically, based on your knowledge of demand and elasticity: 
+
+(a) discuss the assumption that consumers are (elastic or inelastic) in their consumption of gasoline 
+(b) is gasoline considered a compliment or a substitute to McDonalds and Lowes 
+(c) at what portion of the demand curve does the consultant believe the price level is currently at? 
+(d) which portion of the demand curve is above $4? Do not respond point by point but rather write a short essay discussing points above. 
+
+## Grading Rubric
+Your report must not exceed one typed page with one-inch margins and 12-point font single spaced.  Please include your name, instructor’s name (Potter), course and section number 1 (i.e. EconS 101.01), and writing assignment (assignment 2) on the top of your assignment. Your essay will be assessed as either “Meets Expectations” or “Needs Improvement” on both the writing portion and economic analysis. If your essay needs improvement, you will be given feedback from NetTutor to help you revise it.  You can then re-submit the essay to NetTutor for another try, but you only get one second chance. If you take materials or quotes from sources, you must provide citations/references in a standard citation/reference format. Here are the criteria your essay will be judged against:
+
+| Criterion | Needs Improvement | Meets Expectations |
+| --------- | ----------------- | ------------------ |
+| Writing   | The writing is difficult to follow and/or poorly organized.  Transition sentences are absent or ineffective.  Typos and/or grammatical errors distract the reader. Source material citations/references needed, but are missing or incorrect. | Ideas are well-organized.  Transition sentences effectively connect one idea to the next.  The essay is free of typos and grammatical errors. Sources properly cited and referenced, any citation style is acceptable. |
+| Application of economic analysis | Does not provide correct economic justification for why we observe changes in quantity based on prices the way they do. Fails to explain elasticity in the context of gasoline and other goods correctly. | Correctly identifies the answers to parts a, b, c and d above  and provides correct justification for answers. Discussion of elasticity demonstrates coherent economic thought. demonstrates coherent economic thought. |
+

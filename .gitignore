@@ -13,4 +13,11 @@ confidential/
 # Ignore publishers lectures
 kw_lectures/
 
+# Ignore old assignments from other teachers
+writing_assignments/olsen/
+
+
 .Rproj.user
+
+
+
