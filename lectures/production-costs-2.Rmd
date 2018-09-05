@@ -218,6 +218,7 @@ ggplot(data = tc2) +
   geom_point(aes(x = 225, xend = 225, y = 90, yend = 90), color = "gray40", size = 2) +
   annotate("text", x = 220, y = 110, label = "M") + 
   xkcdaxis(c(0,1000), c(0,500)) +
+  xlab("Quantity") + ylab("Cost") + 
   theme(text = element_text(size = 16, family = "Humor Sans"))
 ```
 
