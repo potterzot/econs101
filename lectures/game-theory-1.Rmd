@@ -60,11 +60,21 @@ _Game Theory is the study of behavior when there is the possibility for strategi
 
 * __Strategic interaction__ occurs when people are engaged in a social interaction and are aware of the ways that their actions affect others, and vice versa. In other words, the people are _interdependent_. 
 
-E.g.: if there are only a few coffee shops in town, a price change by one affects the prices set by the others. In contrast, if there are many, a price change by one does not really affect the average price of the market, so other coffee shops will not behave any differently. 
+## Game Theory - oligopoly example
 
-E.g.: Couples engage in strategic interation. You know that your choice affects your partner and their choice affects you, and you know that each other knows that.
+* If there are only a few coffee shops in town, a price change by one affects the prices set by the others. In contrast, if there are many, a price change by one does not really affect the average price of the market, so other coffee shops will not behave any differently. 
 
-E.g.: the relationship between an employer and an employee is interdependent, since the employer often cannot easily observe the employee's level of effort and the employee knows that.
+## Game Theory - relationship example
+
+* Couples engage in strategic interation. You know that your choice affects your partner and their choice affects you, and you know that each other knows that. 
+
+Suppose you would prefer to go see a movie tomorrow, but your partner would rather go see the football game. Fortunately you like each other so you prefer spending time together over spending time apart.
+
+## Game Theory - Employer/Employee example
+
+* the relationship between an employer and an employee is interdependent, since the employer often cannot easily observe the employee's level of effort and the employee knows that.
+
+Suppose next year you work as a TA for this class. You are supposed to show up for tutoring, but your boss doesn't monitor whether you are there the whole time. The payoff the department gets (in terms of students helped) depends on your actions, but you have the option to shirk and if no one shows up, you won't lose your job.
 
 
 ## Some definitions for games
@@ -72,7 +82,7 @@ E.g.: the relationship between an employer and an employee is interdependent, si
 * __Game__ - _A model of strategic interactions._
 * __Player__ - _A player in a game._
 * __Strategy__ - _Feasible action(s) that an agent can take._
-* __Payoff__ - _The _
+* __Payoff__ - _The benefit or cost a player recieves from the outcome of a game._
 * __Dominant Strategy__ - _A strategy that yields a higher payoff than any other strategy, regardless of the other player's actions._
 * __Complete information__ - _All players know the payoffs of all players and the available strategies of all players._
 
