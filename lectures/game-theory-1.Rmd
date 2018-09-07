@@ -1,0 +1,165 @@
+---
+layout: page
+element: lecture
+title: Game Theory 1
+date: September 7, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+library(pander)
+library(here)
+library(ggplot2)
+```
+
+## Pregame
+
+* Tomorrow is WSU's first football game! Warning that there will be almost no parking on campus.
+
+
+## Feedback
+
+<h3 style="color: green;">Good: </h3>
+* I liked the examples, they were relatable and enjoyable
+* I like specific key terms
+* it was _kind of_ interesting
+
+<h3 style="color: red;">Needs improvement: </h3>
+* The graphs are confusing
+* Understanding of MC, ATC, AVC, etc... is shaky
+
+<h3>Ambiguous: </h3>
+* If you wore a fur coat I could maybe see some resemblance to Jon Snow. Also if you let your hair down and let it fluff out.
+
+
+## Oh God what have I done?
+
+<iframe src="https://giphy.com/embed/l2RnCHvTVK5g4X31e" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/l2RnCHvTVK5g4X31e">via GIPHY</a></p>
+
+
+## Game Theory
+
+* K&W treats game theory as an afterthought for oligopoly markets, but game theory is extensive and has become one of the most crucial aspects fo economics analysis.
+* We will work primarily from [The Economy Chapter 4](https://core-econ.org/the-economy/book/text/04.html).
+
+
+## Game Theory - An introduction
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CemLiSI5ox8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## What is Game Theory? { .smaller }
+
+_Game Theory is the study of behavior when there is the possibility for strategic interaction._
+
+* __Strategic interaction__ occurs when people are engaged in a social interaction and are aware of the ways that their actions affect others, and vice versa. In other words, the people are _interdependent_. 
+
+E.g.: if there are only a few coffee shops in town, a price change by one affects the prices set by the others. In contrast, if there are many, a price change by one does not really affect the average price of the market, so other coffee shops will not behave any differently. 
+
+E.g.: Couples engage in strategic interation. You know that your choice affects your partner and their choice affects you, and you know that each other knows that.
+
+E.g.: the relationship between an employer and an employee is interdependent, since the employer often cannot easily observe the employee's level of effort and the employee knows that.
+
+
+## Some definitions for games
+
+* __Game__ - _A model of strategic interactions._
+* __Player__ - _A player in a game._
+* __Strategy__ - _Feasible action(s) that an agent can take._
+* __Payoff__ - _The _
+* __Dominant Strategy__ - _A strategy that yields a higher payoff than any other strategy, regardless of the other player's actions._
+* __Complete information__ - _All players know the payoffs of all players and the available strategies of all players._
+
+
+## Sometimes it can get a little dizzying...
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rMz7JBRbmNo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## An example with farming
+
+* Two farmers (Anil and Bala) decide whether to grow cassava or rice.
+* Anil's land is better for cassava and Bala's land is better for rice.
+* They choose independently, without interacting.
+
+
+## The game { .flexbox .vcenter }
+
+```{r fig4.1, out.width="65%"}
+knitr::include_graphics(here("images/core/figure-04-01.jpg"))
+```
+
+
+## The game payoffs { .flexbox .vcenter }
+
+[Walkthrough](https://core-econ.org/the-economy/book/text/04.html#figure-4-2b-a)
+
+```{r fig4.2, out.width="65%"}
+knitr::include_graphics(here("images/core/figure-04-02-a.jpg"))
+```
+
+
+## Results from the game
+
+* Anil chooses cassava, Bala chooses rice, yielding a payoff of (4,4).
+* This is a __dominant strategy equilibrium__, since neither player has an incentive to switch.
+* The previous game matches the outcomes of a market model, in which each player chooses independently and optimizes, resulting in the most effecient production.
+* But what if Anil's choice imposes costs or benefits on Bala, and Bala's choice imposes costs or benefits on Anil?
+
+
+## A game with social costs
+
+```{r fig4.3a, out.width="65%"}
+knitr::include_graphics(here("images/core/figure-04-03-a.jpg"))
+```
+
+
+## A game with social costs - payoffs
+
+
+```{r fig4.3b, out.width="100%"}
+knitr::include_graphics(here("images/core/figure-04-03-b.jpg"))
+```
+
+
+## The prisoner's dilemma
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p3Uos2fzIJ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## The prisoner's dilemma in payoffs
+
+```{r fig4.mcq.3, out.width="100%"}
+knitr::include_graphics(here("images/core/figure-04-mcq-03.jpg"))
+```
+
+
+## The prisoner's dilemma outcome
+
+* If Ameera plays _Deny_ then it's in Dimitrios' best interest to play _Accuse_ (since 0 > -2).
+* If Ammera plays _Accuse_ then it's in Dimitrios' best interest to play _Accuse_ (since -8 > -15).
+* The same is true in reverse. If Dimitrios plays _Deny_, Ameera should play _Accuse_, and if Dimitrios plays _Accuse_, Ameera should play _Accuse_.
+* The dominant strategy is for both players to accuse, receiving the largest penalty (-8,-8).
+
+## Why the negative solution?
+
+* Players did not place any value on the payoffs of the other person, and so did not internalize (take account of) the costs that their actions inflicted on the other.
+* There is no way to make the player pay for harm caused to other players.
+* They were not able to make an agreement beforehand about what each would do.
+
+## A better solution with previous communication
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S0qjK3TWZE8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## Wrapping Up
+
+* Complete the [knowledge check](https://goo.gl/forms/YKmR70ALy8ZF3Kmx2) for today's participation point.
+
+* Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.

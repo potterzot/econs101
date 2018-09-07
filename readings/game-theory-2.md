@@ -1,7 +1,7 @@
 ---
 layout: page
 element: reading
-title: Game Theory
+title: Game Theory 2
 ---
 
 * Krugman and Wells: Module 32

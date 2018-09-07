@@ -43,48 +43,58 @@
 
 - date: 2018-09-07 (F)
   modules: ['32']
-  topics: ['Game Theory']
+  topics: ['Game Theory 1']
   assignments: ['Homework 2 Due']
+  knowledge_check_url: https://goo.gl/forms/YKmR70ALy8ZF3Kmx2
 
 - date: 2018-09-10 (M)
   modules: ['32']
-  topics: ['Game Theory']
+  topics: ['Game Theory 2']
+  knowledge_check_url: https://goo.gl/forms/N6XEMxRJbahxjtMA2
 
 - date: 2018-09-12 (W)
   modules: ['5']
   topics: ['Demand']
+  knowledge_check_url: 
 
 - date: 2018-09-14 (F)
   modules: ['6']
   topics: ['Supply and Equilibrium']
   assignments: ['Homework 3 Due']
+  knowledge_check_url: 
 
 - date: 2018-09-17 (M)
   modules: ['7']
   topics: ['Changes in Equilibrium']
+  knowledge_check_url: 
 
 - date: 2018-09-19 (W)
   modules: ['8']
   topics: ['Income Effects, Substitution, and Elasticity']
   assignments: ['Writing Assignment 1 Due']
+  knowledge_check_url: 
 
 - date: 2018-09-21 (F)
   modules: ['9']
   topics: ['Interpretating Price Elasticity of Demand']
   assignments: ['Homework 4 Due']
+  knowledge_check_url: 
 
 - date: 2018-09-24 (M)
   modules: ['11']
   topics: ['Consumer and Producer Surplus']
+  knowledge_check_url: 
 
 - date: 2018-09-26 (W)
   modules: ['']
   topics: ['Review Quiz 1']
+  knowledge_check_url: 
 
 - date: 2018-09-28 (F)
   modules: ['']
   topics: ['Quiz 1']
   assignments: ['Quiz 1 In Class']
+  knowledge_check_url: 
 
 - date: 2018-10-01 (M)
   modules: ['12']
