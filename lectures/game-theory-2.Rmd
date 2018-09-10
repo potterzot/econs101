@@ -18,65 +18,154 @@ library(here)
 library(ggplot2)
 ```
 
+## Pregame
+
+* Change in office hours: Thursday 3:10-5pm so that students can discuss homework before it's due.
+* Deadline to drop classes without a record: Tuesday, September 18th, 2018.
+
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
+* Going through homework problems is helpful.
 
 
 <h3 style="color: red;">Needs improvement: </h3>
+* Include more examples.
+* Do some example problems throughout the week.
+* Use the overhead camera for drawing by hand.
+
+## The prisoner's dilemma
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p3Uos2fzIJ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
+## The prisoner's dilemma in payoffs
 
-## Example of plotting { .flexbox .vcenter }
-
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
-
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
-
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+```{r fig4.mcq.3a, out.width="100%"}
+knitr::include_graphics(here("images/core/figure-04-mcq-03.jpg"))
 ```
 
 
-## Linking an Image
+## What makes a prisoner's dilemma?
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+1. One strategy leads to a good payoff for both players.
+2. But at that equilibrium, each player gets a higher payoff from switching.
+3. If both switch, the payoff to both players is lower.
+
+_Review Extra Practice 2 - Game Theory #1 (id 24925)_
 
 
+## Back to Ammeera and Dimitrios 
 
-## WSU: An example
+```{r fig4.mcq.3b, out.width="100%"}
+knitr::include_graphics(here("images/core/figure-04-mcq-03.jpg"))
+```
 
-WSU Tuition: \$5,134
+## The prisoner's dilemma outcome
 
-Cost of classes:
+* If Ameera plays _Deny_ then it's in Dimitrios' best interest to play _Accuse_ (since 0 > -2).
+* If Ameera plays _Accuse_ then it's in Dimitrios' best interest to play _Accuse_ (since -8 > -15).
+* The same is true in reverse. If Dimitrios plays _Deny_, Ameera should play _Accuse_, and if Dimitrios plays _Accuse_, Ameera should play _Accuse_.
+* The dominant strategy is for both players to accuse, receiving the largest penalty (-8,-8).
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+This is known as a __Nash Equilibrium__
 
+
+## Nash Equilibrium
+
+* __Nash Equilibrium__ - _Is a set of strategies for each player in which no player can gain by switching to a different strategy, given the strategies of other players._
+
+In the prisoner's dilemma, (Accuse, Accuse) is the Nash Equilibrium. 
+
+_Review Extra Practice 2 - Game Theory #7 (id 69727)_
+_Review Extra Practice 2 - Game Theory #9 (id 75695)_
+
+
+## Why the negative solution?
+
+1. Players did not place any value on the payoffs of the other person, and so did not internalize (take account of) the costs that their actions inflicted on the other.
+2. There is no way to make the player pay for harm caused to other players.
+3. They were not able to make an agreement beforehand about what each would do.
+
+
+# Solution #1: Other-regarding preferences
+
+If players care about the outcomes of other players, then the payoffs change and the game may no longer be a prisoner's dilemma.
+
+This can happen when social norms are strong, which can be affected by technology.
+
+
+## Ghosting as a prisoner's dilemma { .vcenter .flexbox }
+
+<div width = "60%">
+|             | Ghost  | Say Goodbye |
+| ----------- | ------ | ----------- |
+| Ghost       | -1, -1 | 2, -3       | 
+| Say Goodbye | -3, 2  | 1, 1        |
+</div>
+
+## Ghosting before cell phones { .vcenter .flexbox }
+
+<div width = "60%">
+|             | Ghost  | Say Goodbye |
+| ----------- | ------ | ----------- |
+| Ghost       | -1, -1 | 0, -3       | 
+| Say Goodbye | -3, 0  | 1, 1        |
+</div>
+
+
+## Solution #2: Make players pay for harm caused to other players.
+
+* In the cartel example, imagine companies can sign an agreement to punish non-cooperators.
+* A group of friends who work out together may punish someone who doesn't show up.
+
+What else?
+
+
+## Solution #3: Previous communication?
+
+__Can collusion offer a way out?__
+
+> - Both parties agree to deny. What happens?
+
+> - When it comes time to choose, each party still has an incentive to play Accuse instead.
+
+
+## A better solution with previous communication
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S0qjK3TWZE8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## { .vcenter .flexbox }
+
+__Why did the first player play "split"?__
+
+<div width = "60%">
+|             | Steal     | Split |
+| ----------- | ---------:| -----------:|
+| Steal       | 0, 0      | 13000, 0    | 
+| Split       | 0, 13000  | 6500, 6500  |
+</div>
+
+## A fourth solution: repeated games
+
+* __Repeated Game__ - _A game that players play multiple times with the same payoffs and strategies_.
+* __Tit-for-Tat__ - _A strategy in which a player starts out cooperating, but therafter copies the other player's previous action._
+
+```{r fig4.mcq.3c, out.width="70%"}
+knitr::include_graphics(here("images/core/figure-04-mcq-03.jpg"))
+```
+
+## Tit-for-Tat
+
+* Ameera knows if she defects that Dimitrios will defect next round, so it makes sense to cooperate.
+* Dimitrios knows the same.
+
+__Nash Equilibria__
+
+1. If they start at Accuse, both players play Accuse forever.
+2. If they start at Deny, both players play Deny forever.
+3. Both players alternate playing (Deny, Accuse) forever.
 
 ## Wrapping Up
 

@@ -138,34 +138,10 @@ knitr::include_graphics(here("images/core/figure-04-03-b.jpg"))
 ```
 
 
+
 ## The prisoner's dilemma
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p3Uos2fzIJ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
-## The prisoner's dilemma in payoffs
-
-```{r fig4.mcq.3, out.width="100%"}
-knitr::include_graphics(here("images/core/figure-04-mcq-03.jpg"))
-```
-
-
-## The prisoner's dilemma outcome
-
-* If Ameera plays _Deny_ then it's in Dimitrios' best interest to play _Accuse_ (since 0 > -2).
-* If Ammera plays _Accuse_ then it's in Dimitrios' best interest to play _Accuse_ (since -8 > -15).
-* The same is true in reverse. If Dimitrios plays _Deny_, Ameera should play _Accuse_, and if Dimitrios plays _Accuse_, Ameera should play _Accuse_.
-* The dominant strategy is for both players to accuse, receiving the largest penalty (-8,-8).
-
-## Why the negative solution?
-
-* Players did not place any value on the payoffs of the other person, and so did not internalize (take account of) the costs that their actions inflicted on the other.
-* There is no way to make the player pay for harm caused to other players.
-* They were not able to make an agreement beforehand about what each would do.
-
-## A better solution with previous communication
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/S0qjK3TWZE8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 ## Wrapping Up
