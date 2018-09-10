@@ -68,7 +68,7 @@ knitr::include_graphics(here("images/core/figure-04-mcq-03.jpg"))
 * The same is true in reverse. If Dimitrios plays _Deny_, Ameera should play _Accuse_, and if Dimitrios plays _Accuse_, Ameera should play _Accuse_.
 * The dominant strategy is for both players to accuse, receiving the largest penalty (-8,-8).
 
-This is known as a __Nash Equilibrium__
+This is known as a __Nash Equilibrium__.
 
 
 ## Nash Equilibrium
@@ -78,6 +78,7 @@ This is known as a __Nash Equilibrium__
 In the prisoner's dilemma, (Accuse, Accuse) is the Nash Equilibrium. 
 
 _Review Extra Practice 2 - Game Theory #7 (id 69727)_
+
 _Review Extra Practice 2 - Game Theory #9 (id 75695)_
 
 
@@ -88,7 +89,7 @@ _Review Extra Practice 2 - Game Theory #9 (id 75695)_
 3. They were not able to make an agreement beforehand about what each would do.
 
 
-# Solution #1: Other-regarding preferences
+# Solution 1: Other-regarding preferences
 
 If players care about the outcomes of other players, then the payoffs change and the game may no longer be a prisoner's dilemma.
 
@@ -114,7 +115,7 @@ This can happen when social norms are strong, which can be affected by technolog
 </div>
 
 
-## Solution #2: Make players pay for harm caused to other players.
+## Solution 2: Make players pay for harm caused to other players.
 
 * In the cartel example, imagine companies can sign an agreement to punish non-cooperators.
 * A group of friends who work out together may punish someone who doesn't show up.
@@ -122,7 +123,7 @@ This can happen when social norms are strong, which can be affected by technolog
 What else?
 
 
-## Solution #3: Previous communication?
+## Solution 3: Previous communication?
 
 __Can collusion offer a way out?__
 
