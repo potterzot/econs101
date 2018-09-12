@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Demand
+date: September 12, 2018
 output: ioslides_presentation
 ---
 
@@ -13,70 +13,128 @@ knitr::opts_chunk$set(message = FALSE)
 library(xkcd)
 library(tidyr)
 library(dplyr)
+library(here)
+library(pander)
 ```
 
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
-
+* Videos were interesting and helpful
+* Sapling exercises in class were very helpful!
 
 <h3 style="color: red;">Needs improvement: </h3>
+* Please explain Nash Equilibrium and Tit-for-Tat
 
 
+## What is demand?
 
-## Example of plotting { .flexbox .vcenter }
+<iframe src="https://giphy.com/embed/V9GZaqlnX3dsc" width="480" height="384" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/candy-silly-demand-V9GZaqlnX3dsc">via GIPHY</a></p>
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+## How do we estimate demand? { .smaller }
 
-ggplot(data = d1) + 
+* Often estimated with surveys of __willingness to pay__ (WTP), with which we can build up a __demand schedule__.
+
+* __Demand Schedule__ - _A table of quantity demanded at different price levels._
+* __Willingness to Pay__ - _The maximum amount a person is willing to pay for a quantity of a good (e.g. eBay max)._
+
+```{r ds, echo=FALSE}
+d <- data.frame(
+  Price = c(1, seq(10,50, 10))
+) %>% mutate(Quantity = 10000 - 500*Price^.5)
+```
+
+`r pander(d)`
+
+## A market model { .smaller }
+
+A model of a market consists of:
+
+* __Demand curve__ - _A graphical representation of a demand schedule. A demand curve depicts how much quantity of a good would be demanded at different prices._
+* __Supply curve__ - _A graphical representation of a supply curve, showing how much quantity of a good is supplied at different prices._
+* __Demand and supply curve shifts__ - _A shift in demand or supply due to a change in income (for demand) or technology (for supply), or other factors._
+* __Market equilibrium__ - _The point at which demand and supply is equal (i.e. the curves intersect)._
+* __Changes in market equilibrium__ - _How the market equilibrium changes in response to shifts in demand and supply._
+
+## Demand curves
+
+```{r dc}
+
+ggplot(data = d) + 
   #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+  geom_line(aes(x = Quantity, y = Price), color = "red", size = 1, alpha = .8) +
+  xkcdaxis(c(6000,15000), c(0,50)) + 
+  ggtitle("Demand Curve for WSU Football Tickets") + 
+  xlab("Quantity of Tickets") + ylab("Price") +
+  theme(text = element_text(size = 16, family = "Humor Sans")) 
+
 ```
 
 
-## Linking an Image
+## Changes in demand
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+* __Movement along the demand curve__ - _Due to a change in price, we move along the demand curve from the old price to the new price._
+* __Shift in the demand curve__ - _If demand shifts, then the entire curve moves to the left or the right._
+
+_Review Practice Problem 1._
 
 
+## Shifts in Demand { .smaller }
 
-## WSU: An example
+Shifts in demand can occur because of changes in:
 
-WSU Tuition: \$5,134
+* __Population__ - More people means more demand for goods, so the quantity demanded increases for any price point. 
+* __Income__ - If a population becomes more wealthy overall, the demand curve can also shift (though also likely pivots).
+* __Tastes__ - Preferences can change in response to cultural shifts, major events, or fashion.
+* __Expectations__ - Expectations about the future can affect demand (e.g. an incoming hurricane increases bottled water purchases).
+* __Number of consumers__ - A change in the number of consumers, such as when the drinking age was raised to 21.
 
-Cost of classes:
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+## Graphing a shift in Demand
+
+```{r dc2}
+d$Quantity2 = d$Quantity * 1.5
+names(d) <- c("Price", "Current", "50% More Students")
+dplt <- gather(d, key = Variable, value = Quantity, -Price)
+
+ggplot(data = dplt) + 
+  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
+  geom_line(aes(x = Quantity, y = Price, group = Variable, color = Variable), size = 1, alpha = .8) +
+  xkcdaxis(c(6000,15000), c(0,50)) + 
+  ggtitle("Demand curve for WSU football tickets with 50% more students") + 
+  xlab("Quantity of Tickets") + ylab("Price") +
+  theme(text = element_text(size = 16, family = "Humor Sans"),
+        plot.title = element_text(size = 12)) 
+```
+
+
+## Substitutes and complements { .smaller }
+
+* __Substitutes__ - Two goods are substitutes if a decrease in the price of one good __decreases__ demand for the other good.
+
+_Examples include food away from home (FAFH) and food at home (FAH)._
+
+* __Complements__ - Two goods are complements if a decrease in the price of one good __increases__ demand for the other good.
+
+_Examples include gas prices and milk._
+
+_Review Practice Problem 3._
+
+
+## Normal and inferior goods { .smaller }
+
+* __Normal goods__ - A normal good is one in which an increase in income __increases__ demand for that good.
+
+_Examples include pretty much all goods._
+
+* __Inferior goods__ - Goods are inferior if an increase in income __decreases__ demand for that good.
+
+_Examples?_
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/LQa51bqKHODk1Xlf2) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
