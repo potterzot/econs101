@@ -1,0 +1,101 @@
+---
+layout: page
+element: lecture
+title: Demand 2
+date: September 12, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+library(here)
+library(pander)
+```
+
+## Pregame
+
+* I'm going to email those of you who have lower than a 60% after the homework is submitted today to discuss options.
+* First Quiz is 9/28, two weeks from today. I'll make a practice quiz available sometime next week.
+
+## Feedback
+
+<h3 style="color: green;">Good: </h3>
+* Document camera was good
+* References to additional movie characters have become progressively more insistent, but I feel like I can't top JGL so I'm sticking with that.
+
+<h3 style="color: red;">Needs improvement: </h3>
+* Go over the writing assignment (we did this in the last class? #confused.gif)
+
+
+## Aggregate Demand
+
+* __Aggregate demand__ - _The sum of all consumer demand. Demand curves are summed horizontally._
+
+```{r aggdemand}
+d1 <- data.frame(
+  Price = c(1, seq(10,200, 10))
+) %>% mutate(Quantity = (200 - 10*Price^.5))/10
+
+d1 <- d1 %>% mutate(
+  Quantity2 = (d1$Quantity^1.1) * .6,
+  Quantity3 = (d1$Quantity^.8) * .75,
+  AggQuantity = Quantity + Quantity2 + Quantity3)
+
+names(d1) <- c("Price", "Harry", "James", "Lilly", "Aggregate")
+d1plt <- gather(d1, key = Variable, value = Quantity, -Price)
+
+ggplot(data = d1plt) + 
+  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
+  geom_line(aes(x = Quantity, y = Price, group = Variable, color = Variable), size = 1, alpha = .8) +
+  xkcdaxis(c(0,50), c(0,20)) + 
+  ggtitle("Aggregate demand curve for magic wands") + 
+  xlab("Quantity of Wands Demanded") + ylab("Price") +
+  theme(text = element_text(size = 16, family = "Humor Sans"),
+        plot.title = element_text(size = 12)) 
+```
+
+
+## Substitutes and complements { .smaller }
+
+* __Substitutes__ - Two goods are substitutes if a decrease in the price of one good __decreases__ demand for the other good.
+
+_Examples include food away from home (FAFH) and food at home (FAH)._
+
+* __Complements__ - Two goods are complements if a decrease in the price of one good __increases__ demand for the other good.
+
+_Examples include gas prices and milk._
+
+_Review Practice Problem 3._
+
+
+## Normal and inferior goods { .smaller }
+
+* __Normal goods__ - A normal good is one in which an increase in income __increases__ demand for that good or vice-versa.
+
+_Examples include pretty much all goods._
+
+* __Inferior goods__ - Goods are inferior if an increase in income __decreases__ demand for that good or vice-versa.
+
+_Examples?_
+
+
+## Universal Basic Income
+
+* A Universal Basic Income (UBI) is a proposal to remove various social benefits and provide instead a basic income to everyone.
+
+_What would a UBI do to spending for housing?_
+
+* How __elastic__ is demand for housing? How much does demand change as price changes?
+* How much would a UBI shift demand for housing, and in which direction?
+* How would a UBI shift demand for food at home? For dining out?
+
+## Wrapping Up
+
+* Complete the [knowledge check](https://goo.gl/forms/4Axrj5UUIgu8xZ4E3) for today's participation point.
+
+* Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.

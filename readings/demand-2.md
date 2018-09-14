@@ -1,7 +1,7 @@
 ---
 layout: page
 element: reading
-title: Demand
+title: Demand 2
 ---
 
 * Krugman and Wells: Module 5

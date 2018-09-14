@@ -1,7 +1,7 @@
 ---
 layout: page
 element: lecture
-title: Demand
+title: Demand 1
 date: September 12, 2018
 output: ioslides_presentation
 ---
@@ -89,48 +89,6 @@ Shifts in demand can occur because of changes in:
 * __Tastes__ - Preferences can change in response to cultural shifts, major events, or fashion.
 * __Expectations__ - Expectations about the future can affect demand (e.g. an incoming hurricane increases bottled water purchases).
 * __Number of consumers__ - A change in the number of consumers, such as when the drinking age was raised to 21.
-
-
-## Graphing a shift in Demand
-
-```{r dc2}
-d$Quantity2 = d$Quantity * 1.5
-names(d) <- c("Price", "Current", "50% More Students")
-dplt <- gather(d, key = Variable, value = Quantity, -Price)
-
-ggplot(data = dplt) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = Quantity, y = Price, group = Variable, color = Variable), size = 1, alpha = .8) +
-  xkcdaxis(c(6000,15000), c(0,50)) + 
-  ggtitle("Demand curve for WSU football tickets with 50% more students") + 
-  xlab("Quantity of Tickets") + ylab("Price") +
-  theme(text = element_text(size = 16, family = "Humor Sans"),
-        plot.title = element_text(size = 12)) 
-```
-
-
-## Substitutes and complements { .smaller }
-
-* __Substitutes__ - Two goods are substitutes if a decrease in the price of one good __decreases__ demand for the other good.
-
-_Examples include food away from home (FAFH) and food at home (FAH)._
-
-* __Complements__ - Two goods are complements if a decrease in the price of one good __increases__ demand for the other good.
-
-_Examples include gas prices and milk._
-
-_Review Practice Problem 3._
-
-
-## Normal and inferior goods { .smaller }
-
-* __Normal goods__ - A normal good is one in which an increase in income __increases__ demand for that good.
-
-_Examples include pretty much all goods._
-
-* __Inferior goods__ - Goods are inferior if an increase in income __decreases__ demand for that good.
-
-_Examples?_
 
 
 ## Wrapping Up

@@ -54,35 +54,35 @@
 
 - date: 2018-09-12 (W)
   modules: ['5']
-  topics: ['Demand']
+  topics: ['Demand 1']
   knowledge_check_url: https://goo.gl/forms/LQa51bqKHODk1Xlf2
 
 - date: 2018-09-14 (F)
-  modules: ['6']
-  topics: ['Supply and Equilibrium']
+  modules: ['5']
+  topics: ['Demand 2']
   assignments: ['Homework 3 Due']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/4Axrj5UUIgu8xZ4E3
 
 - date: 2018-09-17 (M)
-  modules: ['7']
-  topics: ['Changes in Equilibrium']
+  modules: ['6']
+  topics: ['Supply and Equilibrium']
   knowledge_check_url: 
 
 - date: 2018-09-19 (W)
-  modules: ['8']
-  topics: ['Income Effects, Substitution, and Elasticity']
+  modules: ['7']
+  topics: ['Changes in Equilibrium']
   assignments: ['Writing Assignment 1 Due']
   knowledge_check_url: 
 
 - date: 2018-09-21 (F)
-  modules: ['9']
-  topics: ['Interpretating Price Elasticity of Demand']
+  modules: ['8']
+  topics: ['Income Effects, Substitution, and Elasticity']
   assignments: ['Homework 4 Due']
   knowledge_check_url: 
 
 - date: 2018-09-24 (M)
-  modules: ['11']
-  topics: ['Consumer and Producer Surplus']
+  modules: ['9']
+  topics: ['Interpretating Price Elasticity of Demand']
   knowledge_check_url: 
 
 - date: 2018-09-26 (W)
@@ -97,83 +97,83 @@
   knowledge_check_url: 
 
 - date: 2018-10-01 (M)
+  modules: ['11']
+  topics: ['Consumer and Producer Surplus']
+
+- date: 2018-10-03 (W)
   modules: ['12']
   topics: ['Efficiency and Markets']
 
-- date: 2018-10-03 (W)
+- date: 2018-10-05 (F)
   modules: ['13']
   topics: ['Price Controls']
-
-- date: 2018-10-05 (F)
-  modules: ['14']
-  topics: ['Quantity Controls']
   assignments: ['Homework 5 Due']
 
 - date: 2018-10-08 (M)
-  modules: ['15']
-  topics: ['Taxes']
+  modules: ['14']
+  topics: ['Quantity Controls']
 
 - date: 2018-10-10 (W)
-  modules: ['4']
-  topics: ['Comparative Advantage and Trade']
+  modules: ['15']
+  topics: ['Taxes']
   assignments: ['Writing Assignment 2 Due']
 
 - date: 2018-10-12 (F)
-  modules: ['16']
-  topics: ['Gains from Trade']
+  modules: ['4']
+  topics: ['Comparative Advantage and Trade']
   assignments: ['Homework 6 Due']
 
 - date: 2018-10-15 (M)
+  modules: ['16']
+  topics: ['Gains from Trade']
+
+- date: 2018-10-17 (W)
   modules: ['17']
   topics: ['Supply, Demand, and Trade']
 
-- date: 2018-10-17 (W)
+- date: 2018-10-19 (F)
   modules: ['24']
   topics: ['Market Structure']
-
-- date: 2018-10-19 (F)
-  modules: ['25', '26']
-  topics: ['Perfect Competition']
   assignments: ['Homework 7 Due']
 
 - date: 2018-10-22 (M)
+  modules: ['25', '26']
+  topics: ['Perfect Competition']
+
+- date: 2018-10-24 (W)
   modules: ['27']
   topics: ['Long Run Outcomes in Perfect Competition']
 
-- date: 2018-10-24 (W)
+- date: 2018-10-26 (F)
   modules: ['28']
   topics: ['Monopoly']
-
-- date: 2018-10-26 (F)
-  modules: ['29']
-  topics: ['Monopoly and Public Policy']
   assignments: ['Homework 8 Due']
 
 - date: 2018-10-29 (M)
+  modules: ['29']
+  topics: ['Monopoly and Public Policy']
+
+- date: 2018-10-31 (W)
   modules: ['30']
   topics: ['Price Discrimination']
 
-- date: 2018-10-31 (W)
+- date: 2018-11-02 (F)
   modules: ['31']
   topics: ['Oligopoly']
-
-- date: 2018-11-02 (F)
-  modules: ['34']
-  topics: ['Monopolistic Competition']
   assignments: ['Homework 9 Due']
 
 - date: 2018-11-05 (M)
-  modules: ['35']
-  topics: ['Product Differentiation and Advertising']
+  modules: ['34']
+  topics: ['Monopolistic Competition']
   assignments: ['Writing Assignment 3 Due']
 
 - date: 2018-11-07 (W)
-  modules: ['36']
-  topics: ['Externalities']
+  modules: ['35']
+  topics: ['Product Differentiation and Advertising']
 
 - date: 2018-11-09 (F)
-  modules: ['37']
-  topics: ['Externalities and Public Policy']
+  modules: ['36']
+  topics: ['Externalities']
   assignments: ['Homework 10 Due']
 
 - date: 2018-11-12 (M)
@@ -203,12 +203,12 @@
   assignments: []
 
 - date: 2018-11-26 (M)
-  modules: ['38']
-  topics: ['Public Goods and Common Resources']
+  modules: ['37']
+  topics: ['Externalities and Public Policy']
 
 - date: 2018-11-28 (W)
-  modules: ['']
-  topics: ['TBD']
+  modules: ['38']
+  topics: ['Public Goods and Common Resources']
 
 - date: 2018-11-30 (F)
   modules: ['']
@@ -226,5 +226,5 @@
 
 - date: 2018-12-07 (F)
   modules: ['']
-  topics: ['TBD']
+  topics: ['Final Exam Review']
   assignments: []
