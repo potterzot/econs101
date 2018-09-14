@@ -57,6 +57,7 @@ ggplot(data = d1plt) +
   xlab("Quantity of Wands Demanded") + ylab("Price") +
   theme(text = element_text(size = 16, family = "Humor Sans"),
         plot.title = element_text(size = 12)) 
+#ggsave(here("images/agg_demand.png"))
 ```
 
 
