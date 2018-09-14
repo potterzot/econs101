@@ -2,7 +2,7 @@
 layout: page
 element: lecture
 title: Demand 2
-date: September 12, 2018
+date: September 14, 2018
 output: ioslides_presentation
 ---
 
@@ -25,18 +25,45 @@ library(pander)
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
-* Document camera was good
-* References to additional movie characters have become progressively more insistent, but I feel like I can't top JGL so I'm sticking with that.
+* Document camera was good.
 
 <h3 style="color: red;">Needs improvement: </h3>
-* Go over the writing assignment (we did this in the last class? #confused.gif)
+* Go over the writing assignment (we did this in the last class? #confused.gif).
+
+
+## Feeling conflicted { .flexbox .vcenter }
+
+```{r out.width = "70%"}
+knitr::include_graphics(here("images/jgl2.jpg"))
+```
+
+
+## Feeling conflicted { .flexbox .vcenter }
+
+```{r out.width = "70%"}
+knitr::include_graphics(here("images/js.jpg"))
+```
+
+
+## Feeling conflicted { .flexbox .vcenter }
+
+```{r out.width = "70%"}
+knitr::include_graphics(here("images/shrek.jpg"))
+```
+
+
+## Feeling conflicted { .flexbox .vcenter }
+
+```{r out.width = "70%"}
+knitr::include_graphics(here("images/hp.jpg"))
+```
 
 
 ## Aggregate Demand
 
 * __Aggregate demand__ - _The sum of all consumer demand. Demand curves are summed horizontally._
 
-```{r aggdemand}
+```{r aggdemand, out.width="90%"}
 d1 <- data.frame(
   Price = c(1, seq(10,200, 10))
 ) %>% mutate(Quantity = (200 - 10*Price^.5))/10
@@ -61,7 +88,7 @@ ggplot(data = d1plt) +
 ```
 
 
-## Substitutes and complements { .smaller }
+## Substitutes and complements
 
 * __Substitutes__ - Two goods are substitutes if a decrease in the price of one good __decreases__ demand for the other good.
 
@@ -74,7 +101,7 @@ _Examples include gas prices and milk._
 _Review Practice Problem 3._
 
 
-## Normal and inferior goods { .smaller }
+## Normal and inferior goods
 
 * __Normal goods__ - A normal good is one in which an increase in income __increases__ demand for that good or vice-versa.
 
