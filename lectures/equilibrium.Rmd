@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Changes in Equilibrium
+date: September 18, 2018
 output: ioslides_presentation
 ---
 
@@ -13,70 +13,103 @@ knitr::opts_chunk$set(message = FALSE)
 library(xkcd)
 library(tidyr)
 library(dplyr)
+library(here)
+library(pander)
 ```
+
+## Pregame { .smaller }
+
+* First quiz moved to __Monday, October 1st__. 
+* Class on Friday September 28th is cancelled (HOWEVER: extra credit for attending an alumni career networking event at 12pm in Paccar 202).
+* Writing assignment feedback should come Thursday, then you have one week to revise and resubmit if you are not happy with your grade.
 
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
-
+* I like that you explain things in depth and you never have to rush your lectures.
 
 <h3 style="color: red;">Needs improvement: </h3>
+* There is little incentive for me to continue practicing problems when the homework only gives 2 attempts.
+* The Sapling homework this week was bullshit and the questions could not have been more broad.
 
 
+## About Quiz 1
 
-## Example of plotting { .flexbox .vcenter }
+* 50 multiple choice questions
+* Practice quiz is on blackboard
+* Closed book
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+## Extra Credit Opportunity
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+* No class Friday, September 28th.
+* 5 extra credit points for attending this SES event (send me proof via email):
+
+```{r out.width="40%"}
+knitr::include_graphics(here("images/ses_network.jpg"))
 ```
 
 
-## Linking an Image
+## Back to supply and demand
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+* Demand shifts left and right in response to changes in income, population, tastes, etc...
+* Demand moves along the demand curve in response to price changes.
+
+* Supply shifts in response to productivity changes or other factors that affect cost.
+* Supply moves along the supply curve in response to price changes.
+
+* __economic rents__ - _The value captured by suppliers or consumers when a market is not in equilibrium._
+
+## A supply shift { .smaller }
 
 
+```{r out.width="70%"}
+knitr::include_graphics(here("images/figure-11-exercise-01.jpg"))
+```
 
-## WSU: An example
+* Explain why the bakeries would want to increase sales. Why can they not do so at the original price?
+* Describe how the actions of bakeries could adjust the industry to a new equilibrium.
+* What action might restaurants take while the market is not in equilibrium?
 
-WSU Tuition: \$5,134
 
-Cost of classes:
+## A demand shift
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+* [Figure 8-11 from The Economy](https://core-econ.org/the-economy/book/text/08.html#figure-8-11a)
+
+* [Figure 11-2 from The Economy](https://core-econ.org/the-economy/book/text/11.html#figure-11-2a)
+
+
+## OPEC oil supply shock
+
+```{r out.width="70%"}
+knitr::include_graphics(here("images/figure-11-09.jpg"))
+```
+
+
+## China and India oil demand shock
+
+```{r out.width="70%"}
+knitr::include_graphics(here("images/figure-11-10.jpg"))
+```
+
+
+## Surge pricing as equilibrium
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3bYzeAFZTT4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## Economic surplus
+
+[FIgure 8-9 from The Economy](https://core-econ.org/the-economy/book/text/08.html#figure-8-9a-a)
+
+
+## Example from world war I
+
+* [Dan Carlin's Hardcore History](https://www.dancarlin.com/home-hh-54/) (2:29 - 2:32).
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/jylLrfabDQe3tfHj1) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
