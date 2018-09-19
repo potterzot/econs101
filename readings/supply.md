@@ -1,7 +1,7 @@
 ---
 layout: page
 element: reading
-title: Production
+title: Supply and Equilibrium
 ---
 
 * Krugman and Wells: Module 6

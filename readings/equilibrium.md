@@ -1,7 +1,7 @@
 ---
 layout: page
 element: reading
-title: Production
+title: Changes in Equilibrium
 ---
 
 * Krugman and Wells: Module 7
