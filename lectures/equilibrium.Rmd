@@ -74,9 +74,7 @@ knitr::include_graphics(here("images/figure-11-exercise-01.jpg"))
 
 ## A demand shift
 
-* [Figure 8-11 from The Economy](https://core-econ.org/the-economy/book/text/08.html#figure-8-11a)
-
-* [Figure 11-2 from The Economy](https://core-econ.org/the-economy/book/text/11.html#figure-11-2a)
+* [Figure 11-2 on a market for hats from The Economy](https://core-econ.org/the-economy/book/text/11.html#figure-11-2a)
 
 
 ## OPEC oil supply shock
