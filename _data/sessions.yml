@@ -83,7 +83,7 @@
 - date: 2018-09-24 (M)
   modules: ['8']
   topics: ['Income Effects, Substitution, and Elasticity']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/c6yydQptWHoBvIOg2
 
 - date: 2018-09-26 (W)
   modules: ['']
@@ -92,88 +92,89 @@
 
 - date: 2018-09-28 (F)
   modules: ['']
-  topics: ['Quiz 1']
-  assignments: ['Quiz 1 In Class']
+  topics: ['NO CLASS']
+  assignments: ['']
   knowledge_check_url: 
 
 - date: 2018-10-01 (M)
+  modules: ['']
+  topics: ['Quiz 1']
+  assignments: ['Quiz 1 In Class']
+
+- date: 2018-10-03 (W)
   modules: ['9']
   topics: ['Interpretating Price Elasticity of Demand']
 
-- date: 2018-10-03 (W)
+- date: 2018-10-05 (F)
   modules: ['11']
   topics: ['Consumer and Producer Surplus']
-
-- date: 2018-10-05 (F)
-  modules: ['12']
-  topics: ['Efficiency and Markets']
   assignments: ['Homework 5 Due']
 
 - date: 2018-10-08 (M)
-  modules: ['13']
-  topics: ['Price Controls']
+  modules: ['12']
+  topics: ['Efficiency and Markets']
 
 - date: 2018-10-10 (W)
-  modules: ['14']
-  topics: ['Quantity Controls']
+  modules: ['13']
+  topics: ['Price Controls']
   assignments: ['Writing Assignment 2 Due']
 
 - date: 2018-10-12 (F)
-  modules: ['15']
-  topics: ['Taxes']
+  modules: ['14']
+  topics: ['Quantity Controls']
   assignments: ['Homework 6 Due']
 
 - date: 2018-10-15 (M)
+  modules: ['15']
+  topics: ['Taxes']
+
+- date: 2018-10-17 (W)
   modules: ['4']
   topics: ['Comparative Advantage and Trade']
 
-- date: 2018-10-17 (W)
+- date: 2018-10-19 (F)
   modules: ['16']
   topics: ['Gains from Trade']
-
-- date: 2018-10-19 (F)
-  modules: ['17']
-  topics: ['Supply, Demand, and Trade']
   assignments: ['Homework 7 Due']
 
 - date: 2018-10-22 (M)
+  modules: ['17']
+  topics: ['Supply, Demand, and Trade']
+
+- date: 2018-10-24 (W)
   modules: ['24']
   topics: ['Market Structure']
 
-- date: 2018-10-24 (W)
+- date: 2018-10-26 (F)
   modules: ['25', '26']
   topics: ['Perfect Competition']
-
-- date: 2018-10-26 (F)
-  modules: ['27']
-  topics: ['Long Run Outcomes in Perfect Competition']
   assignments: ['Homework 8 Due']
 
 - date: 2018-10-29 (M)
+  modules: ['27']
+  topics: ['Long Run Outcomes in Perfect Competition']
+
+- date: 2018-10-31 (W)
   modules: ['28']
   topics: ['Monopoly']
 
-- date: 2018-10-31 (W)
+- date: 2018-11-02 (F)
   modules: ['29']
   topics: ['Monopoly and Public Policy']
-
-- date: 2018-11-02 (F)
-  modules: ['30']
-  topics: ['Price Discrimination']
   assignments: ['Homework 9 Due']
 
 - date: 2018-11-05 (M)
-  modules: ['31']
-  topics: ['Oligopoly']
+  modules: ['30']
+  topics: ['Price Discrimination']
   assignments: ['Writing Assignment 3 Due']
 
 - date: 2018-11-07 (W)
-  modules: ['34']
-  topics: ['Monopolistic Competition']
+  modules: ['31']
+  topics: ['Oligopoly']
 
 - date: 2018-11-09 (F)
-  modules: ['35']
-  topics: ['Product Differentiation and Advertising']
+  modules: ['34']
+  topics: ['Monopolistic Competition']
   assignments: ['Homework 10 Due']
 
 - date: 2018-11-12 (M)
@@ -183,11 +184,12 @@
 - date: 2018-11-14 (W)
   modules: ['']
   topics: ['Quiz 2 Review']
-
-- date: 2018-11-16 (F)
-  modules: ['']
   topics: ['Quiz 2']
   assignments: ['Quiz 2 In Class']
+
+- date: 2018-11-16 (F)
+  modules: ['35']
+  topics: ['Product Differentiation and Advertising']
 
 - date: 2018-11-19 (M)
   modules: ['']

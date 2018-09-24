@@ -1,0 +1,63 @@
+---
+layout: page
+element: lecture
+title: Income Effects, Substitution, and Elasticity
+date: September 24, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+library(here)
+library(ggplot2)
+```
+
+## Feedback
+
+<h3 style="color: green;">Good: </h3>
+* I like that you make sure that the class is still with you before moving on to the next topic. 
+
+<h3 style="color: red;">Needs improvement: </h3>
+* If you do a small like end of the week review on Friday for like 5 minutes of key points would be nice. 
+* The sapling questions where you drag answers into boxes is confusing and doesn't give good feedback.
+* Why have grades never been transferred over to blackboard?
+
+## Substitution effects
+
+* __Substitution Effect__ - _The effect (on quantity demanded) of a change in the price of a good as consumers substitute a good that has become relatively cheaper for the good that has become relatively more expensive._ 
+
+
+## Income effects
+
+* __Income Effect__ - _The effect (on quantity demanded) of a change in the price of a good due to the new price's effect on the consumer's purchasing power._
+
+## Graphing Income and Substitution Effects { .flexbox .vcenter }
+
+```{r inceff}
+knitr::include_graphics(here("images/income-effects.png"))
+```
+
+
+## Giffen Goods
+
+* __Giffen Good__ - _A good that is an inferior good and that requires a substantial portion of the consumer's income. As a result, for a price increasee, demand will actually increase, since the consumer becomes relatively poorer and so spends even more money on the inferior good._
+
+
+##
+
+<iframe src="https://giphy.com/embed/o4K79OHW1ql7W" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/collision-muskox-o4K79OHW1ql7W">via GIPHY</a></p>
+
+## { .flexbox .vcenter }
+
+EXAMPLE TIME
+
+## Wrapping Up
+
+* Complete the [knowledge check](https://goo.gl/forms/c6yydQptWHoBvIOg2) for today's participation point.
+
+* Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
