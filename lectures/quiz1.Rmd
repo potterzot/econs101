@@ -1,0 +1,32 @@
+---
+layout: page
+element: lecture
+title: Quiz 1
+date: October 1, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+library(here)
+```
+
+## Quiz 1 { .flexbox .vcenter }
+
+```{r fig, out.width='70%'}
+knitr::include_graphics(here("images/odds_luck.jpg"))
+```
+
+
+## Quiz 1 Notes
+
+* 50 questions: I suggest you do the easy questions first, then cycle back to the harder ones.
+* No notes, no calculators, no books.
+* Make sure you turn your exam in with your answer sheet!
+* Good luck, crush it!
+ 
