@@ -41,9 +41,9 @@ ggplot(d) +
   #xkcdline(aes(x = .5, xend = .5, y = 0, yend = 1, color = "red", size = 2)) + 
   geom_segment(aes(x = .5, xend = .5, y = 0, yend = 1), color = "red", size = .5) +
   xkcdaxis(c(0,1), c(0,1)) + 
-  ggtitle("Perfectly inelastic demand curve (elasticity = zero)") + 
+  ggtitle("Perfectly inelastic demand (elasticity = zero)") + 
   xlab("Quantity demanded") + ylab("Price") +
-  theme(text = element_text(size = 16, family = "Humor Sans")) 
+  theme(text = element_text(size = 14, family = "Humor Sans")) 
 ```
 
 
@@ -55,9 +55,9 @@ ggplot(d) +
   #xkcdline(aes(x = .5, xend = .5, y = 0, yend = 1, color = "red", size = 2)) + 
   geom_segment(aes(x = 0, xend = 1, y = .5, yend = .5), color = "red", size = .5) +
   xkcdaxis(c(0,1), c(0,1)) + 
-  ggtitle("Perfectly elastic demand curve (elasticity = infinity)") + 
+  ggtitle("Perfectly elastic demand (elasticity = infinity)") + 
   xlab("Quantity demanded") + ylab("Price") +
-  theme(text = element_text(size = 16, family = "Humor Sans")) 
+  theme(text = element_text(size = 14, family = "Humor Sans")) 
 ```
 
 
