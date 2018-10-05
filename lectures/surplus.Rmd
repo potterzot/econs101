@@ -18,7 +18,7 @@ library(dplyr)
 ## Pregame
 
 * Writing Assignment 2 (__Due 10/10__): Submit via blackboard
-* 
+* Mean exam score: 61%. This is 10 percentage points higher than for other ECONS101 classes!
 
 ## Price elasticity of demand
 
