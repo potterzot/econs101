@@ -98,17 +98,19 @@
 
 - date: 2018-10-01 (M)
   modules: ['']
+  topics: ['Review']
+  assignments: ['']
+
+- date: 2018-10-03 (W)
+  modules: ['']
   topics: ['Quiz 1']
   assignments: ['Quiz 1 In Class']
 
-- date: 2018-10-03 (W)
-  modules: ['9']
-  topics: ['Interpretating Price Elasticity of Demand']
-
 - date: 2018-10-05 (F)
-  modules: ['11']
-  topics: ['Consumer and Producer Surplus']
+  modules: ['9, 11']
+  topics: ['Interpretating Price Elasticity of Demand and Consumer and Producer Surplus']
   assignments: ['Homework 5 Due']
+  knowledge_check_url: https://goo.gl/forms/bVuvvNN94gZktiz13
 
 - date: 2018-10-08 (M)
   modules: ['12']
@@ -173,8 +175,8 @@
   topics: ['Oligopoly']
 
 - date: 2018-11-09 (F)
-  modules: ['34']
-  topics: ['Monopolistic Competition']
+  modules: ['']
+  topics: ['Quiz 2 Review']
   assignments: ['Homework 10 Due']
 
 - date: 2018-11-12 (M)
@@ -183,13 +185,12 @@
 
 - date: 2018-11-14 (W)
   modules: ['']
-  topics: ['Quiz 2 Review']
   topics: ['Quiz 2']
   assignments: ['Quiz 2 In Class']
 
 - date: 2018-11-16 (F)
-  modules: ['35']
-  topics: ['Product Differentiation and Advertising']
+  modules: ['34']
+  topics: ['Monopolistic Competition']
 
 - date: 2018-11-19 (M)
   modules: ['']
@@ -205,26 +206,26 @@
   assignments: []
 
 - date: 2018-11-26 (M)
-  modules: ['36']
-  topics: ['Externalities']
+  modules: ['35']
+  topics: ['Product Differentiation and Advertising']
 
 - date: 2018-11-28 (W)
-  modules: ['37']
-  topics: ['Externalities and Public Policy']
+  modules: ['36']
+  topics: ['Externalities']
+  assignments: ['Writing Assignment 4 Due']
 
 - date: 2018-11-30 (F)
-  modules: ['38']
-  topics: ['Public Goods and Common Resources']
+  modules: ['37']
+  topics: ['Externalities and Public Policy']
   assignments: ['Homework 11 Due']
 
 - date: 2018-12-03 (M)
-  modules: ['']
-  topics: ['TBD']
+  modules: ['38']
+  topics: ['Public Goods and Common Resources']
 
 - date: 2018-12-05 (W)
   modules: ['']
   topics: ['TBD']
-  assignments: ['Writing Assignment 4 Due']
 
 - date: 2018-12-07 (F)
   modules: ['']

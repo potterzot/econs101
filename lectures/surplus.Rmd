@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: 'Interpretating Price Elasticity of Demand and Consumer and Producer Surplus'
+date: October 05, 2018
 output: ioslides_presentation
 ---
 
@@ -15,68 +15,80 @@ library(tidyr)
 library(dplyr)
 ```
 
-## Feedback
+## Pregame
 
-<h3 style="color: green;">Good: </h3>
+* Writing Assignment 2 (__Due 10/10__): Submit via blackboard
+* 
+
+## Price elasticity of demand
+
+* __Price Elasticity of Demand__ - _The change in quantity demanded that results from a change in price._
+
+$$\varepsilon = \frac{\Delta Q / Q}{\Delta P / P}.$$
 
 
-<h3 style="color: red;">Needs improvement: </h3>
+## Two extremes of price elasticity of demand
 
+* Price elasticity of demand is zero: Change in quantity demanded for a (any) change in price is zero.
 
+* Price elasticity of demand is infinite: Change in quantity demanded for a (any) change in price is infinite.
 
-## Example of plotting { .flexbox .vcenter }
+## Zero elasticity
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
-
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
-
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+```{r zero}
+d <- data.frame(x = .5, y = seq(0,1, length.out = 100))
+ggplot(d) + 
+  #xkcdline(aes(x = .5, xend = .5, y = 0, yend = 1, color = "red", size = 2)) + 
+  geom_segment(aes(x = .5, xend = .5, y = 0, yend = 1), color = "red", size = .5) +
+  xkcdaxis(c(0,1), c(0,1)) + 
+  ggtitle("Perfectly inelastic demand curve (elasticity = zero)") + 
+  xlab("Quantity demanded") + ylab("Price") +
+  theme(text = element_text(size = 16, family = "Humor Sans")) 
 ```
 
 
-## Linking an Image
+## Infinite elasticity
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+```{r infinite}
+d <- data.frame(x = .5, y = seq(0,1, length.out = 100))
+ggplot(d) + 
+  #xkcdline(aes(x = .5, xend = .5, y = 0, yend = 1, color = "red", size = 2)) + 
+  geom_segment(aes(x = 0, xend = 1, y = .5, yend = .5), color = "red", size = .5) +
+  xkcdaxis(c(0,1), c(0,1)) + 
+  ggtitle("Perfectly elastic demand curve (elasticity = infinity)") + 
+  xlab("Quantity demanded") + ylab("Price") +
+  theme(text = element_text(size = 16, family = "Humor Sans")) 
+```
 
 
 
-## WSU: An example
+## Surplus
 
-WSU Tuition: \$5,134
+__Consumer Surplus__ - _The difference between what a buyer would have been willing to pay and the price they pay._
 
-Cost of classes:
+__Producer Surplus__ - _The difference between the price the good is sold for and the seller's cost to produce._
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+## Surplus { .flexbox .vcenter }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KWbi-Lq1P28?start=40" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Surplus
+
+* __What is Edward's surplus?__
+
+> * Willingness to pay (WTP) - Price = 4000 - 3000 = 1000.
+
+* __What is Vivian's surplus?__
+
+> * Price - Willingness to sell (or just cost) = 3000 - 2000 = 1000.
+
+## Consumer and producer surplus
+
+* See in class notes or module for more depth as well as discussion of Yakima Basin Irrigation Project.
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/bVuvvNN94gZktiz13) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
