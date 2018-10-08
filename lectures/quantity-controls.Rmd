@@ -2,7 +2,7 @@
 layout: page
 element: lecture
 title: Template
-date: August 22, 2018
+date: October 12, 2018
 output: ioslides_presentation
 ---
 
@@ -19,9 +19,7 @@ library(dplyr)
 
 <h3 style="color: green;">Good: </h3>
 
-
 <h3 style="color: red;">Needs improvement: </h3>
-
 
 
 ## Example of plotting { .flexbox .vcenter }
@@ -77,6 +75,6 @@ Cost of classes:
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/daWlbF0C0fBRhcWn2) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.

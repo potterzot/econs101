@@ -115,16 +115,20 @@
 - date: 2018-10-08 (M)
   modules: ['12']
   topics: ['Efficiency and Markets']
+  knowledge_check_url: https://goo.gl/forms/KQTEGoLhpf3dJ9jJ2
 
 - date: 2018-10-10 (W)
   modules: ['13']
   topics: ['Price Controls']
   assignments: ['Writing Assignment 2 Due']
+  knowledge_check_url: https://goo.gl/forms/l8aM3mDo6hZnirDi1
 
 - date: 2018-10-12 (F)
   modules: ['14']
   topics: ['Quantity Controls']
   assignments: ['Homework 6 Due']
+  knowledge_check_url: https://goo.gl/forms/daWlbF0C0fBRhcWn2
+
 
 - date: 2018-10-15 (M)
   modules: ['15']

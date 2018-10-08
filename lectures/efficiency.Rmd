@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Efficiency and Markets
+date: October 07, 2018
 output: ioslides_presentation
 ---
 
@@ -10,73 +10,109 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
-library(xkcd)
-library(tidyr)
+library(here)
 library(dplyr)
+library(tidyr)
+library(xkcd)
 ```
 
-## Feedback
-
-<h3 style="color: green;">Good: </h3>
-
-
-<h3 style="color: red;">Needs improvement: </h3>
+## Pregame
 
 
 
-## Example of plotting { .flexbox .vcenter }
+## Total Surplus { .smaller }
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
+* __Total Surplus__ - Total Surplus is the value to both _consumers_ and _producers_ of all the transactions in a market. It is the sum of producer surplus and consumer surplus.
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+$$TS = PS + CS.$$
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+```{r surplus_fig, out.height="50%"}
+knitr::include_graphics(here("images/surplus.png"))
+```
+
+[Image source.]("https://en.wikipedia.org/w/index.php?curid=18694198")
+
+
+## Larger Consumer Surplus
+
+```{r psurplus}
+q_max <- 1000
+d <- data.frame(Price = seq(1, 100, length.out = 1000))
+d$Demand <- q_max - 10*d$Price
+d$Supply <- 20*d$Price
+
+dplt <- gather(d, key = Variable, value = Quantity, -Price) %>%
+  filter(Quantity > 0)
+
+p_eqm <- 33
+q_eqm <- 665
+
+ggplot(data = dplt) + 
+  geom_segment(aes(x = 0, xend = q_eqm, y = p_eqm, yend = p_eqm), linetype = 2, color = "gray30", size = .2) +
+  geom_segment(aes(x = q_eqm, xend = q_eqm, y = 0, yend = p_eqm), linetype = 2, color = "gray30", size = .3) + 
+  geom_line(aes(x = Quantity, y = Price, group = Variable, color = Variable), size = 1) +
+  annotate("text", x = q_eqm+200, y = p_eqm+1, label = paste0("(Q = ", q_eqm, ", P = ", p_eqm, ")")) +
+  xkcdaxis(c(0,q_max), c(0,max(d$Price))) + 
+  ggtitle("Larger Consumer Surplus") + 
+  xlab("Quantity") + ylab("Price") +
+  theme(text = element_text(size = 16, family = "Humor Sans")) 
+
 ```
 
 
-## Linking an Image
+## Larger Producer Surplus
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+```{r csurplus}
+q_max <- 1000
+d <- data.frame(Price = seq(1, 100, length.out = 1000))
+d$Demand <- q_max - 25*d$Price
+d$Supply <- 20*d$Price
+
+dplt <- gather(d, key = Variable, value = Quantity, -Price) %>%
+  filter(Quantity > 0)
+
+p_eqm <- 22
+q_eqm <- 445
+
+ggplot(data = dplt) + 
+  geom_segment(aes(x = 0, xend = q_eqm, y = p_eqm, yend = p_eqm), linetype = 2, color = "gray30", size = .2) +
+  geom_segment(aes(x = q_eqm, xend = q_eqm, y = 0, yend = p_eqm), linetype = 2, color = "gray30", size = .3) + 
+  geom_line(aes(x = Quantity, y = Price, group = Variable, color = Variable), size = 1) +
+  annotate("text", x = q_eqm+220, y = p_eqm, label = paste0("(Q = ", q_eqm, ", P = ", p_eqm, ")")) +
+  xkcdaxis(c(0,q_max), c(0,max(d$Price))) + 
+  ggtitle("Larger Producer Surplus") + 
+  xlab("Quantity") + ylab("Price") +
+  theme(text = element_text(size = 16, family = "Humor Sans")) 
+```
 
 
+## Market Interventions
 
-## WSU: An example
+__The government could:__
 
-WSU Tuition: \$5,134
+* __Reallocate between consumers__ - _redistribute goods from a consumer who bought it to a consumer who didn't._
+* __Reallocate between sellers__ - _redistribute goods from a producers who sells to a producer who doesn't._
+* __Change the quantity traded__ - _set a limit on the quantity sold._
 
-Cost of classes:
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+## When Markets Work Well
+
+* Lots of producers and consumers (not enough sellers leads to monopoly).
+* Well defined property rights (who owns what means of production, what income, etc...).
+* Enough information about the goods being sold (uncertainty makes purchasing difficult).
+
+
+## When Markets Don't Work Well
+
+* __Externalities__ - _If a market transaction leads to an externality (i.e. production damages others via pollution)._
+* __Poorly defined property rights__ - _It's hard to sell or buy when there's uncertainty about ownership._
+* __Monopoly or Oligopoly__ - _When there aren't enough sellers, monopoly producers can charge excess prices._
+* __Monopsony__ - _When there are only a few buyers, they can withold transcations to force producers to sell for low prices._
+* __Thinness__ - _If there are not many transactions, (i.e. the market is 'thin') then there are opportunities for arbitrage._
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/KQTEGoLhpf3dJ9jJ2) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
