@@ -23,6 +23,9 @@ library(dplyr)
 <h3 style="color: red;">Needs improvement: </h3>
 
 
+## Percet competition is rare
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5hJF8zNJg5I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Example of plotting { .flexbox .vcenter }
 

@@ -18,7 +18,79 @@ library(xkcd)
 
 ## Pregame
 
+* I'll upload midterm grades Tuesday by 12pm.
+* Wednesday writing assignment is due by 5pm!
+* Extra credit opportunity: tonight (10/08) at 5:30pm in the Ensminger Pavilion. I'll be there to talk about Peace Corps!
 
+
+## Writing Assignment 2 { .smaller }
+
+The situation:
+
+* No, not [that situation](http://entertainment.ie/celebrity-gossip/Mike-The-Situation-from-Jersey-Shore-sentenced-to-8-months-in-jail-for-tax-evasion/408819.htm).
+* Three markets: Gasoline, fast food, and home improvement.
+* [The article](https://www.thestreet.com/investing/rising-gas-prices-wont-hurt-retailers-for-now-14588845) suggests that consumers of gas have two different elasticities depending on the price point. 
+  * what are those elasticities (i.e. which section is relatively inelastic and which is relatively elastic)?
+  * what is the price point at which the demand curve becomes more (in)elastic?
+  * which part of the demand curve is the price at now?
+  * how does this affect fast food and home improvement? Are they compliments or substitutes?
+  * how does this affect online retail?
+
+
+# Nobel Prize in Economics
+
+
+## Nobel Prize in Economics 2018
+
+<iframe src="https://giphy.com/embed/aQYR1p8saOQla" width="435" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/see-heavy-aQYR1p8saOQla">via GIPHY</a></p>
+
+
+## Nobel Prize in Economics 2018
+
+* Paul Romer ([@paulmromer](https://twitter.com/paulmromer), [website](https://paulromer.net/)) - How innovation affects growth.
+* [William Nordhaus] ([website](https://sites.google.com/site/williamdnordhaus/papers_speeches)) - Economic effects of climate.
+
+## Romer's charter cities
+
+The problem:
+
+* Worldwide there are lots of people who don't own land, so there is increasing immigration.
+
+If we want equal treatment and we want democracy, the solution is difficult because _enforcing borders is expensive and not particularly effective_.
+
+## Romer's charter cities
+
+```{r, out.width="100%"}
+knitr::include_graphics(here("images/romer_aaea2018.jpg"))
+```
+
+
+## Romer's charter cities
+
+* If we want free mobility: people move in with different cultures and norms, we lose either equal treatment (if people are from a society that does not value gender equality) or democracy (if people are from a non-democratic society).
+
+* If we want democracy: have to either restrict free mobility or restrict the ability of immigrants to vote, so we lose equal treatment.
+
+* If we want equal treatment: have to either restrict free mobility or have an autocratic government, so we lose democracy.
+
+
+## Romer's charter cities
+
+__Solution:__ create new cities in the middle of unused space (i.e. the desert)
+
+* Lay out the streets
+* Allow people to stake claims anywhere but the street
+* Worry about services like water and sewer later (but put them under the streets like we currently do)
+
+
+## Romer's charter cities
+
+```{r burning_man, out.width = "100%"}
+knitr::include_graphics(here("images/burning_man.jpg"))
+```
+(Burning man city)
+
+# Back to measuring economic benefit
 
 ## Total Surplus { .smaller }
 
@@ -93,6 +165,7 @@ __The government could:__
 * __Reallocate between consumers__ - _redistribute goods from a consumer who bought it to a consumer who didn't._
 * __Reallocate between sellers__ - _redistribute goods from a producers who sells to a producer who doesn't._
 * __Change the quantity traded__ - _set a limit on the quantity sold._
+* __Set a price__ - _enforce a lower or higher price._
 
 
 ## When Markets Work Well
