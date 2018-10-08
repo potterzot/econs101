@@ -47,7 +47,7 @@ The situation:
 
 ## Nobel Prize in Economics 2018
 
-* Paul Romer ([@paulmromer](https://twitter.com/paulmromer), [website](https://paulromer.net/)) - How innovation affects growth.
+* Paul Romer ([twitter](https://twitter.com/paulmromer), [website](https://paulromer.net/)) - How innovation affects growth.
 * [William Nordhaus] ([website](https://sites.google.com/site/williamdnordhaus/papers_speeches)) - Economic effects of climate.
 
 ## Romer's charter cities
