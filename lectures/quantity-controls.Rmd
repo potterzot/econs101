@@ -1,7 +1,7 @@
 ---
 layout: page
 element: lecture
-title: Template
+title: Quantity Controls
 date: October 12, 2018
 output: ioslides_presentation
 ---
@@ -10,67 +10,66 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
 ```
 
+## Pregame
+
+* [Slides on climate and agriculture](https://potterzot.com/research/climateImpact/agImpact_NWCC2018.html) that I presented at the conference this week.
+
+* [This article](http://www.anderson.ucla.edu/faculty-and-research/anderson-review/minimum-wage-primer-leamer) on the minimum wage does a good job of explaining the long debate and difficult process of trying to test whether the minimum wage actually leads to less employment or not.
+
+* [This youtuber](https://www.youtube.com/watch?v=uCZ58OJjrFU) explains quotas while wearing a jedi costume (though he also is talking about trade, which we haven't gotten to yet).
+
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
+* Thought the guest speaker explained the concepts well
 
 <h3 style="color: red;">Needs improvement: </h3>
+* The consumer surplus and producer surplus is still kind of confusing. 
+
+## Catching up on price controls
+
+- __Price Floor__ - A minimum price at which a product can be sold. Typically this is applied by purchasing excess supply (driving up the price to the set price floor).
 
 
-## Example of plotting { .flexbox .vcenter }
+## Effect of a price floor
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
+```{r butter, out.width = "90%"}
+knitr::include_graphics(here("images/butter.png"))
+```
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+## Effect of a price floor
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+```{r butter_price_floor, out.width = "90%"}
+knitr::include_graphics(here("images/butter_price_floor.png"))
 ```
 
 
-## Linking an Image
+## Why a Price Floor?
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+- Society values an industry and is willing to pay to support it even if it is not profitable.
+- An industry is politically powerful and can lobby for price supports.
+
+## Quotas
+
+- __Quantity Controls / Quotas__ - A __Quota__ is a government limit on the amount of a product that can be produced. This is typically done by allowing only licensed producers to produce, and in limited amount.
 
 
+## Effect of a quota
 
-## WSU: An example
+```{r quota_dwl, out.width = "90%"}
+knitr::include_graphics(here("images/quota_dwl.png"))
+```
 
-WSU Tuition: \$5,134
 
-Cost of classes:
+## Why a Quota?
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+- Protect renewable resources from over-extraction.
 
 
 ## Wrapping Up
