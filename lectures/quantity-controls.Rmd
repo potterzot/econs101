@@ -59,6 +59,8 @@ knitr::include_graphics(here("images/butter_price_floor.png"))
 
 - __Quantity Controls / Quotas__ - A __Quota__ is a government limit on the amount of a product that can be produced. This is typically done by allowing only licensed producers to produce, and in limited amount.
 
+E.g., licenses to operate a business do the same thing. Liquor licenses, bar licenses, doctor and lawyer licensing, etc...
+
 
 ## Effect of a quota
 
@@ -70,6 +72,20 @@ knitr::include_graphics(here("images/quota_dwl.png"))
 ## Why a Quota?
 
 - Protect renewable resources from over-extraction.
+- Limit imports from other countries or from competing industries.
+- Restrict competition from other firms.
+
+## Licensing dilemma's
+
+Who should be licensed?
+
+- Hairdressers?
+- Pet sitters?
+- Childcare providers?
+- Plumbers?
+- Electricians?
+- Lawyers?
+- Doctors?
 
 
 ## Wrapping Up
