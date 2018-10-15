@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Taxes
+date: October 15, 2018
 output: ioslides_presentation
 ---
 
@@ -10,73 +10,121 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
 ```
 
-## Feedback
 
-<h3 style="color: green;">Good: </h3>
+## Why a tax?
+- To fund group investments: 
+  - roads
+  - schools
+  - defense
+  - health care
+  - parks
+  - research
+- To encourage or discourage behavior.
 
 
-<h3 style="color: red;">Needs improvement: </h3>
+## Not always an effective behavior deterrent...
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fWSKU3-52pk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
+## Types of taxes
 
-## Example of plotting { .flexbox .vcenter }
+Taxes can be levied on almost anything:
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
+- Income
+- Property
+- Capital gains
+- Estate
+- Transportation
+- Imports
+- Etc...
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+    "In this world, nothing can be said to be certain except death and taxes." - Benjamin Franklin
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+
+## Sales taxes
+
+* __Excise tax__ - A tax on the sale of a good or service. It is usually composed of a local and state component.
+
+[Washington DOR Sales Tax Schedule](https://dor.wa.gov/get-form-or-publication/forms-subject/local-sales-use-tax-rates-citycounty)
+
+(A similar form exists for property taxes.)
+
+
+## Impact of a sales tax { .flexbox .vcenter }
+
+```{r sales_tax, out.width="100%"}
+knitr::include_graphics(here("images/excise_tax.png"))
 ```
 
 
-## Linking an Image
+## Tax impact with elastic demand { .flexbox .vcenter }
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+```{r gas_tax, out.width="100%"}
+knitr::include_graphics(here("images/tax_gas.png"))
+```
+
+## Tax impact with elastic supply { .flexbox .vcenter }
+
+```{r parking_tax, out.width="100%"}
+knitr::include_graphics(here("images/tax_parking.png"))
+```
 
 
+## Taxes can be... { .smaller }
 
-## WSU: An example
+* __Progressive tax__ - A tax that __increases__ the percentage paid as income increases.
+* __Regressive tax__ - A tax that __decreases__ the percentage paid as income increases.
+* __Proportional tax__ - A tax that is the __same__ percentage of income regardless of income level.
 
-WSU Tuition: \$5,134
+Income tax in particular can be progressive ([Source](https://taxfoundation.org/2018-tax-brackets/)):
 
-Cost of classes:
+```{r income_tax_rates, out.width = "50%"}
+knitr::include_graphics(here("images/tax_rates.png"))
+```
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+
+## Why U.S. income taxes are so difficult to file
+
+[Adam Ruins Everything on taxes](http://videos.criticalcommons.org/transcoded/http/www.criticalcommons.org/Members/jtierney86/clips/adam-ruins-everything-rent-seeking/video_file/mp4-high/rent-seeking-mp4.mp4?_=1)
+
+
+## Subsidies / Tax Breaks
+
+- A subsidy is a negative tax in which the government gives money.
+
+Examples: Farm subsidies, corporate subsidies
+
+
+## Subsidies / Tax Breaks: Competition over companies
+
+Cities often compete to incentivize a company to move there by giving significant tax breaks. Often the cost of these tax breaks is higher than the benefit of the company.
+
+```{r amzn_hq2, out.width = "100%"}
+knitr::include_graphics(here("images/amzn_hq2.png"))
+```
+
+[Source](https://www.citylab.com/equity/2018/05/the-hypocrisy-of-amazons-hq2-process/560072/)
+
+
+## Subsidies / Tax Breaks: Support for low-income families
+
+- The earned income tax credit (EITC) is a negative income tax for families with low incomes (\$6000 - \$15000 for no children, \$10000-\$40000 for one child).
+- An interesting proposal much discussed globally is the __Universal Basic Income__ (UBI), in which all residents receive a subsidy, regardless of their income.
+
+## Universal Basic Income
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kl39KHS07Xc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/KvwFW0Ocin5JwJIZ2) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
