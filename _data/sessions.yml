@@ -138,56 +138,56 @@
 - date: 2018-10-17 (W)
   modules: ['4']
   topics: ['Comparative Advantage and Trade']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/RBLnvYRWuN3NHYW52
 
 - date: 2018-10-19 (F)
   modules: ['16']
   topics: ['Gains from Trade']
   assignments: ['Homework 7 Due']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/Vj9G2EhOTbUiYLR63
 
 - date: 2018-10-22 (M)
   modules: ['17']
   topics: ['Supply, Demand, and Trade']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/MhpnJ1i7jM75U2iY2
 
 - date: 2018-10-24 (W)
   modules: ['24']
   topics: ['Market Structure']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/ljVuosQeTFgthKKg1 
 
 - date: 2018-10-26 (F)
   modules: ['25', '26']
   topics: ['Perfect Competition']
   assignments: ['Homework 8 Due']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/WRnp2tNm6OpgmMQl1
 
 - date: 2018-10-29 (M)
   modules: ['27']
   topics: ['Long Run Outcomes in Perfect Competition']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/I7VSfzJRDpmpIO7w2
 
 - date: 2018-10-31 (W)
   modules: ['28']
   topics: ['Monopoly']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/gElhIUJZRPdRH6Od2
 
 - date: 2018-11-02 (F)
   modules: ['29']
   topics: ['Monopoly and Public Policy']
   assignments: ['Homework 9 Due']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/Pi2DliCf7PioBjQV2 
 
 - date: 2018-11-05 (M)
   modules: ['30']
   topics: ['Price Discrimination']
   assignments: ['Writing Assignment 3 Due']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/IGkuW3QmKPx04tfD2 
 
 - date: 2018-11-07 (W)
   modules: ['31']
   topics: ['Oligopoly']
-  knowledge_check_url: 
+  knowledge_check_url: https://goo.gl/forms/KvURpjXMrZREz6bj2
 
 - date: 2018-11-09 (F)
   modules: ['']
@@ -221,24 +221,29 @@
 - date: 2018-11-26 (M)
   modules: ['34']
   topics: ['Monopolistic Competition']
+  knowledge_check_url: https://goo.gl/forms/LRoznZB2nyQW1Jl52
 
 - date: 2018-11-28 (W)
   modules: ['35']
   topics: ['Product Differentiation and Advertising']
   assignments: ['Writing Assignment 4 Due']
+  knowledge_check_url: https://goo.gl/forms/VpShioFFtkIKXQIN2
 
 - date: 2018-11-30 (F)
   modules: ['36']
   topics: ['Externalities']
   assignments: ['Homework 11 Due']
+  knowledge_check_url: https://goo.gl/forms/dvRzD93Wp4JwAFS22
 
 - date: 2018-12-03 (M)
   modules: ['37']
   topics: ['Externalities and Public Policy']
+  knowledge_check_url: https://goo.gl/forms/FU9PC7q5SUFLsaPH2
 
 - date: 2018-12-05 (W)
   modules: ['38']
   topics: ['Public Goods and Common Resources']
+  knowledge_check_url: https://goo.gl/forms/SLUopNpSuVmM5ttx2
 
 - date: 2018-12-07 (F)
   modules: ['']

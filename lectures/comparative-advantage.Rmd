@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Comparative Advantage and Trade
+date: October 17, 2018
 output: ioslides_presentation
 ---
 
@@ -10,73 +10,108 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
 ```
 
-## Feedback
+## A brief aside on the opiod epidemic
 
-<h3 style="color: green;">Good: </h3>
-
-
-<h3 style="color: red;">Needs improvement: </h3>
+"In 2016, nearly 64,000 people died of drug overdoses in America — with synthetic opioids (such as fentanyl), heroin, and common opioid painkillers (like Percocet and OxyContin) topping other causes of overdose, according to new data from the Centers for Disease Control and Prevention (CDC). That’s a higher death toll than guns, car crashes, and HIV/AIDS ever killed in one year in the US, and a higher death toll than all US military casualties in the Vietnam and Iraq wars combined." - Vox
 
 
+## How did it start? { .smaller }
 
-## Example of plotting { .flexbox .vcenter }
+- In the late 1990s / early 2000s doctors became very concerned about pain management.
+- A few studies showed opioids such as oxycontin were less addictive than thought.
+- Doctors began prescribing more, and were encouraged to prescribe more both by the medical establishment and by pharmaceutical companies.
+- More studies found high rates of addiction and tolerance.
+- Doctors stopped prescribing, patients who were addicted moved to illegal opioids.
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+## How does this relate to economics? { .smaller }
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+- We have limited resources, so as a society we decide what we value enough to dedicate resources to.
+- Do we have a moral obligation to help opioid addicts who became addicted because of doctor prescriptions?
+- Do we have a moral obligation to help opioid addicts who became addicted for some other reason?
+- How does your stance change if this is someone in Pullman? In your dorm/apt? Your friend? Your family?
+
+
+## How does this relate to economics? { .smaller }
+
+- In-group / out-group behavior
+- "Social distance"
+- Which is more moral? Doing things out of duty or honor? Doing things because you want to be a good person?
+
+- _How we build policy depends on how we value these things. Whether or not we support a UBI is determined more by these aspects than by logic or facts._
+
+
+## More information
+
+ - [Science VS podcast](https://www.gimletmedia.com/science-vs/opioids-how-america-got-hooked)
+ - [New York Times](https://www.nytimes.com/2017/10/26/us/opioid-crisis-public-health-emergency.html)
+ - [Vox](https://www.vox.com/science-and-health/2017/8/3/16079772/opioid-epidemic-drug-overdoses)
+
+
+## Eye Bleach
+
+```{r eyebleach, fig.cap = "Source: Reddit"}
+knitr::include_graphics(here("images/eyebleach.jpg"))
 ```
 
 
-## Linking an Image
+## It's a great time to learn about trade!
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+```{r tradewar, fig.cap = "Source: China Daily", out.width = "80%"}
+knitr::include_graphics(here("images/trade_war.jpg"))
+```
+
+[A good practice video for trade thought experiments.](https://youtu.be/HneRNVtahYw)
+
+## What we'll talk about
+
+- Why trade occurs.
+- How it improves living standards.
+- Ways that trade has lead to worse outcomes in some areas.
 
 
+## What is good about trade { .smaller }
 
-## WSU: An example
+From Krugman and Wells:
 
-WSU Tuition: \$5,134
+- The key to a much better standard of living __for everyone__ is trade.
+- The reason we have an economy is that there are gains from trade.
+- Gains from trade arise from specialization.
 
-Cost of classes:
+(But it's __not__ better for everyone... see [Autor, Dorn, Hanson (2016)](https://www.annualreviews.org/doi/abs/10.1146/annurev-economics-080315-015041), and a [video of Autor discussing his work](https://youtu.be/c07dcInoG0Y).)
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+
+## There are four important things to know about trade
+
+- __Absolute Advantage__ - A firm has an __absolute advantage__ when they can produce more of a good than another firm, or when they can produce that good more efficiently. E.g. the U.S. produces some agricultural products such as corn very cheaply because corn is highly mechanized.
+- __Comparative Advantage__ - A firm has a __comparative advantage__ if the _opportunity cost_ is lower for that firm than for another.
+- __Terms of Trade__ - The exchange rate between two goods that facilitates trade between countries.
+
+
+## Absolute advantage examples
+
+```{r abs_adv, out.widht ="90%"}
+knitr::include_graphics(here("images/absolute_advantage.jpg"))
+```
+
+
+## Comparative advantage examples
+
+```{r com_adv, out.widht ="90%"}
+knitr::include_graphics(here("images/comparative_advantage.jpg"))
+```
+
+
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/RBLnvYRWuN3NHYW52) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
