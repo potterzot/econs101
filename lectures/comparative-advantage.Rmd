@@ -18,7 +18,7 @@ library(dplyr)
 
 ## A brief aside on the opiod epidemic
 
-"In 2016, nearly 64,000 people died of drug overdoses in America — with synthetic opioids (such as fentanyl), heroin, and common opioid painkillers (like Percocet and OxyContin) topping other causes of overdose, according to new data from the Centers for Disease Control and Prevention (CDC). That’s a higher death toll than guns, car crashes, and HIV/AIDS ever killed in one year in the US, and a higher death toll than all US military casualties in the Vietnam and Iraq wars combined." - Vox
+"In 2016, nearly 64,000 people died of drug overdoses in America — with synthetic opioids (such as fentanyl), heroin, and common opioid painkillers (like Percocet and OxyContin) topping other causes of overdose, according to new data from the Centers for Disease Control and Prevention (CDC). __That’s a higher death toll than guns, car crashes, and HIV/AIDS ever killed in one year in the US, and a higher death toll than all US military casualties in the Vietnam and Iraq wars combined.__" - Vox
 
 
 ## How did it start? { .smaller }
@@ -54,16 +54,34 @@ library(dplyr)
  - [Vox](https://www.vox.com/science-and-health/2017/8/3/16079772/opioid-epidemic-drug-overdoses)
 
 
-## Eye Bleach
+## Eye Bleach { .flexbox .vcenter }
 
-```{r eyebleach, fig.cap = "Source: Reddit"}
+```{r eyebleach, out.width = "60%", fig.cap = "Source: Reddit.", fig.align="center"}
 knitr::include_graphics(here("images/eyebleach.jpg"))
 ```
 
 
+## A note on economic systems { .smaller }
+
+There are two categories of economic systems:
+
+- "Command and control" economies in which the state or a corporation decides how much to produce. There is not a market, but rather goods are distributed and work is demanded. Emphasizes "From each according to his ability, to each according to his needs" -- Marx
+
+(But Marx thought this would only be possible in a society where technology had removed the need for physical labor.)
+
+- Market economies like the ones we are studying now.
+
+## A note on economic systems { .flexbox .vcenter }
+
+```{r twocows, out.width = "70%", fig.cap = "Source: unknown.", fig.align="center"}
+knitr::include_graphics(here("images/two_cows.jpg"))
+```
+
+
+
 ## It's a great time to learn about trade!
 
-```{r tradewar, fig.cap = "Source: China Daily", out.width = "80%"}
+```{r tradewar, fig.cap = "Source: China Daily.", out.width = "80%", fig.align="center"}
 knitr::include_graphics(here("images/trade_war.jpg"))
 ```
 
@@ -87,27 +105,25 @@ From Krugman and Wells:
 (But it's __not__ better for everyone... see [Autor, Dorn, Hanson (2016)](https://www.annualreviews.org/doi/abs/10.1146/annurev-economics-080315-015041), and a [video of Autor discussing his work](https://youtu.be/c07dcInoG0Y).)
 
 
-## There are four important things to know about trade
+## There are three important things to know about trade
 
 - __Absolute Advantage__ - A firm has an __absolute advantage__ when they can produce more of a good than another firm, or when they can produce that good more efficiently. E.g. the U.S. produces some agricultural products such as corn very cheaply because corn is highly mechanized.
 - __Comparative Advantage__ - A firm has a __comparative advantage__ if the _opportunity cost_ is lower for that firm than for another.
 - __Terms of Trade__ - The exchange rate between two goods that facilitates trade between countries.
 
 
-## Absolute advantage examples
+## Absolute advantage examples  { .flexbox .vcenter}
 
-```{r abs_adv, out.widht ="90%"}
+```{r abs_adv, out.width ="70%", fig.align="center"}
 knitr::include_graphics(here("images/absolute_advantage.jpg"))
 ```
 
 
-## Comparative advantage examples
+## Comparative advantage examples { .flexbox .vcenter}
 
-```{r com_adv, out.widht ="90%"}
+```{r com_adv, out.width ="80%", fig.align="center"}
 knitr::include_graphics(here("images/comparative_advantage.jpg"))
 ```
-
-
 
 
 ## Wrapping Up
