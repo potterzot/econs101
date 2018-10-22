@@ -141,14 +141,14 @@
   knowledge_check_url: https://goo.gl/forms/RBLnvYRWuN3NHYW52
 
 - date: 2018-10-19 (F)
-  modules: ['16']
-  topics: ['Gains from Trade']
+  modules: []
+  topics: [Homework review]
   assignments: ['Homework 7 Due']
-  knowledge_check_url: https://goo.gl/forms/Vj9G2EhOTbUiYLR63
+  knowledge_check_url: 
 
 - date: 2018-10-22 (M)
-  modules: ['17']
-  topics: ['Supply, Demand, and Trade']
+  modules: ['16', '17']
+  topics: ['Trade Analysis']
   knowledge_check_url: https://goo.gl/forms/MhpnJ1i7jM75U2iY2
 
 - date: 2018-10-24 (W)

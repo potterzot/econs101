@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Trade Analysis
+date: October 22, 2018
 output: ioslides_presentation
 ---
 
@@ -13,70 +13,95 @@ knitr::opts_chunk$set(message = FALSE)
 library(xkcd)
 library(tidyr)
 library(dplyr)
+library(here)
 ```
 
-## Feedback
+## Pregame
 
-<h3 style="color: green;">Good: </h3>
+* Make sure to do the knowledge check today to vote on whether you'd like to use NetTutor or Blackboard.
+* Writing Assignment 1 and 2 grades will be up next Monday.
+* Writing Assignment 3 will be posted by Monday, and is due November 5th.
+* 
 
+## Trade: Highly emotional/political
 
-<h3 style="color: red;">Needs improvement: </h3>
-
-
-
-## Example of plotting { .flexbox .vcenter }
-
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
-
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
-
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+```{r wto_protests, out.width="90%", fig.align='center'}
+knitr::include_graphics(here("images/wto_protests.jpg"))
 ```
 
 
-## Linking an Image
-
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+Source: <a rel="nofollow" class="external text" href="https://www.flickr.com/people/41267996@N00">Steve Kaiser</a> from Seattle, US - <a rel="nofollow" class="external text" href="https://www.flickr.com/photos/41267996@N00/125523970/">WTO protests 10</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0" title="Creative Commons Attribution-Share Alike 2.0">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=4994979">Link</a>
 
 
 
-## WSU: An example
 
-WSU Tuition: \$5,134
 
-Cost of classes:
+## Solar Panel Tariffs
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+- 30% Tariff in January on imported solar panels
 
+```{r wp_solar, out.width="90%", fig.align='center'}
+knitr::include_graphics(here("images/wp_solar.png"))
+```
+
+Source: [Washington Post](https://www.washingtonpost.com/graphics/2018/business/trump-tariff-trade-war/?%3Ftid%3D=sm_pg&noredirect=on&utm_term=.66f6a290d3e7).
+
+
+
+## How do we calculate global markets? { .smaller }
+
+```{r two_markets, out.width="90%", fig.align='center'}
+knitr::include_graphics(here("images/two_markets.png"))
+```
+
+1. Add up quantity demanded.
+2. Add up quantity supplied.
+3. Find the price at which Quantity Demanded = Quantity Supplied ($5, 500 lbs of coffee).
+4. Since Guatamala produces 360lbs and only demands 280lbs, it exports 360-280 = 80lbs to Croatia.
+
+## Graphing Trade { .smaller }
+
+```{r kw_trade, out.width="70%", fig.align='center'}
+knitr::include_graphics(here("images/kw_trade.png"))
+```
+
+Source: Krugman and Wells
+
+
+## Trade Surplus { .smaller }
+
+```{r kw_trade_surplus, out.width="90%", fig.align='center'}
+knitr::include_graphics(here("images/kw_trade_surplus.png"))
+```
+
+Source: Krugman and Wells
+
+
+## Trade Gains and Losses { .smaller }
+
+```{r kw_trade_gains_losses, out.width="90%", fig.align='center'}
+knitr::include_graphics(here("images/kw_trade_gains_losses.png"))
+```
+
+Source: Krugman and Wells
+
+
+## Winners and Losers from Trade
+
+* _Specialization_ and _Trade_ allow for a larger overall pie. __But__, that pie does not go to everyone equally, so some may be worse off.
+* [Winners and Losers from Trade](https://core-econ.org/the-economy/book/text/18.html#186-winners-and-losers-from-trade-and-specialization)
+
+
+## Job gains and losses from tariffs { .smaller }
+
+```{r wp_trade_jobs, out.width="70%", fig.align='center'}
+knitr::include_graphics(here("images/wp_trade_jobs.png"))
+```
+
+Source: Washington Post via Trade Partnership Worldwide
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/MhpnJ1i7jM75U2iY2) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
