@@ -16,9 +16,13 @@ library(tidyr)
 library(dplyr)
 ```
 
-## Pregame
+## Safety
 
+- Campus police will provide escorts: (509) 335-8548.
+- Alternatives to Violence of the Palouse: (509) 332-HELP (4357).
+- Crisis hotline: 1-866-871-6385.
 
+If you need help, faculty are not trained, but they are supposed to maintain confidentiality, though they may have to inform department directors and cougar health services in certain circumstances.
 
 
 ## Markets and Civic Life
