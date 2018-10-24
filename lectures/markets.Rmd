@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Market Structures
+date: October 24, 2018
 output: ioslides_presentation
 ---
 
@@ -10,6 +10,7 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
@@ -18,12 +19,6 @@ library(dplyr)
 ## Pregame
 
 
-## Feedback
-
-<h3 style="color: green;">Good: </h3>
-
-
-<h3 style="color: red;">Needs improvement: </h3>
 
 
 ## Markets and Civic Life
@@ -31,59 +26,124 @@ library(dplyr)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3nsoN-LS8RQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
-## Example of plotting { .flexbox .vcenter }
+## Dimensions of market structure
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
-
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
-
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+```{r kw_ms, fig.align='center', out.width='90%', fig.cap="Market Structure (Krugman and Wells)."}
+knitr::include_graphics(here("images/kw_market_structure.png"))
 ```
 
 
-## Linking an Image
+## Perfect competition
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+- __Price-Taking__ - A producer or consumer who does not have enough influence on the market to affect prices. A price-taking producer must set their price at or below the market price. A price-taking consumer must offer a price at least as high as the market price.
+
+If both consumers and producers are price-taking, we say the market is __perfectly competitive__.
+
+If just producers are price-takers, it is a __perfectly competitive industry__.
 
 
+## Perfect competition requirements
 
-## WSU: An example
+- There must be enough producers and no producer can have a large enough __market share__ to affect prices. (E.g. corner stores and gas stations)
 
-WSU Tuition: \$5,134
+(__market share__ is the fraction of total revenue for the industry made up from a particular firm's revenues.)
 
-Cost of classes:
+- Consumers must regard the good from all firms as equivalent to each other. Goods are __perfect substitutes__. (E.g. oranges or other fruits, perhaps pens, bread.)
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+- Free entry and exit of firms (other firms can't keep firms out). (E.g. any business that requires licensing is not a competitive market.)
+
+
+## Perfect Competition in the short run
+
+```{r pc_sr, fig.align='center', out.width='90%'}
+knitr::include_graphics(here("images/perfect_competition_sr.png"))
+```
+
+
+## Perfect Competition in the long run
+
+```{r pc_lr, fig.align='center', out.width='90%'}
+knitr::include_graphics(here("images/perfect_competition_lr.png"))
+```
+
+## Monopoly { .smaller }
+
+- One firm produces the good.
+- Since there is one firm, that firm can set the price.
+
+```{r monopoly, fig.align='center', out.width='50%'}
+knitr::include_graphics(here("images/monopoly.png"))
+```
+
+## Monopoly requirements
+
+A monopolist __must__ keep other firms from entering the market:
+
+- Control natural resources (DeBeers diamonds).
+- Technological superiority (Other firms can't produce).
+- Increasing returns to scale (they can produce more cheaply).
+- Government barriers: licenses, copyright, patents
+
+
+## Oligopoly
+
+- An __oligopoly__ is a few firms that have some price-setting power. Oligopolist firms can set prices to some extent, can collude to reduce production and/or elevate prices, and otherwise extort additional profits from consumers.
+
+- The typical oligopoly game theory problem is the prisoner's dilemma. Do firms collude and keep output low and prices high? Or do they cheat?
+
+
+## Oligopoly collusion
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fD_Y8hgzpFQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## Measuring market concentration { .smaller }
+
+The __Herfindal-Hirschman Index (HHI)__ measures market concentration, and is the sum of squared market shares. For example, if Amazon, Wal-Mart, Target, and five other smaller competitors have market shares of $25%$, $45%$, $15%$, and $5%$ each, the HHI is
+
+$$HHI = 25^2 + 45^2 + 15^2 + 5 \times 5^2 = 3,000.$$
+
+What's your intuition on:
+
+- Airplanes
+- Diamond mining
+- Movie production
+- Retail
+
+
+## Market concentration for some markets
+
+```{r hhi, fig.align='center', out.width='90%'}
+knitr::include_graphics(here("images/kw_hhi.png"))
+```
+
+
+## Monopolistic Competition
+
+All of the previous markets assume goods that are indistinquishable to consumers. 
+
+But what if goods *are* distinguishable, or at least *seem* distinguisable?
+
+Then firms engage in __monopolistic competition__.
+
+- __Monopolistic__ because each firm produces a slightly different product.
+- __Competition__ because consumers still substitute between similar goods, so firms compete on price and quality.
+
+
+## Monopolistic Competition
+
+```{r monopolistic_competition, fig.align='center', out.width='90%'}
+knitr::include_graphics(here("images/monopolistic_competition_sr.jpg"))
+```
+
+## Product differentiation
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wJfYAJJYMqg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/ljVuosQeTFgthKKg1) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
