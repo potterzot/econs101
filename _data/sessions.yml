@@ -160,7 +160,7 @@
   modules: ['25', '26']
   topics: ['Perfect Competition']
   assignments: ['Homework 8 Due']
-  knowledge_check_url: https://goo.gl/forms/WRnp2tNm6OpgmMQl1
+  knowledge_check_url:
 
 - date: 2018-10-29 (M)
   modules: ['27']

@@ -1,0 +1,111 @@
+---
+layout: page
+element: lecture
+title: Long Run Outcomes in Perfect Competition
+date: October 29, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(here)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+```
+
+## Pregame { .smaller }
+
+- Writing Assignment 3 is on Blackboard and is due to NetTutor on Wednesday Nov 7th by 5pm.
+- Practice test will be available tonight
+- We'll go over both before class
+
+__Schedule of next few weeks:__
+
+- This week is normal
+- 11/7 - lecture by Mike Mahoney (TA) and WA 2 due at 5pm
+- 11/9 - review for quiz 2 and HW 10 due at 5pm (only 1 more left after this)
+- 11/12 - NO CLASS
+- 11/14 - QUIZ 2
+- 11/16 - Fun class (Informal talk with instructors/grad students about anything you want. I'll bring oreos.)
+
+
+## Feedback
+
+<h3 style="color: green;">Good: </h3>
+Are there things in place to prevent monopolies? For example the epiPen market.
+
+<h3 style="color: red;">Needs improvement: </h3>
+- <no feedback...>
+
+
+## Perfect competition is rare
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5hJF8zNJg5I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## Perfect competition in the Long Run
+
+- __Long Run__ - After firms have entered the market to drive profits down.
+- __Short Run__ - Hold the number of firms fixed.
+
+__Review of Acronyms:__
+
+- __ATC__ - Average Total Cost $\frac{TC}{Q}$
+- __AVC__ - Average Variable Cost $\frac{VC}{Q}$
+- __MC__ - Marginal Cost (cost of one additional unit)
+- __MR__ - Marginal Revenue (revenue from one additional unit)
+
+
+## Short run profit (P > ATC)
+
+```{r kw_profitability, out.width="80%", fig.align='center', fig.cap="Source: Krugman and Wells."}
+knitr::include_graphics(here("images/kw_profitability.png"))
+```
+
+
+## Short run loss (P < ATC)
+
+```{r kw_profitability_loss, out.width="80%", fig.align='center', fig.cap="Source: Krugman and Wells."}
+knitr::include_graphics(here("images/kw_profitability_loss.png"))
+```
+
+
+## Short Run Supply
+
+```{r kw_short_run_supply, out.width="80%", fig.align='center', fig.cap="Source: Krugman and Wells."}
+knitr::include_graphics(here("images/kw_short_run_supply.png"))
+```
+
+
+## Short Run Equilibrium
+
+```{r kw_short_run_eqm, out.width="80%", fig.align='center', fig.cap="Source: Krugman and Wells."}
+knitr::include_graphics(here("images/kw_short_run_eqm.png"))
+```
+
+
+## Long Run Equilibrium
+
+```{r kw_long_run_eqm, out.width="80%", fig.align='center', fig.cap="Source: Krugman and Wells."}
+knitr::include_graphics(here("images/kw_long_run_eqm.png"))
+```
+
+
+## Time for an example... { .smaller }
+
+[Google Spreadsheet](https://docs.google.com/spreadsheets/d/1EdXAIMsQ2JlJ1X7ZbzNfkbXU5yKHWLrvEZDBKlcMhtA/edit?usp=sharing)
+
+```{r meme_economy, out.width="50%", fig.align='center', fig.cap="Source: https://me.me/i/farmers-investors-nasda-nq-meme-economy-meme-insider-memes-good-13828294."}
+knitr::include_graphics(here("images/meme_economy.png"))
+```
+
+
+
+## Wrapping Up
+
+* Complete the [knowledge check](https://goo.gl/forms/I7VSfzJRDpmpIO7w2) for today's participation point.
+
+* Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
