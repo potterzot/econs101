@@ -108,7 +108,7 @@
 
 - date: 2018-10-05 (F)
   modules: ['9, 11']
-  topics: ['Interpretating Price Elasticity of Demand and Consumer and Producer Surplus']
+  topics: ['Interpreting Price Elasticity of Demand and Consumer and Producer Surplus']
   assignments: ['Homework 5 Due']
   knowledge_check_url: https://goo.gl/forms/bVuvvNN94gZktiz13
 
@@ -181,12 +181,12 @@
 - date: 2018-11-05 (M)
   modules: ['30']
   topics: ['Price Discrimination']
-  assignments: ['Writing Assignment 3 Due']
   knowledge_check_url: https://goo.gl/forms/IGkuW3QmKPx04tfD2 
 
 - date: 2018-11-07 (W)
   modules: ['31']
   topics: ['Oligopoly']
+  assignments: ['Writing Assignment 3 Due']
   knowledge_check_url: https://goo.gl/forms/KvURpjXMrZREz6bj2
 
 - date: 2018-11-09 (F)
@@ -204,6 +204,8 @@
   assignments: ['Quiz 2 In Class']
 
 - date: 2018-11-16 (F)
+  modules: ['']
+  topics: ['Discussion Class']
 
 - date: 2018-11-19 (M)
   modules: ['']

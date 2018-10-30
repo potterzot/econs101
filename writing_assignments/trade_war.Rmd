@@ -14,12 +14,12 @@ library(tidyr)
 
 _Essays are submitted to a plagarism aglorithm to check for copying. Make sure you submit your own work. Plagarism is a failing offense._
 
-As of October 22nd, the U.S. price of steel was \$928 per metric ton^[Source: http://steelbenchmarker.com/files/history.pdf.], up from \$742.4 in June^[Source: https://www.washingtonpost.com/graphics/2018/business/trump-tariff-trade-war]. Let the previous $\742.2 price be the world price and the \$928 be the price after a 25% tariff was put in place. At the new price of \$928, 2 million metric tons of steel were imported. Total quantity demanded was 9.3.
+As of October 22nd, the U.S. price of steel was \$928 per metric ton^[Source: http://steelbenchmarker.com/files/history.pdf.], up from \$742.4 in June^[Source: https://www.washingtonpost.com/graphics/2018/business/trump-tariff-trade-war]. Let the previous \$742.4 price be the world price and the \$928 be the price after a 25% tariff was put in place. At the new price of \$928, 2 million metric tons of steel were imported. Total quantity demanded was 9.3.
 
-Without trade, the equilibrium price would be \$1000 and the equilibrium quantity would be 7.6 million metric tons. These two points (point 1: [7.6, 1000], and point 2: [9.3, 742.2]) let us construct a linear demand line, so that we have the following figure:
+Without trade, the equilibrium price would be \$1000 and the equilibrium quantity would be 7.6 million metric tons. These two points (point 1: [7.6, 1000], and point 2: [9.3, 742.4]) let us construct a linear demand line, so that we have the following figure:
 
-```{r, echo=FALSE}
-prices <- 1:2000
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+prices <- 0:2500
 d <- data.frame(
   Price = prices,
   Demand = -0.006982157 * prices + 14.58216,
@@ -27,14 +27,29 @@ d <- data.frame(
 )
 ggplot(data = gather(d, key = Quantity, value = Value, -Price)) + 
   geom_line(aes(x = Value, y = Price, color = Quantity), size = 1) +
+  geom_point(x = 7.6, y = 1000, size = 0.5, color = "grey20") +
+  geom_point(x = 7.3, y = 928, size = 0.5, color = "grey20") +
+  geom_point(x = 8.103, y = 928, size = 0.5, color = "grey20") +
+  geom_point(x = 6.525, y = 742.4, size = 0.5, color = "grey20") +
+  geom_point(x = 9.4, y = 742.4, size = 0.5, color = "grey20") +
+  geom_point(x = 0, y = 2088, size = 0.5, color = "grey20") +
+  geom_point(x = 3.434, y = 0, size = 0.5, color = "grey20") +
+  annotate("text", x = 8.9, y = 1000, label = "(Q = 7.6, P = 1000)", size = 2, align = "right") +
+  annotate("text", x = 6, y = 928, label = "(Q = 7.3, P = 928)", size = 2, align = "right") +
+  annotate("text", x = 9.5, y = 928, label = "(Q = 8.103, P = 928)", size = 2, align = "right") +
+  annotate("text", x = 5, y = 743, label = "(Q = 6.525, P = 742.4)", size = 2, align = "right") +
+  annotate("text", x = 10.6, y = 743, label = "(Q = 9.3, P = 742.4)", size = 2, align = "right") +
+  annotate("text", x = 1.5, y = 2088, label = "(Q = 0, P = 2088)", size = 2, align = "right") +
+  annotate("text", x = 4.5, y = 0, label = "(Q = 3.434, P = 0)", size = 2, align = "right") +
+  xlim(0, 15) +
   xlab("Quantity") + ggtitle("U.S. Steel Market, 2018") + theme_bw()
 ```
 
-Draw in the world price (\$742.2) line and mark the different quantities and prices at the no trade equilibrium, the free trade equilibrium, and the tariff equilibrium. You do not need to include the graph, but in your essay, use the graph and the marked points to discuss consumer and producer surplus in three scenarios:
+Draw in the world price (\$742.4) line and mark the different quantities and prices at the no trade equilibrium, the free trade equilibrium, and the tariff equilibrium. You do not need to include the graph, but in your essay, use the graph and the marked points to discuss consumer and producer surplus in three scenarios:
 
 1. The market before trade (i.e. at the no trade equilibrium). 
 2. The market after trade but with no tariff. Discuss the benefits that acrue to steel consumers and steel producers going from no trade to trade.
-3. The market with trade and a tariff. Discuss the loss to producers and consumers from implementing the tariff.
+3. The market with trade and a tariff. Discuss the loss to consumers and gain to producers from implementing the tariff.
 
 In each case, be sure to include the value of consumer and producer surplus and how that changed relative to the previous case.
 
@@ -50,3 +65,21 @@ Your essay should not exceed one typed page with one-inch margins and 12-point f
 | Writing   | The writing is difficult to follow and/or poorly organized.  Transition sentences are absent or ineffective.  Typos and/or grammatical errors distract the reader. Source material citations/references needed, but are missing or incorrect. | Ideas are well-organized.  Transition sentences effectively connect one idea to the next.  The essay is free of typos and grammatical errors. Sources properly cited and referenced, any citation style is acceptable. |
 | Application of economic analysis | Does not provide correct interpretation of how the change from no trade to free trade to trade with a tariff affects consumer and producer surplus. Fails to correctly calculate consumer surplus and producer surplus. Does not identify the correct direction of movement in the auto manufacturing industry and the effect on workers, and additional tariff policies that might prevent that and how that leads to escalating tariffs. | Correctly identifies the CS and PS in each of the three cases and discusses what happens as we move between scenarios. Correctly explains the effect on the auto industry and its workers, and the tariff that might be implemented to solve that problem. Correctly extrapolates to how that can lead to ever-increasing tariffs. |
 
+```{r echo=FALSE}
+#Values for rubric
+
+# No Trade Scenario
+CS_aut <- (2088 - 1000)*7.6*0.5
+PS_aut <- 3.434 * 1000 + 1000*(7.6 - 3.434)*0.5
+
+# Trade
+CS_ft <- 9.3 * (2088 - 742.4) * 0.5
+PS_ft <- 742.4 * 3.434 + 0.5 * (6.525 - 3.434) * 742.4
+
+# Trade with Tariff
+CS_t <- 8.103 * (2088 - 928) * 0.5
+PS_t <- 928 * 3.434 + 0.5 * (7.3 - 3.434) * 928 
+
+
+
+```

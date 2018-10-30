@@ -1,0 +1,18 @@
+---
+title: "ANSWER KEY - Writing Assignment #3: Analysis of tariff impacts"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+For all numerical answers, +/- 10 is close enough to be considered correct.
+
+The essay should consist of an opening and closing paragraph, and a paragraph explaining no trade, free trade, and tariff impacts, as follows:
+
+1. With no trade (autarky), at an equilibrium price of \$1000 and quantity of 7.6, the consumer surplus is 4134 and the producer surplus is 5517. 
+
+2. With free trade, the world price is \$742.4, and consumer surplus is 6257. Domestic producer surplus is 3697. 
+
+3. With a tariff, the consumer surplus is 4699, so the tariff is a loss of 1557 to consumers. The producer surplus is 4980, so the gain to producers is 1284.

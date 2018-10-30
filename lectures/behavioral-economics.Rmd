@@ -149,8 +149,8 @@ You are paired with another student. I give you \$10. You offer some amount to t
 
 **Q**: If you {found \$20 | got a raise of \$20}, would you spend it on something fun or on groceries?
 
-```{r q1, echo=FALSE, out.width = "75%"}
-dt <- readr::read_csv(here("confidential/f18/extra_credit1.csv")) %>% 
+```{r q1, echo=FALSE, out.width = "75%", fig.align='center'}
+dt <- readr::read_csv(here("confidential/f18/extra_credit/inclass_credit1.csv")) %>% 
   select(group, q1, q2a, q2b, q3a, q3b) %>%
   gather(key = q, value = r, -group) %>% 
   filter(!is.na(r)) %>%
