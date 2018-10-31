@@ -140,10 +140,13 @@ Then firms engage in __monopolistic competition__.
 knitr::include_graphics(here("images/monopolistic_competition_sr.jpg"))
 ```
 
+## Product differentiation { .smaller }
+
+__Note:__ I originally showed this video in class because it contains a humorous example of product differentiation, but in it one of the actors makes a suggestive and harrassing comment to a woman walking by. His behavior is inappropriate and goes against the classroom code, so I've moved the video to this [link](https://www.youtube.com/embed/wJfYAJJYMqg), and am replacing it in the slide with a different one.
+
 ## Product differentiation
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wJfYAJJYMqg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2PWhudUOGlM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Wrapping Up

@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Monopoly
+date: October 31, 2018
 output: ioslides_presentation
 ---
 
@@ -10,73 +10,106 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
 ```
 
-## Feedback
+## Pregame { .smaller }
+
+- The deluxe hugs video from the Market Structure lecture had a comment to a woman in it that I felt was pretty inappropriate, so I've replaced with a different video, but kept the link with an explanation.
+- Practice Quiz 2 is up.
+- Blackboard organization.
+- Writing Assignment update.
+
+
+## Feedback { .smaller }
 
 <h3 style="color: green;">Good: </h3>
-
+- Using memes 
+- Real world examples
+- I like that you go over homework in every class, it is actually really helpful! 
+- I appreciate that you went back over all the previous equations, it was nice to have a refresher!
 
 <h3 style="color: red;">Needs improvement: </h3>
+- Tables with graphs?
+- If possible, please post your lectures from when you do not teach class - if I don't understand something from a sub, this is helpful for me to look back on.
+- Please finish the hw problems before the end of class because some people have to leave right at 2pm for another class.
 
 
+## Imagine you're Google in the early days of search { .smaller }
 
-## Example of plotting { .flexbox .vcenter }
+The price you charge for ad space is determined by a competitive market, so __you can't charge any price you want__. You're a __price-taker__.
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
-
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
-
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+```{r out.width='50%', fig.align='center'}
+knitr::include_graphics(here("images/pc_price_taker_meme.jpg"))
 ```
 
 
-## Linking an Image
+## Over time, you become more like a monopoly { .smaller }
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+You choose the price you want, and sell as many as the market will demand at that price. You're a __price setter__.
+
+```{r out.width='60%', fig.align='center'}
+knitr::include_graphics(here("images/monopoly_price_meme.png"))
+```
 
 
+## The primary difference between a price-taking firm and a monopolist firm { .smaller }
 
-## WSU: An example
+- Price-taking firm faces a demand curve that is market price.
+- Monopolist firm faces a demand curve that is the actual demand curve.
 
-WSU Tuition: \$5,134
+```{r out.width='60%', fig.align='center', fig.cap='Source: Krugman and Wells'}
+knitr::include_graphics(here("images/kw_pc_monopolist_demand.png"))
+```
 
-Cost of classes:
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+## The primary difference between a price-taking firm and a monopolist firm
 
+The implication is...
+
+_If a firm has a monopoly, it can set the price at some point along the demand curve to maximize revenue._
+
+## Monopolist maximizes profit across price and quantity
+
+Since choosing the price affects the quantity the monopolist can sell, there are two effects. 
+
+For example, if the monopolist increases prices:
+
+- demand is lower so the firm sells less and revenue is reduced. This is the __Quantity Effect__.
+- each unit sold is sold at a higher price, so revenue is increased. This is the __Price Effect__.
+
+
+## Monopolist optimal output
+
+The monopolist chooses quantity at which:
+
+_Marginal Cost is equal to Marginal Revenue (MC = MR), but __not__ equal to price._
+
+In a competitive market, MC = MR = Price, but in a monopoly, the price is higher.
+
+## Monopolist profit
+
+```{r out.width='80%', fig.align='center', fig.cap='Source: Krugman and Wells'}
+knitr::include_graphics(here("images/kw_monopolist_profit.png"))
+```
+
+
+## Raise the price
+
+```{r out.width='60%', fig.align='center'}
+knitr::include_graphics(here("images/monopoly_price_meme2.jpg"))
+```
+
+
+## Google Sheets Example
+
+[Google Sheets](https://docs.google.com/spreadsheets/d/1EdXAIMsQ2JlJ1X7ZbzNfkbXU5yKHWLrvEZDBKlcMhtA/edit?usp=sharing)
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/gElhIUJZRPdRH6Od2) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
