@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Monopoly and Public Policy
+date: November 2, 2018
 output: ioslides_presentation
 ---
 
@@ -10,73 +10,93 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
 ```
 
-## Feedback
+## Google sheets helpful?
 
-<h3 style="color: green;">Good: </h3>
-
-
-<h3 style="color: red;">Needs improvement: </h3>
-
-
-
-## Example of plotting { .flexbox .vcenter }
-
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
-
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
-
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+```{r, out.width='90%'}
+knitr::include_graphics(here("images/google_sheets_helpful.png"))
 ```
 
 
-## Linking an Image
+## The key to creating a monopoly { .flexbox .vcenter }
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+__Barriers to entry__
 
 
+## Monopoly inefficiencies
 
-## WSU: An example
+```{r,out.width='70%', fig.align='center'}
+knitr::include_graphics(here("images/monopoly.png"))
+```
 
-WSU Tuition: \$5,134
 
-Cost of classes:
+## Monopoly inefficiencies
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+- Higher price and lower quantity = deadweight loss
+- But also, monopolists tend to stagnate, no longer innovating. This has a social cost.
+
+
+## Natural Monopolies
+
+- __Natural Monopoly__ - An industry in which there are significant economies of scale due to high fixed costs, i.e. the _marginal cost_ continues to decrease even for very high quantity produced.
+
+For example, electrical production, water systems, roads, social network effects.
+
+All benefit from initial investment and number of customers making it difficult for other firmst to enter the market, i.e. they create __barriers to entry__.
+
+
+## Natural Monopolies
+
+<iframe src="https://player.vimeo.com/video/298575803" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/298575803">Natural monopoly</a> from <a href="https://vimeo.com/user31487742">Economics online</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+
+## Dealing with Monopolies { .smaller }
+
+1. Anti-trust policy - legal frameworks to prevent or remove monopolies (here's a [list of all anti-trust suits the U.S. government has filed](https://www.justice.gov/atr/antitrust-case-filings-alpha)). Generally this is through one of two things:
+
+  1. Break the company into multiple pieces (e.g. break AT&T into one company in each region of the U.S.).
+  2. Require licensing of infrastructure or a process (e.g. cell providers must license their bandwidth to other providers).
+
+2. Set price limits - but it is difficult to find the right price.
+3. In a natural monopoly, take public ownership - but then incentives become political and these can be poorly run.
+
+
+## Monopoly political cartoons
+
+```{r, out.width='90%', fig.cap='Puck Magazine, August 1, 1883. Art by F. Graetz.'}
+knitr::include_graphics(here("images/monopoly_tournament.jpg"))
+```
+
+
+## Monopoly political cartoons
+
+```{r, out.width='90%', fig.cap='Omaha Evening Bee, November 3, 1894.'}
+knitr::include_graphics(here("images/monopoly_snakes.jpg"))
+```
+
+
+## Monopoly political cartoons
+
+```{r, out.width='90%', fig.cap='Puck Magazine, 1889.'}
+knitr::include_graphics(here("images/monopoly_sherman.jpg"))
+```
+
+
+## Monopoly political cartoons
+
+```{r, out.width='60%', fig.cap='Wall Street Journal, July 14, 2017. Art by Robert Neubecker.', fig.align='center'}
+knitr::include_graphics(here("images/monopoly_tech.jpg"))
+```
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/Pi2DliCf7PioBjQV2) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
