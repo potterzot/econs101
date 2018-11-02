@@ -25,7 +25,9 @@ knitr::include_graphics(here("images/google_sheets_helpful.png"))
 
 ## The key to creating a monopoly { .flexbox .vcenter }
 
-__Barriers to entry__
+```{r,out.width='90%', fig.align='center'}
+knitr::include_graphics(here("images/barriers_to_entry.jpg"))
+```
 
 
 ## Monopoly inefficiencies
