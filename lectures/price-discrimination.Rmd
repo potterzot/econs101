@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Price Discrimination
+date: November 5, 2018
 output: ioslides_presentation
 ---
 
@@ -10,73 +10,102 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
+library(here)
 library(xkcd)
 library(tidyr)
 library(dplyr)
 ```
 
-## Feedback
 
-<h3 style="color: green;">Good: </h3>
+## Is price discrimination wrong?
 
-
-<h3 style="color: red;">Needs improvement: </h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7GUPY4ZXZME" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+## Is price discrimination wrong?
 
-## Example of plotting { .flexbox .vcenter }
+Say I am the lead economist at GoPro. Is it wrong if I:
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
+- barter with each customer to agree on a price?
+- give a discount if someone buys 10 at once?
+- charge a different price to people who live in different cities?
+- charge a higher price to people who are wearing fancier clothes?
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
+__None of these is illegal.__
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+
+## Firms who have some market power don't have to be price-takers
+
+- __[Price Discrimination](https://core-econ.org/the-economy/book/text/50-02-glossary.html?query=price+discrimination)__: A selling strategy in which different prices are set for different buyers or groups of buyers, or prices vary depending on the number of units purchased.
+
+Reading: [How firms can influence prices](https://core-econ.org/the-economy/book/text/11.html#112-how-market-organization-can-influence-prices).
+
+Tons of articles and opinions on [Twitter](https://twitter.com/search?src=typd&q=price%20discrimination).
+
+
+## Price discrimination has three types
+
+1. __first degree__: each customer is charged their willingness-to-pay.
+2. __second degree__: different prices are charged for different quantities purchased (e.g. Costco).
+3. __third degree__: the market is divided into multiple sub-markets and each is charged a different price
+
+
+## First degree price discrimination
+
+- Charge each consumer their willingness-to-pay
+- Producers capture all of the surplus
+
+
+## Haggling: The original first degree price discrimination { .small }
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FcWgvRXbet8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Second degree price discrimination
+
+- Different prices for different sizes
+
+E.g. A 16oz. bag of Santitas is \$0.18 per oz., an 8oz. bag is \$0.154 per oz.
+
+```{r, out.width='70%'}
+knitr::include_graphics(here("images/santitas.jpg"))
 ```
 
 
-## Linking an Image
+## Second degree price discrimination welfare effects
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+What are the welfare implications for people who have low incomes?
+
+> - they pay more for food because they can't afford bulk purchases.
 
 
+## Third degree price discrimination
 
-## WSU: An example
+- Divide the market into multiple segments, charge each segment a different price.
 
-WSU Tuition: \$5,134
 
-Cost of classes:
+## Data science: categorizing people { .smaller }
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+One of the primary jobs for economists at companies like Amazon (or any online retailer) is to use people's data to categorize them into bins so you can charge a different price.
 
+
+## Evidence for categorization
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CUYBzKirmwg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Categorization gone bad
+
+Categorization happens not just for market transactions. The excellent book [Weapons of Math Destruction](https://weaponsofmathdestructionbook.com/) discusses algorithms that categorize people and determine:
+
+- prison sentence based on likelihood of recidivism
+- ads for predatory loans displayed on google to people with low incomes
+- hiring practices that replicate bias in past hiring decisions
+
+_So when is categorization wrong?_
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/IGkuW3QmKPx04tfD2) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
