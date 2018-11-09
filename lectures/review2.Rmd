@@ -1,0 +1,34 @@
+---
+layout: page
+element: lecture
+title: Quiz 2 Review
+date: November 9, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+library(here)
+```
+
+## Quiz 2 Review { .smaller }
+
+Vote on questions you want to cover today [here](https://goo.gl/forms/CAXOUGZ7P6AgzDvr2).
+
+- Extra office hours: 10-2pm on Monday 11/12.
+- Review Session 1010-12pm on Wednesday 11/14 in Terrell Library Study Room 1AA (Ground Floor).
+- There will be 44 questions.
+- The material is __not__ cumulative. It includes the following topics:
+  - elasticity (modules 9,11)
+  - market efficiency (module 12)
+  - price and quantity regulation (modules 13, 14, 15)
+  - trade (modules 4, 16, 17)
+  - competitive markets (modules 24, 25, 26, 27)
+  - monopoly (modules 28, 29, 30)
+  - oligopoly (module 31)
+  
