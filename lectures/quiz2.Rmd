@@ -1,0 +1,28 @@
+---
+layout: page
+element: lecture
+title: Quiz 2
+date: November 14, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+library(here)
+```
+
+## Quiz 2 { .smaller }
+
+* There are 44 questions.
+* No notes, no calculators, no books.
+* Remember, __MC = MR__!
+* __Autarky__ means "no trade".
+
+```{r, out.width='80%', fig.align='center'}
+knitr::include_graphics(here("images/goodluck.jpg"))
+```
