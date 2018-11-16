@@ -1,5 +1,5 @@
 ---
-title: 'Writing Assignment 3: Monopsony and the Minimum Wage'
+title: 'Writing Assignment 4: Monopsony and the Minimum Wage'
 output: pdf_document
 ---
 
@@ -15,13 +15,13 @@ library(dplyr)
 ```
 
 
-**DUE**: Wednesday, November 05, 2018 by 5pm Pacific Time via NETUTOR
+**DUE**: Wednesday, November 28, 2018 by 5pm Pacific Time via NETUTOR
 
 _Essays are submitted to a plagarism aglorithm to check for copying. Make sure you submit your own work. Plagarism is a failing offense._
 
 A debate has raged in economics for several decades as to whether the minimum wage negatively affects employment or not. Recall that economic theory suggests that in a perfectly competitive market, raising the minimum wage would result in businesses reducing their employment and shifting to using more equipment. However, analysis of employment levels after minimum wages are implemented has been mixed, with some studies finding a negative impact and others finding no impact. One recent paper by [Naidu, Suresh and Posner](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3129221) (2018) suggests that the labor market is not competitive, and as a result employers can supress wages because there are many fewer "buyers" of labor (i.e. the firms) than there are "sellers" of labor (i.e. the workers).
 
-Suppose the labor market is described by **Figure 1**. Given our discussion of monopsony effects in recent classes, write an essay describing how a minimum wage law affects employment under a perfectly competitive market and constrast that with how it would affect employment under a monopsony market in which buyers hold market power. The essay should have three sections:
+Suppose the labor market is described by **Figure 1**. Given our discussion of monopsony and competitive markets, write an essay describing how a minimum wage law affects employment under a perfectly competitive market and constrast that with how it would affect employment under a monopsony market in which buyers hold market power. The essay should have three sections:
 
 1. Use the figure and the labelled points in your essay, discuss:
 
@@ -30,7 +30,7 @@ Suppose the labor market is described by **Figure 1**. Given our discussion of m
     c. the equilibrium employment and wage level in a monopsony market. Is this equilibrium lower or higher than under competition?
     d. the effect of a minimum wage on wages and labor in a monopsony market. Do wages and employment increase or decrease?
 
-2. Read section "I.A.3 The Social Cost of Monopsony" (starting on pg. 15 of Naidue, Suresh, and Posner) and discuss the negative effects of monopsony on the labor market. Include both redistributive and waste effects, as well as the four additional effects they discuss.
+2. Read the section "I.A.3 The Social Cost of Monopsony" (starting on pg. 15 of Naidue, Suresh, and Posner) and discuss the negative effects of monopsony on the labor market. Include both redistributive and waste effects, as well as the four additional effects they discuss.
 
 3. Read the first two paragraphs of "I.A.4 Recent Developments: Evidence of Labor Market Concentration" (starting on pg. 17 of NSP). Explain why Cark and Krueger's research suggested that workers were paid less than their marginal product, and what that meant for whether the minimum wage would lead to employees being fired.
 
@@ -69,7 +69,7 @@ ggplot(data = d2) +
   xkcdaxis(c(0,100),c(0,1000))
 ```
 
-_Note: I am aware of the wikipedia page on monopsony and invite you to reference it in your essay. It may be helpful for understanding the first part of the assignment._
+_Note: The wikipedia page on monopsony provides a good initial reference on monopsony. It may be helpful for understanding the first part of the assignment._
 
 **References**
 

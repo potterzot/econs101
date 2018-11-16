@@ -1,5 +1,5 @@
 ---
-title: 'ANSWER KEY - Writing Assignment 3: Monopsony and the Minimum Wage'
+title: 'ANSWER KEY - Writing Assignment 4: Monopsony and the Minimum Wage'
 output: pdf_document
 ---
 
