@@ -13,6 +13,7 @@ knitr::opts_chunk$set(message = FALSE)
 library(xkcd)
 library(tidyr)
 library(dplyr)
+library(here)
 ```
 
 
@@ -49,7 +50,7 @@ Externalities can be __positive__ or __negative__.
 
 ## Externality example: traffic
 
-```{r out.width='90%}
+```{r, out.width='80%'}
 knitr::include_graphics(here("images/externalities_traffic.jpg"))
 ```
 
