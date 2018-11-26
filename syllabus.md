@@ -28,24 +28,24 @@ output:
 
 **Time & Location**: {{ page.schedule }}
 
-**Course Website**: [{{ site.url }}](%7B%7B%20site.baseurl%20%7D%7D)
+**Course Website**: [{{ site.url }}]({{ site.baseurl }})
 
 **Current Syllabus**: The syllabus and other relevant class information
 and resources will be posted at [{{
-site.url}}](%7B%7B%20site.baseurl%20%7D%7D) as well as on blackboard at
+site.url }}]({{ site.baseurl }}) as well as on blackboard at
 <https://learn.wsu.edu>.
 
 **Current Schedule**: The details course schedule is available on the
 course website at: [{{ site.url
-}}/schedule](%7B%7B%20site.baseurl%20%7D%7D/schedule) and on blackboard
+}}/schedule]({{ site.baseurl }}/schedule) and on blackboard
 at <https://learn.wsu.edu>.
 
 **Professor**: {{ page.professor }}, {{ page.office }}, {{ page.email
-}}, Office hours: {{ page.office\_hours }}
+}}, Office hours: {{ page.office_hours }}
 
 **Teaching Assistant**: {{ page.TA }}, {{
-page.TA\_office\_hours\_location }}, {{ page.TA\_email }}, Office hours:
-{{ page.TA\_office\_hours }}
+page.TA_office_hours_location }}, {{ page.TA_email }}, Office hours:
+{{ page.TA_office_hours }}
 
 *I receive ~100 emails per day. To manage this, I only check email from
 4:00-5:00 pm. I prefer verbal communication, but if you want to use
@@ -57,8 +57,7 @@ within 24 hours.*
 *Note: Additional office hours by appointment. Schedules get very busy,
 so no appointments can be made less than 24 hours in advance.*
 
-**Feedback**: Please leave feedback at any time at: [{{ site.feedbackurl
-}}](%7B%7B%20site.feedbackurl%20%7D%7D)
+**Feedback**: Please leave feedback at any time at: [{{ site.feedbackurl }}]({{ site.feedbackurl }})
 
 ### Texts
 
@@ -234,7 +233,7 @@ EconLab, your TA, or myself to discuss revisions.
 #### Quizzes and the Final Exam
 
 There will be two quizzes and a final. Except for the final, the quizzes
-are on the \[class schedule\]({{ site.baseurl | append: ‘/schedule’
+are on the [class schedule]({{ site.baseurl | append: ‘/schedule’
 }}/), in Blackboard, and announced in class. The quizzes will take place
 during class time and will involve only the material covered since the
 last quiz. The final exam will be cumulative, but with an emphasis on
