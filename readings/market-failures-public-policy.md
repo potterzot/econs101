@@ -1,7 +1,7 @@
 ---
 layout: page
 element: reading
-title: Externalities and Public Policy
+title: Market Failures and Public Policy
 ---
 
 * Krugman and Wells: Module 37

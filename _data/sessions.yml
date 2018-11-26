@@ -221,33 +221,32 @@
   assignments: []
 
 - date: 2018-11-26 (M)
-  modules: ['34']
-  topics: ['Monopolistic Competition']
+  modules: ['36']
+  topics: ['Market Failures']
   knowledge_check_url: https://goo.gl/forms/LRoznZB2nyQW1Jl52
 
 - date: 2018-11-28 (W)
-  modules: ['35']
-  topics: ['Product Differentiation and Advertising']
+  modules: ['37']
+  topics: ['Market Failures and Public Policy']
   assignments: ['Writing Assignment 4 Due']
   knowledge_check_url: https://goo.gl/forms/VpShioFFtkIKXQIN2
 
 - date: 2018-11-30 (F)
-  modules: ['36']
-  topics: ['Externalities']
+  modules: ['38']
+  topics: ['Public Goods and Common Resources']
   assignments: ['Homework 11 Due']
   knowledge_check_url: https://goo.gl/forms/dvRzD93Wp4JwAFS22
 
 - date: 2018-12-03 (M)
-  modules: ['37']
-  topics: ['Externalities and Public Policy']
+  modules: ['']
+  topics: ['Final Exam Prep']
   knowledge_check_url: https://goo.gl/forms/FU9PC7q5SUFLsaPH2
 
 - date: 2018-12-05 (W)
-  modules: ['38']
-  topics: ['Public Goods and Common Resources']
+  modules: ['']
+  topics: ['Final Exam Prep']
   knowledge_check_url: https://goo.gl/forms/SLUopNpSuVmM5ttx2
 
 - date: 2018-12-07 (F)
   modules: ['']
   topics: ['Final Exam Review']
-  assignments: []

@@ -1,7 +1,7 @@
 ---
 layout: page
 element: reading
-title: Externalities
+title: Market Failures
 ---
 
 * Krugman and Wells: Module 36
