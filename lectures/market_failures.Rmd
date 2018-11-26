@@ -22,7 +22,7 @@ library(dplyr)
 - The last homework is due Friday 11/30/2018 at 5pm.
 - Readings for this section: Module 36 in K&W, Chapters 12 & 20 in [The Economy](https://core-econ.org/the-economy/book/text). Especially Chapter 20!
 - We will be going over some problems for the final in each class from now on.
-- I will provide a practice exam
+- Details on the Final Exam will be provided on Wednesday.
 
 
 ## The Final Exam
@@ -61,6 +61,13 @@ knitr::include_graphics(here("images/externalities_traffic.jpg"))
 - Others?
 
 [A bunch of popular media videos demonstrating externalities](https://econ.video/?s=externality).
+
+
+## Why do externalities happen?
+
+According to Coase, externalities occur because no property right exists for the externality. Coase argued that if you do define a property right, parties can negotiate to reach an efficient outcome.
+
+[Video description of the Coase Theorem](https://youtu.be/00HPak2RLlQ).
 
 
 ## An externalitiy example in Idaho
