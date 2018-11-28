@@ -228,7 +228,6 @@
 - date: 2018-11-28 (W)
   modules: ['37']
   topics: ['Market Failures and Public Policy']
-  assignments: ['Writing Assignment 4 Due']
   knowledge_check_url: https://goo.gl/forms/VpShioFFtkIKXQIN2
 
 - date: 2018-11-30 (F)
@@ -244,6 +243,7 @@
 
 - date: 2018-12-05 (W)
   modules: ['']
+  assignments: ['Writing Assignment 4 Due']
   topics: ['Final Exam Prep']
   knowledge_check_url: https://goo.gl/forms/SLUopNpSuVmM5ttx2
 

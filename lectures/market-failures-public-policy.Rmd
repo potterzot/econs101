@@ -1,0 +1,89 @@
+---
+layout: page
+element: lecture
+title: Market Failures and Public Policy
+date: November 28, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+library(xkcd)
+library(tidyr)
+library(dplyr)
+library(here)
+```
+
+
+## Pregame
+
+- [Summer Research Opportunity]("http://potterzot.com/econs101/files/lakes_research_internship.pdf")
+- The last writing assignment is due Wednesday 12/05/2018 at 5pm. Here's the catch: Only two days for revision because everything must be turned in by Friday 12/07/2018 by 5pm.
+- The last homework is due Friday 11/30/2018 at 5pm.
+- Readings for this section: Module 36 in K&W, Chapters 12 & 20 in [The Economy](https://core-econ.org/the-economy/book/text). Especially Chapter 20!
+
+
+## The Final Exam
+
+- Monday, December 10th from 1:00-3:00pm in Todd 216.
+- There will be 50 questions.
+- You can have one full page front and back of notes.
+- I will put some equations on the projector.
+
+
+## Feedback { .smaller }
+
+<h3 style="color: green;">Good: </h3>
+- The real life examples are good 
+
+<h3 style="color: red;">Needs improvement: </h3>
+- Please draw the diagrams and examples bigger and more clear. Small handwriting along with quick chicken scratch makes it difficult to distinguish what is what. Using one piece of paper to write more then one example is good for the environment, but it’s more difficult to comprehend.
+
+## Some Useful Videos on Market Failures
+
+- [Negative Externalities](https://www.youtube.com/watch?v=aj6FTueEICY)
+- [Positive Externalities](https://www.youtube.com/watch?v=lb1fnodI3YU)
+- [Economic Rockstar Podcast](https://www.youtube.com/watch?v=jTpLZOLdBBM) - This one is a more complex discussion of externalities and managing common pool resources.
+
+
+## Externalities Review
+
+- Externalities occur when individual actions generate costs or benefits for others.
+- Examples: 
+    - The decision to drive imposes a time cost on other drivers if it leads to traffic jams.
+    - The decision to pollute makes production cheaper but generates costs to the community.
+    - Choosing to get a flu vaccine generates a benefit to other people of reducing the prevalence of the flu.
+    - Education makes it easier to make more informed decisions as a society.
+    - Not going to the doctor until you have an emergency imposes costs on everyone else.
+    - Harvesting natural resources to maximize profits reduces the regeneration capacity of the resource.
+
+
+## Coase Theorem
+
+- The [Coase Theorem](https://en.wikipedia.org/wiki/Coase_theorem) suggests that the issue is one of property rights, and that property rights, once defined, allow for market transactions to arrive at a solution.
+
+
+## Externalities affect some kind of Social "Good"
+
+We can divide goods into four groups based on two definitions:
+
+- __Rivalrous Goods__ are goods whose consumption means they cannot be consumed by others. Examples: food, almost all material goods. Examples of nonrivalrous goods include: public health, quiet, works of art, national defense.
+
+
+- __Excludable Goods__ are goods for which the supplier can limit access to only those who pay for it. Examples: Digital movies, almost all material goods. Examples of __Nonexcludable goods__ inlcude clean air, clean water, public pastures.
+
+
+## Tragedy of the Commons
+
+- If a resource is owned communally, then individuals may overexploit the resource.
+- [Hardin (1968)](https://pages.mtu.edu/~asmayer/rural_sustain/governance/Hardin%201968.pdf) termed this the __Tragedy of the Commons__.
+- Example: WSU Internet Bandwidth.
+
+
+## Wrapping Up
+
+* Complete the [knowledge check](https://goo.gl/forms/VpShioFFtkIKXQIN2) for today's participation point.
+
+* Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
