@@ -233,14 +233,13 @@ EconLab, your TA, or myself to discuss revisions.
 #### Quizzes and the Final Exam
 
 There will be two quizzes and a final. Except for the final, the quizzes
-are on the [class schedule]({{ site.baseurl | append: ‘/schedule’
-}}/), in Blackboard, and announced in class. The quizzes will take place
+are on the [class schedule]({{ site.baseurl | append: '/schedule'
+}}), in Blackboard, and announced in class. The quizzes will take place
 during class time and will involve only the material covered since the
 last quiz. The final exam will be cumulative, but with an emphasis on
-the material covered since the second test. *If you take all quizzes and
-the final and your final exam score is better than one of your quiz
-scores, I will replace the lowest quiz score with your final exam
-score.*
+the material covered since the second test. __If your final exam score is 
+better than one of your quiz scores, your lowest quiz score will be replaced 
+by your final exam score.__
 
 The format of the quizzes will be multiple choice questions. Bubble
 sheets (or *Scantrons*) will be provided for each quiz and for the final
