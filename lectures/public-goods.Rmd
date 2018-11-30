@@ -1,8 +1,8 @@
 ---
 layout: page
 element: lecture
-title: Template
-date: August 22, 2018
+title: Public Goods and Common Resources
+date: November 30, 2018
 output: ioslides_presentation
 ---
 
@@ -13,70 +13,100 @@ knitr::opts_chunk$set(message = FALSE)
 library(xkcd)
 library(tidyr)
 library(dplyr)
+library(here)
 ```
 
 ## Feedback
 
 <h3 style="color: green;">Good: </h3>
-
+- The graph was easy to read and there was no chicken scratch.
 
 <h3 style="color: red;">Needs improvement: </h3>
+- Are the readings/sapling exercises about them mandatory or just suggested?
 
 
+## Classification of goods
 
-## Example of plotting { .flexbox .vcenter }
+We can divide goods into four groups based on two definitions:
 
-```{r production, out.width = "100%"}
-d1 <- data.frame(t = 0:16)
-d1$hw1 <- 40 + log(d1$t+1)/max(log(d1$t)) * 55
-d1$hw2 <- 20 + log(d1$t+1, base = exp(2))/max(log(d1$t), base = exp(2)) * 400
+- __Rivalrous Goods__ are goods whose consumption means they cannot be consumed by others. Examples: food, almost all material goods. Examples of nonrivalrous goods include: public health, quiet, works of art, national defense.
 
-x1 <- 2
-x2 <- x1 + 1
-x3 <- 13
-x4 <- x3 + 1
 
-ggplot(data = d1) + 
-  #xkcdline(data = d, aes(x = min(d$x), xend = max(d$x), y = min(d$y), yend = max(d$y)), color = "red", size = 2) + 
-  geom_line(aes(x = t, y = hw1), color = "red", size = 1, alpha = .8) +
-  xkcdaxis(c(0,16), c(0,100)) + 
-  geom_segment(aes(x = x1, xend = x1, y = 0, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x1, y = d1[d1$t == x1,]$hw1, yend = d1[d1$t == x1,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x2, xend = x2, y = 0, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x2, y = d1[d1$t == x2,]$hw1, yend = d1[d1$t == x2,]$hw1), color = "deepskyblue4", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x3, xend = x3, y = 0, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x3, y = d1[d1$t == x3,]$hw1, yend = d1[d1$t == x3,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = x4, xend = x4, y = 0, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  geom_segment(aes(x = 0, xend = x4, y = d1[d1$t == x4,]$hw1, yend = d1[d1$t == x4,]$hw1), color = "seagreen2", linetype = 2, alpha = .9) +
-  #xkcdline(data = d1, aes(x = 5, xend = 5, y = 0, yend = d1[d1$t == 5,]$hw1), linetype = 2) +
-  xlab("Hours Running") + ylab("Final Rank") +
-  theme(text = element_text(size = 16, family = "Humor Sans"))
+- __Excludable Goods__ are goods for which the supplier can limit access to only those who pay for it. Examples: Digital movies, almost all material goods. Examples of __Nonexcludable goods__ inlcude clean air, clean water, public pastures.
+
+
+## Classifying types of goods
+
+__Markets efficiently provide only the first category of goods.__
+
+```{r, out.width='80%', fig.align='center'}
+knitr::include_graphics(here("images/kw_good_types.png"))
 ```
 
 
-## Linking an Image
+## Why Can't Markets Provide Other Types of Goods?
 
-[Figure 3.5 from The Economy](https://core-econ.org/the-economy/book/text/03.html#figure-3-5a)
+- Goods that are __nonexcludable__ suffer from a "free-rider" problem. Example: group projects.
+- Goods that are __nonrivalrous__, the most efficient price is zero.
 
 
+## Public Goods
 
-## WSU: An example
+Public goods are both __nonexcludable__ and __nonrivalrous__. In this way they are the opposite of private goods.
 
-WSU Tuition: \$5,134
+Examples:
 
-Cost of classes:
+- National Defense
+- Scientific discoveries
+- Herd immunity
 
-| Classes | Total Cost | Marginal Cost | Average Cost | 
-| ------- | ----------:| -------------:| ------------:|
-| 1       | 1000       | 1000          | 1000         |
-| 2       | 1750       | 750           | 875          |
-| 3       | 2350       | ???           | 783.3        |
-| 4       | ????       | 250           | ???          |
-| 5       | 2850       | 250           | 570          |
+The __marginal social benefit__ of a public good is the __sum__ of the individual marginal benefits.
+
+
+## Common Pool Resources
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CxC161GvMPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Common Pool Resources
+
+A __common pool resource__ is __rivalrous__ but __nonexcludable__.
+
+The issue is one of __overuse__. How do we get individuals to take into account the effect of their actions on the group?
+
+- Tax or quota limits.
+- Make the resource private.
+- Tradable permits to use the resource.
+- Community agreement to limit use.
+
+
+## Community Solutions to Resource Management { .smaller }
+
+"New Institutional Economics" pioneered by Nobel Laureate [Elinor Ostrom](https://en.wikipedia.org/wiki/Elinor_Ostrom).
+
+Top-down solutions like taxes and permits are subject to issues:
+
+- corruption
+- difficulty monitoring
+
+Communities can manage themselves if group cohesion is high:
+
+- members share similar viewpoints and goals and are relatively equal.
+- other social interactions create bonds that encourage participation.
+
+
+## Artificially Scarce Goods
+
+__Artificially scare goods__ are excludable but nonrivalrous. These are things like digital media. 
+
+- Excludable so sellers charge a positive price, 
+- but nonrivalrous so more people could consume them and increase total social benefit.
+
+Solution is similar to natural monopoly: regulate price (or just accept inefficiency).
 
 
 ## Wrapping Up
 
-* Complete the [knowledge check]() for today's participation point.
+* Complete the [knowledge check](https://goo.gl/forms/dvRzD93Wp4JwAFS22) for today's participation point.
 
 * Please provide [feedback](https://goo.gl/forms/8SiOwdi19kN8cINJ3) on today's lecture.
