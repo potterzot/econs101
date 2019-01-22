@@ -239,13 +239,13 @@
 - date: 2018-12-03 (M)
   modules: ['']
   topics: ['Final Exam Prep']
-  knowledge_check_url: https://goo.gl/forms/FU9PC7q5SUFLsaPH2
+  knowledge_check_url:
 
 - date: 2018-12-05 (W)
   modules: ['']
   assignments: ['Writing Assignment 4 Due']
   topics: ['Final Exam Prep']
-  knowledge_check_url: https://goo.gl/forms/SLUopNpSuVmM5ttx2
+  knowledge_check_url:
 
 - date: 2018-12-07 (F)
   modules: ['']
